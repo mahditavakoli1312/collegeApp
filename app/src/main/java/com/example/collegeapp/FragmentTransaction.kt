@@ -1,8 +1,6 @@
 package com.example.fragment_test
 
-import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 
