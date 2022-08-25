@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/fragment_choose_login.xml" value="0.176" />
+        <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/fragment_choose_login.xml" value="0.136" />
+        <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/fragment_confirm_register.xml" value="0.16" />
+        <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/fragment_login.xml" value="0.152" />
+        <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/fragment_main.xml" value="0.136" />
+        <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/fragment_register.xml" value="0.176" />
         <entry key="..\:/android studio projects/CollegeApp/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
       </map>
     </option>
