@@ -5,4 +5,11 @@
     <string name="label_splashSreen">Splash Screen</string>
     <string name="label_register">Register</string>
     <string name="label_login">login</string>
+    <string name="label_choose_login">Choose Login</string>
+    <string name="label_login_screen">Login Screen</string>
+    <string name="label_login_LoginFragment">Login</string>
+    <string name="label_register_screen">Register Screen</string>
+    <string name="register_registerFragment">register</string>
+    <string name="label_confirmregister_screen">ConfirmRegister Screen</string>
+    <string name="label_login_confrimRegister">Login</string>
 </resources>

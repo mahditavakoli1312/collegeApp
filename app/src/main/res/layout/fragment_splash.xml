@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashFragment">
+    tools:context=".register_Login.SplashFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textStyle="bold"
+        android:text="@string/label_splashSreen"
         android:textSize="30sp"
-        android:text="@string/label_splashSreen" />
+        android:textStyle="bold" />
 
 </RelativeLayout>
