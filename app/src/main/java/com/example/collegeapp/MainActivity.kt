@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import com.example.collegeapp.register_Login.SplashFragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var navController: NavController
 
     companion object {
         var globalMain: MainActivity? = null
@@ -22,12 +24,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val navHost =
+            supportFragmentManager.findFragmentById(R.id.fcv_fragmentContainer_activityMain) as NavHostFragment
+        navController = navHost.navController
+
+
         globalMain = this
         // mahdi tavakoli profile : https://github.com/mahditavakoli1312/FragmentTransaction---mahdi-tavakoli
 
-        replaceFragment(
-            SplashFragment()
-        )
+
     }
 
     fun replaceFragment(fragment: Fragment) {

@@ -5,7 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.collegeapp.MainActivity
+import androidx.navigation.fragment.findNavController
+import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
 import kotlinx.android.synthetic.main.fragment_register.*
 
@@ -22,7 +23,13 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_register_registerFragment.setOnClickListener {
-            MainActivity.globalMain?.replaceFragment(ConfirmRegisterFragment())
+
+            FragmentNavigationMethod.navigateWithPopUp(
+                action = R.id.action_registerFragment_to_confirmRegisterFragment,
+                navController = findNavController(),
+                popUpId = R.id.registerFragment,
+                inclusive = true
+            )
         }
     }
 

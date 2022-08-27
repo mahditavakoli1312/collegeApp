@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.collegeapp.home.MainFragment
-import com.example.collegeapp.MainActivity
+import androidx.navigation.fragment.findNavController
+import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -25,7 +25,12 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btn_login_loginFragment.setOnClickListener {
-            MainActivity.globalMain?.replaceFragment(MainFragment())
+            FragmentNavigationMethod.navigateWithPopUp(
+                action = R.id.action_loginFragment_to_mainFragment,
+                navController = findNavController(),
+                popUpId = R.id.chooseLoginFragment,
+                inclusive = true
+            )
         }
     }
 }
