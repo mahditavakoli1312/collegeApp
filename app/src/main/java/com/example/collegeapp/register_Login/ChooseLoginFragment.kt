@@ -5,7 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.collegeapp.MainActivity
+import androidx.navigation.fragment.findNavController
+import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
 import kotlinx.android.synthetic.main.fragment_choose_login.*
 
@@ -25,12 +26,17 @@ class ChooseLoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btn_register_chooseLoginActivity.setOnClickListener {
-            MainActivity.globalMain?.replaceFragment(RegisterFragment())
+            FragmentNavigationMethod.navigate(
+                action = R.id.action_chooseLoginFragment_to_registerFragment,
+                navController = findNavController(),
+            )
         }
 
         btn_login_chooseLoginActivity.setOnClickListener {
-            MainActivity.globalMain?.replaceFragment(LoginFragment())
-
+            FragmentNavigationMethod.navigate(
+                action = R.id.action_chooseLoginFragment_to_loginFragment,
+                navController = findNavController(),
+            )
         }
     }
 
