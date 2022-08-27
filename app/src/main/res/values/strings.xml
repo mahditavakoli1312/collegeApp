@@ -3,6 +3,14 @@
     <string name="label_splashSreen">Splash Screen</string>
     <string name="label_register">Register</string>
     <string name="label_login">login</string>
+    <string name="label_bookmark">بوکمارک ها</string>
+    <string name="label_articles">مقالات من</string>
+    <string name="label_profilefragment">profileFragment</string>
+    <string name="label_users">کاربران</string>
+    <string name="label_tags">تگ ها</string>
+    <string name="label_posts">پست ها</string>
+    <string name="label_newArticle">مقاله جدید</string>
+    <string name="label_showArticle">نمایش مقاله</string>
     <string name="label_choose_login">Choose Login</string>
     <string name="label_login_screen">Login Screen</string>
     <string name="label_register_screen">Register Screen</string>
@@ -11,4 +19,5 @@
     <string name="label_profile">profile</string>
     <string name="label_search">search</string>
     <string name="label_home">home</string>
+    <string name="label_home_fragment">home fragment</string>
 </resources>

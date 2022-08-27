@@ -1,14 +1,18 @@
-package com.example.collegeapp.Home
+package com.example.collegeapp.home
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import com.example.collegeapp.MainActivity
 import com.example.collegeapp.R
+import com.example.collegeapp.profile.ProfileFragment
+import com.example.collegeapp.search.SearchFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -29,16 +33,19 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btn_profile_activityMain.setOnClickListener {
-
+            com.example.fragment_test.FragmentTransaction.replaceFragment(ProfileFragment() , this.childFragmentManager , R.id.cv_mainFragment)
         }
 
         btn_search_activityMain.setOnClickListener {
-
+            com.example.fragment_test.FragmentTransaction.replaceFragment(SearchFragment() , this.childFragmentManager , R.id.cv_mainFragment)
         }
 
         btn_home_activityMain.setOnClickListener {
-
+            com.example.fragment_test.FragmentTransaction.replaceFragment(HomeFragment() , this.childFragmentManager , R.id.cv_mainFragment)
         }
+        btn_home_activityMain.callOnClick()
+
+
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {

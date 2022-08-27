@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.collegeapp.Home.MainFragment
+import com.example.collegeapp.home.MainFragment
 import com.example.collegeapp.MainActivity
 import com.example.collegeapp.R
 import kotlinx.android.synthetic.main.fragment_login.*
