@@ -7,7 +7,12 @@ class FragmentNavigationMethod {
 
     companion object {
         fun navigate(action: Int, navController: NavController) {
-            navController.navigate(action)
+            try {
+                navController.navigate(action)
+            } catch (e: IllegalArgumentException) {
+                e.printStackTrace()
+            }
+
         }
 
         fun navigateWithPopUp(
@@ -17,7 +22,11 @@ class FragmentNavigationMethod {
             inclusive: Boolean
         ) {
             val options = NavOptions.Builder().setPopUpTo(popUpId, inclusive).build()
-            navController.navigate(action, null, options)
+            try {
+                navController.navigate(action, null, options)
+            } catch (e: IllegalArgumentException) {
+                e.printStackTrace()
+            }
         }
     }
 }
