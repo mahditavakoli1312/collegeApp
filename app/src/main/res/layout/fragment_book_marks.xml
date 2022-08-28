@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.ShowArticleFragment">
+    tools:context=".BookMarksFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/label_showArticle"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="@string/label_bookmarks_screen" />
 
 </FrameLayout>

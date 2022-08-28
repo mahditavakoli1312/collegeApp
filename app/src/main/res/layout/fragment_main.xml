@@ -12,12 +12,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.92" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontal84_MainFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.84" />
+
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -25,7 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/gl_horizontal92_MainFragment"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/cv_mainFragment"/>
+        android:id="@+id/cv_mainFragment" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
