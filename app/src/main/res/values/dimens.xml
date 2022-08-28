@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="guid_0.06Start_percent">0.06</dimen>
+    <dimen name="guid_0.06End_percent">0.94</dimen>
+    <dimen name="guid_0.04Start_percent">0.04</dimen>
+    <dimen name="guid_0.04End_percent">0.96</dimen>
+    <dimen name="guid_0.5">0.5</dimen>
+    <dimen name="btn_retio_312_48">6.5</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="radius_8">8dp</dimen>
+</resources>
