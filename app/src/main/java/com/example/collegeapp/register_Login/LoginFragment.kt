@@ -25,6 +25,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btn_login_loginFragment.setOnClickListener {
+
             FragmentNavigationMethod.navigateWithPopUp(
                 action = R.id.action_loginFragment_to_mainFragment,
                 navController = findNavController(),

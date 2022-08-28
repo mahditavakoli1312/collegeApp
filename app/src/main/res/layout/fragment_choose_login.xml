@@ -5,27 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".register_Login.ChooseLoginFragment">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background_image"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/background_image" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/gradiant_black_bottom_to_top"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/label_choose_login"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:src="@drawable/gradiant_black_bottom_to_top" />
+
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_centerVertical_chooseLoginFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.5"
-        android:id="@+id/gl_centerVertical_chooseLoginFragment"/>
+        app:layout_constraintGuide_percent="@dimen/guid_0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontal1_chooseLoginActivity"
@@ -61,45 +58,47 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
     <TextView
         android:id="@+id/tv_info_chooseLoginFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_16"
         android:text="@string/label_helium_info"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginActivity"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/btn_register_chooseLoginActivity"
-        android:layout_marginBottom="@dimen/margin_16"
-        android:textSize="18sp"/>
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginActivity" />
+
     <ImageView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_logo"
         android:layout_marginBottom="@dimen/margin_16"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
+        android:src="@drawable/ic_logo"
         app:layout_constraintBottom_toTopOf="@id/tv_info_chooseLoginFragment"
-        app:layout_constraintStart_toStartOf="@id/gl_centerVertical_chooseLoginFragment"/>
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
+        app:layout_constraintStart_toStartOf="@id/gl_centerVertical_chooseLoginFragment" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register_chooseLoginActivity"
+        style="@style/custom_button_blue"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_register_bold"
-        style="@style/custom_button_blue"
         app:layout_constraintBottom_toBottomOf="@id/gl_horizontal2_chooseLoginActivity"
+        app:layout_constraintDimensionRatio="@dimen/btn_retio_312_48"
         app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
         app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginActivity"
-        app:layout_constraintTop_toTopOf="@id/gl_horizontal1_chooseLoginActivity"
-        app:layout_constraintDimensionRatio="@dimen/btn_retio_312_48"/>
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal1_chooseLoginActivity" />
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login_chooseLoginActivity"
+        style="@style/custom_button_transparent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_login_bold"
-        style="@style/custom_button_transparent"
         app:layout_constraintBottom_toBottomOf="@id/gl_horizontal3_chooseLoginActivity"
         app:layout_constraintDimensionRatio="@dimen/btn_retio_312_48"
         app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
