@@ -1,8 +1,41 @@
 <resources>
     <string name="app_name">CollegeApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_splashSreen">Splash Screen</string>
-    <string name="label_register">Register</string>
-    <string name="label_login">login</string>
+    <string name="label_register">ثبت نام</string>
+    <string name="label_register_bold"><b>ثبت نام</b></string>
+    <string name="label_login">ورود</string>
+    <string name="label_login_bold"><b>ورود</b></string>
+    <string name="label_bookmark">بوکمارک ها</string>
+    <string name="label_articles">مقالات من</string>
+    <string name="label_profilefragment">profileFragment</string>
+    <string name="label_users">کاربران</string>
+    <string name="label_tags">تگ ها</string>
+    <string name="label_posts">پست ها</string>
+    <string name="label_newArticle">مقاله جدید</string>
+    <string name="label_showArticle">نمایش مقاله</string>
+    <string name="label_choose_login">Choose Login</string>
+    <string name="label_login_screen">Login Screen</string>
+    <string name="label_register_screen">Register Screen</string>
+    <string name="label_confirmregister_screen">ConfirmRegister Screen</string>
+    <string name="label_main_fragment">Main Fragment</string>
+    <string name="label_profile">profile</string>
+    <string name="label_search">search</string>
+    <string name="label_home">home</string>
+    <string name="label_home_fragment">home fragment</string>
+    <string name="label_helium_info">هلیوم پلاس بستری برای اشتراک گذاری ایده‌ها و فکر افراد پیشرو در زمینه علم و دانش</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_bookmarks_screen">Bookmarks Screen</string>
+    <string name="label_myarticles_screen">MyArticles Screen</string>
+    <string name="label_mobilenumber">شماره موبایل</string>
+    <string name="label_password">کلمه عبور</string>
+    <string name="label_dontHaveAccount">حساب کاربری ندارید؟</string>
+    <string name="label_dontHaveAccount_bold"><b>حساب کاربری ندارید؟</b></string>
+    <string name="label_registerStr_fa">ثبت نام کنید.</string>
+    <string name="label_registerStr_bold"><b>ثبت نام کنید.</b></string>
+    <string name="label_registerTitle"><b>ثبت نام</b></string>
+    <string name="label_isRegister">قبلا ثبت نام کرده اید؟</string>
+    <string name="label_loginStr_bold"><b>وارد شوید.</b></string>
+    <string name="label_name">نام و نام خانوادگی</string>
+    <string name="label_username">نام کاربری</string>
+    <string name="label_email">پست الکترونیک</string>
 </resources>
