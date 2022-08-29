@@ -5,26 +5,44 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment">
-
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_verticalStart_homeFragment"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_verticalEnd_homeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontalEnd_homeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/label_home_fragment" />
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
+        app:layout_constraintEnd_toEndOf="@id/gl_verticalEnd_homeFragment"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:id="@+id/rv_articles_homeFragment"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:text="@string/label_showArticle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/btn_showArticle_mainFragment" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:text="@string/label_newArticle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontalEnd_homeFragment"
+        android:background="@drawable/btn_circle_blue_primary_700"
+        android:src="@drawable/ic_new_article"
+        android:padding="@dimen/margin_16"
         android:id="@+id/btn_newArticle_mainFragment" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
