@@ -21,7 +21,6 @@ class SplashFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onResume()
         Handler().postDelayed({
             FragmentNavigationMethod.navigateWithPopUp(
                 action = R.id.action_splashFragment_to_chooseLoginFragment,
@@ -31,5 +30,6 @@ class SplashFragment : Fragment() {
             )
         }, 3000)
     }
+
 
 }
