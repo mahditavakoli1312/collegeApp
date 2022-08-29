@@ -20,7 +20,7 @@ class SplashFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
 
-    override fun onResume() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onResume()
         Handler().postDelayed({
             FragmentNavigationMethod.navigateWithPopUp(

@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/label_home_fragment"
-        />
+        android:text="@string/label_home_fragment" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="40dp"

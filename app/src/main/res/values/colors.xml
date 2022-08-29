@@ -10,4 +10,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#29FFFFFF</color>
     <color name="transparent100">#00FFFFFF</color>
+    <color name="white_8">#14FFFFFF</color>
+    <color name="white_60">#14FFFFFF</color>
+    <color name="status_color">#030304</color>
+    <color name="blue_400">#9090F7</color>
+
+
 </resources>
