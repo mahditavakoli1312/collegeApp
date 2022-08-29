@@ -38,4 +38,6 @@
     <string name="label_name">نام و نام خانوادگی</string>
     <string name="label_username">نام کاربری</string>
     <string name="label_email">پست الکترونیک</string>
+    <string name="label_searchbarstr">جستجو ...</string>
+    <string name="label_confrimRegisterStr">ثبت نام شما با موفقیت انجام شد.</string>
 </resources>

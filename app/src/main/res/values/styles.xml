@@ -5,6 +5,7 @@
         <item name="android:background">@drawable/btn_blue_primary_700</item>
         <item name="background">@drawable/btn_blue_primary_700</item>
         <item name="android:textColor">@color/white</item>
+        <item name="layout_constraintHeight_min">43dp</item>
     </style>
 
     <style name="custom_button_transparent" parent="Widget.AppCompat.Button">
@@ -14,6 +15,8 @@
 
     <style name="custom_inputEditTextLayout_gray" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusBottomEnd">@dimen/radius_8</item>
+        <item name="iconTint">@color/white</item>
+        <item name="layout_constraintHeight_min">55dp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/radius_8</item>
         <item name="boxCornerRadiusTopEnd">@dimen/radius_8</item>
         <item name="boxCornerRadiusTopStart">@dimen/radius_8</item>
@@ -22,11 +25,32 @@
         <item name="boxStrokeWidth">@dimen/stroke_0</item>
         <item name="boxStrokeWidthFocused">@dimen/stroke_2</item>
         <item name="hintTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white_91</item>
+        <item name="startIconTint">@color/white_91</item>
+
 
     </style>
 
-    <style name="custom_inputEditText_gray" parent="ThemeOverlay.Material3.TextInputEditText">
+    <style name="custom_searchEditTextLayout_gray" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_8</item>
+        <item name="iconTint">@color/white</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_8</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_8</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_8</item>
+        <item name="boxBackgroundColor">@color/searchbox_color</item>
+        <item name="boxStrokeColor">@color/white</item>
+        <item name="layout_constraintHeight_min">55dp</item>
+        <item name="boxStrokeWidth">@dimen/stroke_0</item>
+        <item name="boxStrokeWidthFocused">@dimen/stroke_2</item>
         <item name="hintTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white_91</item>
+        <item name="startIconTint">@color/white_91</item>
+    </style>
+
+    <style name="custom_inputEditText_gray" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="hintTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:textColor">@color/white</item>
     </style>
