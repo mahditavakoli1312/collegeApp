@@ -19,9 +19,12 @@
     <dimen name="stroke_0">0dp</dimen>
     <dimen name="size26">26sp</dimen>
     <dimen name="size30">30sp</dimen>
+    <dimen name="size22">22sp</dimen>
     <dimen name="size16">16sp</dimen>
     <dimen name="size12">12sp</dimen>
     <dimen name="size8">8sp</dimen>
+    <dimen name="constraintHeight_min">59dp</dimen>
+    <dimen name="stroke_1">1dp</dimen>
 
 
 </resources>

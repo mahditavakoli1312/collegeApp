@@ -1,4 +1,4 @@
-package com.example.collegeapp.adapters
+package com.example.collegeapp.search.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.example.collegeapp.Entities.ArticleEntity
 import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
+import com.example.collegeapp.search.entities.ArticleEntity
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
@@ -73,8 +73,8 @@ class SearchPostAdapter :
 
     /* Gets current flower and uses it to bind view. */
     override fun onBindViewHolder(holder: SearchPostHolder, position: Int) {
-        val flower = getItem(position)
-        holder.bind(flower)
+        val post = getItem(position)
+        holder.bind(post)
 
     }
 

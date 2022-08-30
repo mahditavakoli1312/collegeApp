@@ -1,4 +1,4 @@
-package com.example.collegeapp.Entities
+package com.example.collegeapp.search.entities
 
 import androidx.annotation.DrawableRes
 

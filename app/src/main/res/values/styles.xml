@@ -18,7 +18,7 @@
     <style name="custom_inputEditTextLayout_gray" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusBottomEnd">@dimen/radius_8</item>
         <item name="iconTint">@color/white</item>
-        <item name="layout_constraintHeight_min">55dp</item>
+        <item name="layout_constraintHeight_min">@dimen/constraintHeight_min</item>
         <item name="boxCornerRadiusBottomStart">@dimen/radius_8</item>
         <item name="boxCornerRadiusTopEnd">@dimen/radius_8</item>
         <item name="boxCornerRadiusTopStart">@dimen/radius_8</item>

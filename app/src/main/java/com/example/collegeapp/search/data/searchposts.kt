@@ -1,8 +1,7 @@
-package com.example.collegeapp.data
+package com.example.collegeapp.search.data
 
-import android.content.res.Resources
-import com.example.collegeapp.Entities.ArticleEntity
 import com.example.collegeapp.R
+import com.example.collegeapp.search.entities.ArticleEntity
 
 fun searchPostLists(): List<ArticleEntity> {
     return listOf(
@@ -11,116 +10,133 @@ fun searchPostLists(): List<ArticleEntity> {
             time = "۲۱ فروردین ۱۴۰۱",
             tag = "تکنولوژی",
             image = R.drawable.background_image,
-            writer ="مهدی توکلی",
+            writer = "مهدی توکلی",
         ),
         ArticleEntity(
             title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
             time = "۲۱ فروردین ۱۴۰۱",
             tag = "تکنولوژی",
             image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
-        ),  ArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "تکنولوژی",
-            image = R.drawable.background_image,
-            writer ="مهدی توکلی",
+            writer = "مهدی توکلی",
         ),
-        )
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+        ArticleEntity(
+            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
+            time = "۲۱ فروردین ۱۴۰۱",
+            tag = "تکنولوژی",
+            image = R.drawable.background_image,
+            writer = "مهدی توکلی",
+        ),
+    )
 }
