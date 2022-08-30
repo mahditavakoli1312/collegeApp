@@ -53,18 +53,9 @@
         <item name="android:layout_marginTop">@dimen/margin_8</item>
     </style>
 
-    <style name="custom_textView_tag" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">@color/primary_200</item>
-        <item name="android:textSize">@dimen/size8</item>
-        <item name="android:paddingEnd">@dimen/margin_8</item>
-        <item name="android:paddingStart">@dimen/margin_8</item>
-        <item name="android:paddingTop">@dimen/margin_4</item>
-        <item name="android:paddingBottom">@dimen/margin_4</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">@dimen/margin_8</item>
-        <item name="android:layout_marginBottom">@dimen/margin_8</item>
-        <item name="android:background">@drawable/tag_gray</item>
+    <style name="custom_chip_item" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipStrokeColor">@color/tophomechips_bordercolor_selector</item>
+        <item name="chipStrokeWidth">@dimen/stroke_1</item>
     </style>
 
 </resources>
