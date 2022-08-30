@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_navgraph"
+    app:startDestination="@id/childPostSearchFragment2">
+
+    <fragment
+        android:id="@+id/childPostSearchFragment2"
+        android:name="com.example.collegeapp.search.ChildPostSearchFragment"
+        android:label="ChildPostSearchFragment">
+        <action
+            android:id="@+id/action_childPostSearchFragment2_to_childUserSearchFragment2"
+            app:destination="@id/childUserSearchFragment" />
+        <action
+            android:id="@+id/action_childPostSearchFragment2_to_childTagSearchFragment2"
+            app:destination="@id/childTagSearchFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/childUserSearchFragment"
+        android:name="com.example.collegeapp.search.ChildUserSearchFragment"
+        android:label="ChildUserSearchFragment">
+        <action
+            android:id="@+id/action_childUserSearchFragment_to_childPostSearchFragment2"
+            app:destination="@id/childPostSearchFragment2" />
+        <action
+            android:id="@+id/action_childUserSearchFragment_to_childTagSearchFragment2"
+            app:destination="@id/childTagSearchFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/childTagSearchFragment2"
+        android:name="com.example.collegeapp.search.ChildTagSearchFragment"
+        android:label="ChildTagSearchFragment">
+        <action
+            android:id="@+id/action_childTagSearchFragment2_to_childPostSearchFragment2"
+            app:destination="@id/childPostSearchFragment2" />
+        <action
+            android:id="@+id/action_childTagSearchFragment2_to_childUserSearchFragment"
+            app:destination="@id/childUserSearchFragment" />
+    </fragment>
+</navigation>

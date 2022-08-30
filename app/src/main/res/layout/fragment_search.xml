@@ -41,46 +41,53 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="@dimen/margin_2"
-        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:checkedChip="@+id/c_post_chipsgroup_searchfragment"
         app:layout_constraintBottom_toTopOf="@id/gl_horizontal18_searchfragment"
         app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_searchfragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_searchfragment"
-        app:layout_constraintTop_toBottomOf="@+id/gl_horizontal10_searchfragment">
+        app:layout_constraintTop_toBottomOf="@+id/gl_horizontal10_searchfragment"
+        app:singleLine="true"
+        app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/c_post_chipsgroup_searchfragment"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="#1FFFFFFF"
             android:text="@string/label_posts"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:chipStrokeColor="@color/tophomechips_bordercolor_selector"
-            app:chipStrokeWidth="1dp" />
+            app:chipStrokeWidth="@dimen/stroke_1" />
+
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/c_tags_chipsgroup_searchfragment"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="#1FFFFFFF"
             android:text="@string/label_tags"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:chipStrokeColor="@color/tophomechips_bordercolor_selector"
-            app:chipStrokeWidth="1dp" />
+            app:chipStrokeWidth="@dimen/stroke_1" />
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/c_users_chipsgroup_searchfragment"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="#1FFFFFFF"
             android:text="@string/label_users"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:chipStrokeColor="@color/tophomechips_bordercolor_selector"
-            app:chipStrokeWidth="1dp" />
+            app:chipStrokeWidth="@dimen/stroke_1" />
 
     </com.google.android.material.chip.ChipGroup>
 
@@ -94,6 +101,9 @@
         app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_searchfragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_searchfragment"
         app:layout_constraintTop_toTopOf="parent"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/white"
+        app:endIconDrawable="@drawable/ic_close"
         app:startIconDrawable="@drawable/ic_search">
 
 
@@ -102,16 +112,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/label_searchbarstr"
-            android:inputType="textPassword" />
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/cv_searchFragment"
+        android:id="@+id/fcv_nestedFragmentHolder_searchFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-
+        app:defaultNavHost="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gl_horizontal18_searchfragment" />
+        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_searchfragment"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_searchfragment"
+        app:layout_constraintTop_toBottomOf="@id/gl_horizontal18_searchfragment"
+        app:navGraph="@navigation/search_navgraph" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
