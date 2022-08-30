@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CompoundButton
 import android.widget.ImageView
 import android.widget.Toolbar
 import androidx.core.view.get
@@ -43,13 +44,17 @@ class HomeFragment : Fragment() {
         }
 
         chipsList.forEach {
-            chipsGroup.addView(Chip(view.context , null , com.google.android.material.R.style.Widget_MaterialComponents_Chip_Choice).apply {
+            chipsGroup.addView(Chip(view.context , null , com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter).apply {
                 text = it
-                backgroundDrawable = view.resources.getDrawable(R.drawable.tag_gray , view.context.theme)
+                setChipBackgroundColorResource(R.color.white_10)
                 setTextColor(view.resources.getColor(R.color.primary_200))
                 setChipStrokeColorResource(R.color.tophomechips_bordercolor_selector)
                 chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
-                //Todo Stroke Color should be handle in this method
+                isClickable = true
+                isCheckable = false
+                setOnClickListener {
+                    isSelected = !isSelected
+                }
             })
         }
 
