@@ -4,14 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CompoundButton
 import android.widget.ImageView
-import android.widget.Toolbar
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
@@ -19,7 +14,7 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class HomeFragment : Fragment() {
-    val chipsList = listOf("نانو" , "تکنولوزی" , "خیام", "سعدی" , "روانشناسی")
+    val chipsList = listOf("نانو", "تکنولوزی", "خیام", "سعدی", "روانشناسی")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,7 +27,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val rvArticle: RecyclerView = view.findViewById(R.id.rv_articles_homeFragment)
         val articleAdapter = ArticlesAdapter()
-        val chipsGroup :ChipGroup = view.findViewById(R.id.chips_filter_homeFragment)
+        val chipsGroup: ChipGroup = view.findViewById(R.id.chips_filter_homeFragment)
         rvArticle.adapter = articleAdapter
         articleAdapter.submitList(RecyclerDataTemp().articleList())
 
@@ -44,18 +39,23 @@ class HomeFragment : Fragment() {
         }
 
         chipsList.forEach {
-            chipsGroup.addView(Chip(view.context , null , com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter).apply {
-                text = it
-                setChipBackgroundColorResource(R.color.white_10)
-                setTextColor(view.resources.getColor(R.color.primary_200))
-                setChipStrokeColorResource(R.color.tophomechips_bordercolor_selector)
-                chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
-                isClickable = true
-                isCheckable = false
-                setOnClickListener {
-                    isSelected = !isSelected
-                }
-            })
+            chipsGroup.addView(
+                Chip(
+                    view.context,
+                    null,
+                    com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
+                ).apply {
+                    text = it
+                    setChipBackgroundColorResource(R.color.white_10)
+                    setTextColor(view.resources.getColor(R.color.primary_200))
+                    setChipStrokeColorResource(R.color.tophomechips_bordercolor_selector)
+                    chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
+                    isClickable = true
+                    isCheckable = false
+                    setOnClickListener {
+                        isSelected = !isSelected
+                    }
+                })
         }
 
     }

@@ -98,4 +98,10 @@
         <item name="chipStrokeColor">@color/tophomechips_bordercolor_selector</item>
         <item name="chipStrokeWidth">@dimen/stroke_1</item>
     </style>
+
+    <style name="custom_textView_header30">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

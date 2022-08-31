@@ -6,12 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     tools:context=".home.HomeFragment">
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_HorizontalStart_homeFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/guid_0.08Start_percent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_verticalStart_homeFragment"
         android:layout_width="match_parent"
@@ -25,12 +27,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontalEnd_homeFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
     <ImageView
         android:id="@+id/img_addChips_homeFragment"
         android:layout_width="wrap_content"
@@ -41,8 +45,7 @@
         android:src="@drawable/ic_add"
         android:padding="@dimen/margin_4"
         app:layout_constraintDimensionRatio="1:1"
-        android:background="@drawable/tag_gray"
-        />
+        android:background="@drawable/tag_gray" />
 
     <HorizontalScrollView
         android:layout_width="0dp"

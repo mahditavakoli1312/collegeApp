@@ -93,6 +93,9 @@
         <action
             android:id="@+id/action_searchFragment_to_childPostSearchFragment"
             app:destination="@id/childPostSearchFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -110,17 +113,21 @@
         android:id="@+id/bookMarksFragment"
         android:name="com.example.collegeapp.profile.ChildBookMarksFragment"
         android:label="fragment_book_marks"
-        tools:layout="@layout/fragment_book_marks" />
+        tools:layout="@layout/fragment_child_book_marks" />
     <fragment
         android:id="@+id/myArticlesFragment"
         android:name="com.example.collegeapp.profile.ChildMyArticlesFragment"
         android:label="fragment_my_articles"
-        tools:layout="@layout/fragment_my_articles" />
+        tools:layout="@layout/fragment_child_my_articles" />
     <fragment
         android:id="@+id/childPostSearchFragment"
         android:name="com.example.collegeapp.search.ChildPostSearchFragment"
         android:label="ChildPostSearchFragment"
-        tools:layout="@layout/fragment_child_search_post" />
+        tools:layout="@layout/fragment_child_search_post">
+        <action
+            android:id="@+id/action_childPostSearchFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/childTagSearchFragment"
         android:name="com.example.collegeapp.search.ChildTagSearchFragment"

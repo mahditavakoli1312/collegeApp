@@ -5,7 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
+import com.example.collegeapp.profile.adapter.PostMyArticleAdapter
+import com.example.collegeapp.profile.data.myArticlesPostsLists
 
 
 class ChildMyArticlesFragment : Fragment() {
@@ -15,7 +19,19 @@ class ChildMyArticlesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_articles, container, false)
+        return inflater.inflate(R.layout.fragment_child_my_articles, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val postMyArticleAdapter = PostMyArticleAdapter()
+
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postprofile_bookmark)
+        recyclerView.adapter = postMyArticleAdapter
+        postMyArticleAdapter.submitList(myArticlesPostsLists())
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
     }
 
 

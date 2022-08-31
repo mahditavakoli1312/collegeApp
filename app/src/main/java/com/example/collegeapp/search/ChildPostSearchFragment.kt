@@ -31,6 +31,5 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
         searchPostAdapter.submitList(searchPostLists())
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-
     }
 }
