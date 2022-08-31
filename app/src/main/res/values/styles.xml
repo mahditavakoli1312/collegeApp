@@ -79,13 +79,7 @@
         <item name="android:layout_marginTop">@dimen/margin_8</item>
     </style>
 
-<<<<<<< app/src/main/res/values/styles.xml
-    <style name="custom_chip_item" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="chipStrokeColor">@color/tophomechips_bordercolor_selector</item>
-        <item name="chipStrokeWidth">@dimen/stroke_1</item>
-    </style>
 
-=======
     <style name="custom_textView_tag" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/primary_200</item>
         <item name="android:textSize">@dimen/size8</item>
@@ -104,6 +98,4 @@
         <item name="chipStrokeColor">@color/tophomechips_bordercolor_selector</item>
         <item name="chipStrokeWidth">@dimen/stroke_1</item>
     </style>
-
->>>>>>> app/src/main/res/values/styles.xml
 </resources>
