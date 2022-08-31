@@ -110,4 +110,5 @@
         <item name="itemTextColor">@color/selector_bottom_nav</item>
         <item name="itemIconTint">@color/selector_bottom_nav</item>
     </style>
+
 </resources>
