@@ -9,8 +9,9 @@
     <dimen name="btn_ratio_312_48">6.5</dimen>
     <dimen name="img_ratio_100_75">1.33</dimen>
     <dimen name="margin_16">16dp</dimen>
-    <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
     <dimen name="margin_32">32dp</dimen>
     <dimen name="margin_64">64dp</dimen>
     <dimen name="margin_48">48dp</dimen>
@@ -20,7 +21,12 @@
     <dimen name="stroke_1">1dp</dimen>
     <dimen name="size26">26sp</dimen>
     <dimen name="size30">30sp</dimen>
+    <dimen name="size22">22sp</dimen>
     <dimen name="size16">16sp</dimen>
     <dimen name="size12">12sp</dimen>
     <dimen name="size8">8sp</dimen>
+    <dimen name="constraintHeight_min">59dp</dimen>
+    <dimen name="stroke_1">1dp</dimen>
+
+
 </resources>

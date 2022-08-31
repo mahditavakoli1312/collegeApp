@@ -2,34 +2,62 @@ package com.example.collegeapp.search
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.collegeapp.FragmentNavigationMethod
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.collegeapp.R
+import com.google.android.material.chip.ChipGroup
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
+    private lateinit var navController: NavController
+
+    companion object {
+        private var currentState = 0
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.btn_post_frSearch).setOnClickListener {
-            FragmentNavigationMethod.navigate(
-                action = R.id.action_searchFragment_to_childPostSearchFragment,
-                navController = findNavController()
-            )
+        val chipGroup = view.findViewById<ChipGroup>(R.id.cg_searchChips_searchfragment)
+        val checkedChipId = chipGroup.checkedChipId
+        val checkedChipIds = chipGroup.checkedChipIds
+
+        val nestedNavHostFragment =
+            childFragmentManager.findFragmentById(R.id.fcv_nestedFragmentHolder_searchFragment) as NavHostFragment
+
+        navController = nestedNavHostFragment.navController
+
+        chipGroup.setOnCheckedStateChangeListener { group, checkedId ->
+//            Log.d("chippp12", checkedId.toString())
+
+            when {
+
+                R.id.c_post_chipsgroup_searchfragment in checkedId -> {
+                    navController.navigate(
+                        R.id.childPostSearchFragment2
+                    )
+                    currentState = 0
+//                    Log.d("chippp", checkedId.toString())
+                }
+
+                R.id.c_tags_chipsgroup_searchfragment in checkedId -> {
+                    navController.navigate(
+                        R.id.childTagSearchFragment2
+                    )
+                    currentState = 1
+//                    Log.d("chippp", checkedId.toString())
+                }
+
+                R.id.c_users_chipsgroup_searchfragment in checkedId -> {
+                    navController.navigate(
+                        R.id.childUserSearchFragment
+                    )
+                    currentState = 2
+//                    Log.d("chippp", checkedId.toString())
+                }
+            }
         }
-        view.findViewById<Button>(R.id.btn_tags_frSearch).setOnClickListener {
-            FragmentNavigationMethod.navigate(
-                action = R.id.action_searchFragment_to_childTagSearchFragment,
-                navController = findNavController()
-            )
-        }
-        view.findViewById<Button>(R.id.btn_users_frSearch).setOnClickListener {
-            FragmentNavigationMethod.navigate(
-                action = R.id.action_searchFragment_to_childUserSearchFragment2,
-                navController = findNavController()
-            )
-        }
+
+
     }
 }
