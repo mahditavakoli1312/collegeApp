@@ -33,7 +33,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         setupTabIconsForTwo(
             tabLayout = tabLayout,
             firstIcon = R.drawable.ic_myarticles,
-            secondIcon = R.drawable.ic_bookmark
+            secondIcon = R.drawable.ic_bookmarks
         )
 
     }
