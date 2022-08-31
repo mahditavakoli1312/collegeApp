@@ -27,7 +27,7 @@ class LoginFragment : Fragment() {
         btn_login_loginFragment.setOnClickListener {
 
             FragmentNavigationMethod.navigateWithPopUp(
-                action = R.id.action_loginFragment_to_mainFragment,
+                action = R.id.action_loginFragment_to_homeFragment,
                 navController = findNavController(),
                 popUpId = R.id.chooseLoginFragment,
                 inclusive = true
