@@ -1,38 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_childsearchpostfragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_childsearchpostfragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal10_childsearchpostfragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.103" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal18_childsearchpostfragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18" />
-
+    android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_postssearch_searchfragment"
@@ -43,6 +13,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/gradient_toptobottom_recyclerview" />
+        android:background="@drawable/gradient_toptobottom_recyclerview"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

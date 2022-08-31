@@ -20,6 +20,7 @@
     <color name="white_10">#1AFFFFFF</color>r>
     <color name="gray_light">#8593A6</color>
     <color name="gray_dark">#7B7980</color>
+    <color name="backgroundColor">#02060B</color>
 
 
 </resources>
