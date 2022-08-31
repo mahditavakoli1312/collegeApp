@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@id/profileFragment"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/label_profile"
+        />
+    <item android:id="@id/searchFragment"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_search"
+        android:title="@string/label_search"
+        />
+    <item android:id="@id/homeFragment"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_home"
+        android:title="@string/label_home"
+        />
+</menu>

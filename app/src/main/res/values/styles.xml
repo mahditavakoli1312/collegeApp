@@ -98,4 +98,10 @@
         <item name="chipStrokeColor">@color/tophomechips_bordercolor_selector</item>
         <item name="chipStrokeWidth">@dimen/stroke_1</item>
     </style>
+
+    <style name="custom_bottom_navigation" parent="Widget.Design.BottomNavigationView">
+        <item name="android:background">@color/black</item>
+        <item name="itemTextColor">@color/selector_bottom_nav</item>
+        <item name="itemIconTint">@color/selector_bottom_nav</item>
+    </style>
 </resources>
