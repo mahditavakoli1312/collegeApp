@@ -90,7 +90,7 @@
         android:layout_marginTop="@dimen/margin_16"
         android:text="@string/label_login_bold"
         app:layout_constraintBottom_toBottomOf="@id/gl_horizontal95_confrimActivity"
-        app:layout_constraintDimensionRatio="@dimen/btn_ratio_312_48"
+        app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
         app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_confrimfragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_confrimfragment" />
 

@@ -13,13 +13,15 @@
     <color name="transparent100">#00FFFFFF</color>
     <color name="white_8">#14FFFFFF</color>
     <color name="white_60">#14FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
     <color name="status_color">#030304</color>
     <color name="blue_400">#9090F7</color>
     <color name="white_91">#E8FFFFFF</color>
-    <color name="searchbox_color">#02060B</color>
+    <color name="search_box">#02060B</color>
     <color name="white_10">#1AFFFFFF</color>r>
     <color name="gray_light">#8593A6</color>
     <color name="gray_dark">#7B7980</color>
+    <color name="black_light">#171C21</color>
 
 
 </resources>
