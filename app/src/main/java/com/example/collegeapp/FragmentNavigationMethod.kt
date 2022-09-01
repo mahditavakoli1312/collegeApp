@@ -6,6 +6,7 @@ import androidx.navigation.NavOptions
 class FragmentNavigationMethod {
 
     companion object {
+
         fun navigate(action: Int, navController: NavController) {
             try {
                 navController.navigate(action)

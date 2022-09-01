@@ -1,9 +1,11 @@
-package com.example.collegeapp.search.adapters
+package com.example.collegeapp.profile.adapter
 
+import android.animation.ObjectAnimator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
@@ -14,27 +16,33 @@ import coil.transform.RoundedCornersTransformation
 import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.MainActivity
 import com.example.collegeapp.R
-import com.example.collegeapp.search.entities.ArticleEntity
+import com.example.collegeapp.search.entities.MyArticleEntity
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+//
+class PostMyArticleAdapter :
 
-class SearchPostAdapter :
-    ListAdapter<ArticleEntity, SearchPostAdapter.SearchPostHolder>(SearchPostDiffCallback) {
+    ListAdapter<MyArticleEntity, PostMyArticleAdapter.MyArticlePostHolder>(PostMyArticleDiffCallback) {
 
     /* ViewHolder for Flower, takes in the inflated view and the onClick behavior. */
-    class SearchPostHolder(itemView: View) :
+    class MyArticlePostHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         private val textTitle: TextView =
-            itemView.findViewById(R.id.tv_titleArticleRecycler_homeFragment)
-        private val textWriterTime: TextView =
-            itemView.findViewById(R.id.tv_writerTimeArticleRecycler_homeFragment)
+            itemView.findViewById(R.id.tv_titleArticleRecycler_myarticle)
         private val imageArticle: ImageView =
-            itemView.findViewById(R.id.img_articleRecycler_homeFragment)
+            itemView.findViewById(R.id.img_articleRecycler_myarticle)
         private val chipsGroup: ChipGroup =
-            itemView.findViewById(R.id.chipsGroup_articleRecycler_homeFragment)
+            itemView.findViewById(R.id.chipsGroup_articleRecycler_myarticle)
+
+        private val progressBar = itemView.findViewById<ProgressBar>(R.id.pb_progressBar_myarticle)
+        private val inProgress = itemView.findViewById<TextView>(R.id.tv_inProgress_myarticles)
+
+        private var currentProgress = 74
 
         /* Bind flower name and image. */
-        fun bind(articleEntity: ArticleEntity) {
+        fun bind(articleEntity: MyArticleEntity) {
+            progressBar.max = 100
+
             itemView.setOnClickListener {
                 val x =
                     MainActivity.globalMain?.findNavController(R.id.fcv_fragmentContainer_activityMain)
@@ -46,11 +54,6 @@ class SearchPostAdapter :
                 )
             }
             textTitle.text = articleEntity.title
-            textWriterTime.text = itemView.resources.getString(
-                R.string.label_writer_time,
-                articleEntity.writer,
-                articleEntity.time
-            )
             imageArticle.setImageResource(articleEntity.image)
             val tagsList = articleEntity.tag.split(",")
 
@@ -65,19 +68,29 @@ class SearchPostAdapter :
 
                 })
             }
+            if (articleEntity.inProgress) {
+                progressBar.visibility = View.VISIBLE
+                ObjectAnimator.ofInt(progressBar, "progress", currentProgress).setDuration(2000)
+                    .start()
+                inProgress.text = "در حال انتشار"
+
+            } else {
+                progressBar.visibility = View.INVISIBLE
+                inProgress.text = articleEntity.time
+            }
 
         }
     }
 
     /* Creates and inflates view and return FlowerViewHolder. */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchPostHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyArticlePostHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_post_serarchviewholder, parent, false)
-        return SearchPostHolder(view)
+            .inflate(R.layout.item_myarticle_profileviewholder, parent, false)
+        return MyArticlePostHolder(view)
     }
 
     /* Gets current flower and uses it to bind view. */
-    override fun onBindViewHolder(holder: SearchPostHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyArticlePostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)
 
@@ -87,12 +100,12 @@ class SearchPostAdapter :
 }
 
 
-object SearchPostDiffCallback : DiffUtil.ItemCallback<ArticleEntity>() {
-    override fun areItemsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
+object PostMyArticleDiffCallback : DiffUtil.ItemCallback<MyArticleEntity>() {
+    override fun areItemsTheSame(oldItem: MyArticleEntity, newItem: MyArticleEntity): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
+    override fun areContentsTheSame(oldItem: MyArticleEntity, newItem: MyArticleEntity): Boolean {
         return oldItem.hashCode() == newItem.hashCode()
     }
 }
