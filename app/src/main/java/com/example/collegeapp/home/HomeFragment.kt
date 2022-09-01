@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.*
+import androidx.activity.OnBackPressedCallback
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
@@ -57,6 +60,24 @@ class HomeFragment : Fragment() {
                     }
                 })
         }
+
+        var lastClick = 0L
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+
+                val now = System.currentTimeMillis()
+                if (now - lastClick < 1000L) {
+                    findNavController().popBackStack()
+                } else {
+                    Toast.makeText(requireContext(), "از خروج مطمئنید ؟", Toast.LENGTH_SHORT).show()
+                    lastClick = now
+                }
+                isEnabled = false
+            }
+
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
 }

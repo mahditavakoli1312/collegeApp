@@ -41,4 +41,16 @@
     <string name="label_searchbarstr">جستجو ...</string>
     <string name="label_confrimRegisterStr">ثبت نام شما با موفقیت انجام شد.</string>
     <string name="label_writer_time">%s • %s</string>
+    <string name="label_add_tag">افزودن تگ</string>
+    <string name="label_share_new_article">انتشار مقاله جدید</string>
+    <string name="label_title_new_article">عنوان مقاله خود را وارد کنید</string>
+    <string name="label_desc_new_article">متن مقاله خود را وارد کنید</string>
+    <string name="label_share_article">انتشار مقاله</string>
+    <string name="label_choose_tag">انتخاب تگ</string>
+    <string name="label_choose">انتخاب</string>
+    <string name="label_technology">تکنولوژی</string>
+    <string name="label_internet_error">لطفا اتصال اینترنت خود را بررسی کنید</string>
+    <string name="label_retry">تلاش مجدد</string>
+    <string name="label_ignor">رد کردن</string>
+    <string name="label_added_article_to_bookmark">مقاله به بوکمارک ها اضافه شد</string>
 </resources>

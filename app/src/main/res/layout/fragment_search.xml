@@ -100,7 +100,7 @@
         app:endIconDrawable="@drawable/ic_close"
         app:endIconMode="clear_text"
         app:endIconTint="@color/white"
-        app:layout_constraintDimensionRatio="@dimen/btn_ratio_312_48"
+        app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
         app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_searchfragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_searchfragment"
         app:layout_constraintTop_toTopOf="parent"
