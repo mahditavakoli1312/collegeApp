@@ -13,7 +13,6 @@ import com.example.collegeapp.search.entities.UserSearchEntity
 class SearchUserAdapter :
     ListAdapter<UserSearchEntity, SearchUserAdapter.SearchUserHolder>(SearchUserDiffCallback) {
 
-    /* ViewHolder for Flower, takes in the inflated view and the onClick behavior. */
     class SearchUserHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         private val textUser: TextView =
@@ -26,14 +25,12 @@ class SearchUserAdapter :
         }
     }
 
-    /* Creates and inflates view and return FlowerViewHolder. */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchUserHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_user_serarchviewholder, parent, false)
         return SearchUserHolder(view)
     }
 
-    /* Gets current flower and uses it to bind view. */
     override fun onBindViewHolder(holder: SearchUserHolder, position: Int) {
         val user = getItem(position)
         holder.bind(user)
