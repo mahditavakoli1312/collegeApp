@@ -25,7 +25,6 @@ class PostMyArticleAdapter :
 
     ListAdapter<MyArticleEntity, PostMyArticleAdapter.MyArticlePostHolder>(PostMyArticleDiffCallback) {
 
-    /* ViewHolder for Flower, takes in the inflated view and the onClick behavior. */
     class MyArticlePostHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         private val textTitle: TextView =
@@ -40,7 +39,6 @@ class PostMyArticleAdapter :
 
         private var currentProgress = 74
 
-        /* Bind flower name and image. */
         fun bind(articleEntity: MyArticleEntity) {
             progressBar.max = 100
 
@@ -83,14 +81,12 @@ class PostMyArticleAdapter :
         }
     }
 
-    /* Creates and inflates view and return FlowerViewHolder. */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyArticlePostHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_myarticle_profileviewholder, parent, false)
         return MyArticlePostHolder(view)
     }
 
-    /* Gets current flower and uses it to bind view. */
     override fun onBindViewHolder(holder: MyArticlePostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)

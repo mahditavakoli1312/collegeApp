@@ -21,7 +21,6 @@ import com.google.android.material.chip.ChipGroup
 class SearchPostAdapter :
     ListAdapter<ArticleEntity, SearchPostAdapter.SearchPostHolder>(SearchPostDiffCallback) {
 
-    /* ViewHolder for Flower, takes in the inflated view and the onClick behavior. */
     class SearchPostHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         private val textTitle: TextView =
@@ -33,7 +32,6 @@ class SearchPostAdapter :
         private val chipsGroup: ChipGroup =
             itemView.findViewById(R.id.chipsGroup_articleRecycler_homeFragment)
 
-        /* Bind flower name and image. */
         fun bind(articleEntity: ArticleEntity) {
             itemView.setOnClickListener {
                 val x =
@@ -69,14 +67,12 @@ class SearchPostAdapter :
         }
     }
 
-    /* Creates and inflates view and return FlowerViewHolder. */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchPostHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_post_serarchviewholder, parent, false)
         return SearchPostHolder(view)
     }
 
-    /* Gets current flower and uses it to bind view. */
     override fun onBindViewHolder(holder: SearchPostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)
