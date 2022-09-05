@@ -19,14 +19,8 @@ class SearchUserAdapter :
         private val textUser: TextView =
             itemView.findViewById(R.id.tv_username_item_usersearchviewholder)
 
-        /* Bind flower name and image. */
         fun bind(userSearchEntity: UserSearchEntity) {
-//            itemView.setOnClickListener {
-//                FragmentNavigationMethod.navigate(
-//                    action = R.id.action_homeFragment_to_showArticleFragment,
-//                    navController = itemView.findNavController()
-//                )
-//            }
+
             textUser.text = userSearchEntity.user_name
 
         }

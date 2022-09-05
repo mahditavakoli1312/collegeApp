@@ -19,6 +19,7 @@ import com.example.collegeapp.R
 import com.example.collegeapp.search.entities.MyArticleEntity
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+
 //
 class PostMyArticleAdapter :
 

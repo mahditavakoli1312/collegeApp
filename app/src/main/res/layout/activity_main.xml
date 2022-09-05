@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontal92_activityMain"
         android:layout_width="match_parent"
@@ -23,11 +24,12 @@
         app:layout_constraintBottom_toTopOf="@id/bn_activityMain"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="383dp" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         style="@style/custom_bottom_navigation"
         app:menu="@menu/menu_nav"
-        android:id="@+id/bn_activityMain"/>
+        android:id="@+id/bn_activityMain" />
 </androidx.constraintlayout.widget.ConstraintLayout>

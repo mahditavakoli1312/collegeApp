@@ -37,7 +37,8 @@
         app:layout_constraintBottom_toTopOf="@id/gl_HorizontalStart_newArticleFragment"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_close"
-        android:padding="@dimen/margin_16"/>
+        android:padding="@dimen/margin_16" />
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -47,7 +48,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="start|center_vertical"
         style="@style/custom_textView_header"
-        android:text="@string/label_share_new_article"/>
+        android:text="@string/label_share_new_article" />
+
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -55,7 +57,7 @@
         app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
         app:layout_constraintTop_toBottomOf="@id/gl_HorizontalStart_newArticleFragment"
         android:id="@+id/img_article_newArticleFragment"
-        app:layout_constraintDimensionRatio="@dimen/ratio_328_246"/>
+        app:layout_constraintDimensionRatio="@dimen/ratio_328_246" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/c_addTag_newArticleFragment"
@@ -71,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment"
         android:textColor="@color/white"
         android:layout_marginTop="@dimen/margin_16"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/et_titleArticle_newArticleFragment"
@@ -84,7 +86,8 @@
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
         app:layout_constraintTop_toBottomOf="@id/c_addTag_newArticleFragment"
         android:layout_marginTop="@dimen/margin_16"
-        android:hint="@string/label_title_new_article"/>
+        android:hint="@string/label_title_new_article" />
+
     <EditText
         android:id="@+id/et_descArticle_newArticleFragment"
         android:textDirection="rtl"
@@ -96,7 +99,7 @@
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
         app:layout_constraintTop_toBottomOf="@id/et_titleArticle_newArticleFragment"
         android:layout_marginTop="@dimen/margin_16"
-        android:hint="@string/label_desc_new_article"/>
+        android:hint="@string/label_desc_new_article" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_choose_tags"
@@ -109,5 +112,5 @@
         app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="@dimen/margin_8"/>
+        android:layout_margin="@dimen/margin_8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

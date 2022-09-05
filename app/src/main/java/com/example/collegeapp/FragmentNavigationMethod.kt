@@ -30,21 +30,5 @@ class FragmentNavigationMethod {
             }
         }
 
-//        fun navigateWithPopUpDestPop(
-//            dest: Int,
-//            navController: NavController,
-//            inclusive: Boolean
-//        ) {
-//            val options = NavOptions.Builder().setPopUpTo(0,inclusive).build()
-////            navController.popBackStack()
-////            navController.popBackStack(0,true,options)
-//
-//            try {
-//                navController.navigate(dest,options)
-//            } catch (e: IllegalArgumentException) {
-//                e.printStackTrace()
-//            }
-//
-//        }
     }
 }

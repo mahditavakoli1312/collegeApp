@@ -15,7 +15,8 @@ class ChildUserSearchFragment : Fragment(R.layout.fragment_child_search_user) {
         super.onViewCreated(view, savedInstanceState)
         val searchUserAdapter = SearchUserAdapter()
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_userssearch_childSearchPostFragment)
+        val recyclerView =
+            view.findViewById<RecyclerView>(R.id.rv_userssearch_childSearchPostFragment)
         recyclerView.adapter = searchUserAdapter
         searchUserAdapter.submitList(searchUserLists())
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

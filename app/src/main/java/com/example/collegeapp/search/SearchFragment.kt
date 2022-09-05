@@ -28,7 +28,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         navController = nestedNavHostFragment.navController
 
         chipGroup.setOnCheckedStateChangeListener { group, checkedId ->
-//            Log.d("chippp12", checkedId.toString())
 
             when {
 
@@ -37,7 +36,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                         R.id.childPostSearchFragment2
                     )
                     currentState = 0
-//                    Log.d("chippp", checkedId.toString())
                 }
 
                 R.id.c_tags_chipsgroup_searchFragment in checkedId -> {
@@ -45,7 +43,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                         R.id.childTagSearchFragment2
                     )
                     currentState = 1
-//                    Log.d("chippp", checkedId.toString())
                 }
 
                 R.id.c_users_chipsgroup_searchFragment in checkedId -> {
@@ -53,7 +50,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                         R.id.childUserSearchFragment
                     )
                     currentState = 2
-//                    Log.d("chippp", checkedId.toString())
                 }
             }
         }

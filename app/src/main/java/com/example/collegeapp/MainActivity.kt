@@ -1,7 +1,6 @@
 package com.example.collegeapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -62,7 +61,6 @@ class MainActivity : AppCompatActivity() {
                 lastClick = now
             }
         } else if (navController.currentDestination?.id == R.id.searchFragment || navController.currentDestination?.id == R.id.profileFragment) {
-            Log.d("test13", "aaa")
             FragmentNavigationMethod.navigate(
                 action = R.id.homeFragment,
                 navController = navController
