@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92" />
+        app:layout_constraintGuide_percent="@dimen/guid_0.92BottomNavigation" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcv_fragmentContainer_activityMain"

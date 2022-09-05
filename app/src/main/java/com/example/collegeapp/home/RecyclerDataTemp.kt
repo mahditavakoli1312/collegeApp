@@ -1,107 +1,108 @@
 package com.example.collegeapp.home
 
+import android.content.Context
 import com.example.collegeapp.R
 
 class RecyclerDataTemp {
-    fun articleList(): List<ArticleEntity> {
+    fun articleList(context: Context): List<ArticleEntity> {
         val resultList = mutableListOf<ArticleEntity>()
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن سیلبسیبسیبسیبسیبسیبسیبسیبسیب است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         resultList.add(
             ArticleEntity(
-                "سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن است که نامش به نکویی نبرند",
+                context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
-                "28 فروردین 1401",
-                "سبحان بازوبندی",
-                "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی"
+                context.getString(R.string.label_time_fake),
+                context.getString(R.string.label_writer_fake),
+                context.getString(R.string.label_tag_fake)
             )
         )
         return resultList.toList()

@@ -7,21 +7,21 @@
     tools:context=".register_Login.ConfirmRegisterFragment">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal95_confrimFragment"
+        android:id="@+id/gl_horizontal95_confirmFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".95" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_confrimFragment"
+        android:id="@+id/gl_verticalStart_confirmFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_confrimFragment"
+        android:id="@+id/gl_verticalEnd_confirmFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -39,14 +39,14 @@
         android:src="@drawable/gradiant_black_bottom_to_top" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_vertical20_confrimFragment"
+        android:id="@+id/gl_vertical20_confirmFragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_vertical80_confrimFragment"
+        android:id="@+id/gl_vertical80_confirmFragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -54,45 +54,45 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal24_confrimFragment"
+        android:id="@+id/gl_horizontal24_confirmFragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
 
     <ImageView
-        android:id="@+id/iv_confrim_confrimRegister"
+        android:id="@+id/iv_confirm_confirmRegister"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_confrim"
+        android:src="@drawable/ic_confirm"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical80_confrimFragment"
-        app:layout_constraintStart_toEndOf="@+id/gl_vertical20_confrimFragment"
-        app:layout_constraintTop_toBottomOf="@id/gl_horizontal24_confrimFragment" />
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical80_confirmFragment"
+        app:layout_constraintStart_toEndOf="@+id/gl_vertical20_confirmFragment"
+        app:layout_constraintTop_toBottomOf="@id/gl_horizontal24_confirmFragment" />
 
     <TextView
         android:layout_marginTop="@dimen/margin_16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/label_confrimRegisterStr"
+        android:text="@string/label_confirmRegisterStr"
         android:textColor="@color/white"
         android:textSize="@dimen/size16"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical80_confrimFragment"
-        app:layout_constraintStart_toEndOf="@+id/gl_vertical20_confrimFragment"
-        app:layout_constraintTop_toBottomOf="@id/iv_confrim_confrimRegister" />
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical80_confirmFragment"
+        app:layout_constraintStart_toEndOf="@+id/gl_vertical20_confirmFragment"
+        app:layout_constraintTop_toBottomOf="@id/iv_confirm_confirmRegister" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login_confrimRegister"
+        android:id="@+id/btn_login_confirmRegister"
         style="@style/custom_button_blue"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_16"
         android:text="@string/label_login_bold"
-        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal95_confrimFragment"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal95_confirmFragment"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_confrimFragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_confrimFragment" />
+        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_confirmFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_confirmFragment" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

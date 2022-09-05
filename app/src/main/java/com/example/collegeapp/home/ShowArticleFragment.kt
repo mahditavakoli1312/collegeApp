@@ -2,10 +2,11 @@ package com.example.collegeapp.home
 
 import android.os.Bundle
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.collegeapp.R
@@ -16,8 +17,10 @@ class ShowArticleFragment : Fragment(R.layout.fragment_show_article) {
         super.onViewCreated(view, savedInstanceState)
         val imageArticle: ImageView = view.findViewById(R.id.img_article_showArticleFragment)
         val writer: TextView = view.findViewById(R.id.tv_writerTimeArticleRecycler_showArticle)
+        val imageBack: ImageView = view.findViewById(R.id.img_back_showArticleFragment)
         imageArticle.load(
-            view.resources.getDrawable(
+            ResourcesCompat.getDrawable(
+                view.resources,
                 R.drawable.background_image,
                 view.context.theme
             )
@@ -32,7 +35,6 @@ class ShowArticleFragment : Fragment(R.layout.fragment_show_article) {
             val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
             val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
             val customLayoutSnack = layoutInflater.inflate(R.layout.snackbar_internet_error, null)
-            val params = viewSnack.layoutParams as FrameLayout.LayoutParams
             viewSnack.setBackgroundColor(view.resources.getColor(R.color.transparent100))
             viewSnack.addView(customLayoutSnack, 0)
             viewSnack.findViewById<TextView>(R.id.tv_okAction_snackLayout).visibility = View.GONE
@@ -44,5 +46,8 @@ class ShowArticleFragment : Fragment(R.layout.fragment_show_article) {
             snackBar.show()
         }
 
+        imageBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

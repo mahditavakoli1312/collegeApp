@@ -9,14 +9,14 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_vertical91_itemUsersearch"
+        android:id="@+id/gl_vertical91_itemUserSearch"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".91" />
 
     <TextView
-        android:id="@+id/tv_username_item_usersearchviewholder"
+        android:id="@+id/tv_username_item_userSearchViewHolder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:maxLines="1"
@@ -24,7 +24,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/size16"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical91_itemUsersearch"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical91_itemUserSearch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,10 +32,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_next"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_username_item_usersearchviewholder"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_username_item_userSearchViewHolder"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/gl_vertical91_itemUsersearch"
-        app:layout_constraintTop_toTopOf="@+id/tv_username_item_usersearchviewholder" />
+        app:layout_constraintStart_toEndOf="@id/gl_vertical91_itemUserSearch"
+        app:layout_constraintTop_toTopOf="@+id/tv_username_item_userSearchViewHolder" />
 
     <ImageView
         android:layout_width="match_parent"

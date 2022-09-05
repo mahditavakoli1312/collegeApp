@@ -16,11 +16,11 @@ class SearchUserAdapter :
     class SearchUserHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         private val textUser: TextView =
-            itemView.findViewById(R.id.tv_username_item_usersearchviewholder)
+            itemView.findViewById(R.id.tv_username_item_userSearchViewHolder)
 
         fun bind(userSearchEntity: UserSearchEntity) {
 
-            textUser.text = userSearchEntity.user_name
+            textUser.text = userSearchEntity.nameUser
 
         }
     }

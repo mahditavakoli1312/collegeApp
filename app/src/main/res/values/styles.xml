@@ -78,6 +78,12 @@
         <item name="android:textSize">@dimen/size26</item>
     </style>
 
+    <style name="custom_textView_appBar" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/size22</item>
+    </style>
+
     <style name="custom_textView_desc" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/size16</item>

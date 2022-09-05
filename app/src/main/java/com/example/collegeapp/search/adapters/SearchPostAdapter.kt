@@ -5,15 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.MainActivity
 import com.example.collegeapp.R
+import com.example.collegeapp.easyNavigate
 import com.example.collegeapp.search.entities.ArticleEntity
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
@@ -38,7 +40,7 @@ class SearchPostAdapter :
                     MainActivity.globalMain?.findNavController(R.id.fcv_fragmentContainer_activityMain)
                         ?: itemView.findNavController()
 
-                FragmentNavigationMethod.navigate(
+                Navigation.easyNavigate(
                     action = R.id.showArticleFragment,
                     navController = x
                 )
@@ -52,13 +54,23 @@ class SearchPostAdapter :
             imageArticle.setImageResource(articleEntity.image)
             val tagsList = articleEntity.tag.split(",")
 
-            imageArticle.load(itemView.resources.getDrawable(R.drawable.background_image)) {
+            imageArticle.load(
+                ResourcesCompat.getDrawable(
+                    itemView.resources,
+                    R.drawable.background_image,
+                    itemView.context.theme
+                )
+            ) {
                 transformations(RoundedCornersTransformation(itemView.resources.getDimension(R.dimen.radius_8)))
             }
             tagsList.forEach {
                 chipsGroup.addView(Chip(itemView.context).apply {
                     text = it
-                    backgroundDrawable = itemView.resources.getDrawable(R.drawable.tag_gray)
+                    backgroundDrawable = ResourcesCompat.getDrawable(
+                        itemView.resources,
+                        R.drawable.tag_gray,
+                        itemView.context.theme
+                    )
                     setTextColor(itemView.resources.getColor(R.color.primary_200))
 
                 })

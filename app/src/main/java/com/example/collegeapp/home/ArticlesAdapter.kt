@@ -5,14 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
+import com.example.collegeapp.easyNavigate
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
@@ -30,8 +32,9 @@ class ArticlesAdapter :
             itemView.findViewById(R.id.chipsGroup_articleRecycler_homeFragment)
 
         fun bind(article: ArticleEntity) {
+            chipsGroup.removeAllViews()
             itemView.setOnClickListener {
-                FragmentNavigationMethod.navigate(
+                Navigation.easyNavigate(
                     action = R.id.action_homeFragment_to_showArticleFragment,
                     navController = itemView.findNavController()
                 )
@@ -46,7 +49,8 @@ class ArticlesAdapter :
             val tagsList = article.tag.split(",")
 
             imageArticle.load(
-                itemView.resources.getDrawable(
+                ResourcesCompat.getDrawable(
+                    itemView.resources,
                     R.drawable.background_image,
                     itemView.context.theme
                 )
@@ -57,7 +61,11 @@ class ArticlesAdapter :
                 chipsGroup.addView(Chip(itemView.context).apply {
                     text = it
                     backgroundDrawable =
-                        itemView.resources.getDrawable(R.drawable.tag_gray, itemView.context.theme)
+                        ResourcesCompat.getDrawable(
+                            itemView.resources,
+                            R.drawable.tag_gray,
+                            itemView.context.theme
+                        )
                     setTextColor(itemView.resources.getColor(R.color.primary_200))
 
                 })

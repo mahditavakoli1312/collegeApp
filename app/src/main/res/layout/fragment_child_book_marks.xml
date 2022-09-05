@@ -20,7 +20,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_postssearch_bookmarkFragment"
+        android:id="@+id/rv_postsSearch_bookmarkFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_child_bookmarkFragment"
@@ -29,7 +29,7 @@
     <View
         android:layout_width="0dp"
         android:layout_height="20dp"
-        android:background="@drawable/gradient_toptobottom_recyclerview"
+        android:background="@drawable/gradient_top_to_bottom_recyclerview"
         app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_child_bookmarkFragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_child_bookmarkFragment"
         app:layout_constraintTop_toTopOf="parent" />

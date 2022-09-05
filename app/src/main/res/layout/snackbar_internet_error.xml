@@ -63,7 +63,7 @@
         android:id="@+id/tv_cancelAction_snackLayout"
         app:layout_constraintStart_toEndOf="@id/tv_okAction_snackLayout"
         app:layout_constraintTop_toBottomOf="@id/tv_desc_SnackLayout"
-        android:text="@string/label_ignor"
+        android:text="@string/label_ignore"
         android:layout_marginStart="@dimen/margin_16"
         style="@style/custom_textView_Action_snack"
         android:layout_marginEnd="@dimen/margin_16"

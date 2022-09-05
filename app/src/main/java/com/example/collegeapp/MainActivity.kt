@@ -2,12 +2,15 @@ package com.example.collegeapp
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
@@ -56,11 +59,11 @@ class MainActivity : AppCompatActivity() {
             if (now - lastClick < 2000L) {
                 finish()
             } else {
-                showMessage()
+                showMassage(findViewById<View?>(R.id.fcv_fragmentContainer_activityMain).rootView)
                 lastClick = now
             }
         } else if (navController.currentDestination?.id == R.id.searchFragment || navController.currentDestination?.id == R.id.profileFragment) {
-            FragmentNavigationMethod.navigate(
+            Navigation.easyNavigate(
                 action = R.id.homeFragment,
                 navController = navController
             )
@@ -70,9 +73,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showMessage() {
-        Toast.makeText(globalMain, "از خروج مطمئنید ؟", Toast.LENGTH_SHORT)
-            .show()
+    private fun showMassage(view: View) {
+        val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
+        val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
+        val customLayoutSnack = layoutInflater.inflate(R.layout.snackbar_internet_error, null)
+        viewSnack.setBackgroundColor(view.resources.getColor(R.color.transparent100))
+        viewSnack.addView(customLayoutSnack, 0)
+        viewSnack.findViewById<TextView>(R.id.tv_okAction_snackLayout).visibility = View.GONE
+        viewSnack.findViewById<TextView>(R.id.tv_cancelAction_snackLayout).visibility =
+            View.GONE
+        viewSnack.findViewById<ImageView>(R.id.img_icon_snackLayout).visibility = View.GONE
+        viewSnack.findViewById<TextView>(R.id.tv_desc_SnackLayout).text =
+            getString(R.string.label_exit)
+        snackBar.show()
     }
 
 
