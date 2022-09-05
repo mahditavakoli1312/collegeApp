@@ -8,7 +8,7 @@ import com.example.collegeapp.profile.ChildBookMarksFragment
 import com.example.collegeapp.profile.ChildMyArticlesFragment
 
 
-class ViewPagerAdapter_TabLayout(
+class ViewPagerAdapterTabLayout(
 
     private val fragmentLists: List<Fragment>,
     fragmentLifecycle: Lifecycle,
@@ -18,17 +18,11 @@ class ViewPagerAdapter_TabLayout(
     override fun getItemCount(): Int = fragmentLists.size
 
     override fun createFragment(position: Int): Fragment {
+        return when (position) {
+            0 -> ChildMyArticlesFragment()
+            1 -> ChildBookMarksFragment()
+            else -> ChildMyArticlesFragment()
 
-        when (position) {
-            0 -> {
-                return ChildMyArticlesFragment()
-            }
-            1 -> {
-                return ChildBookMarksFragment()
-            }
-            else -> {
-                return ChildMyArticlesFragment()
-            }
         }
     }
 

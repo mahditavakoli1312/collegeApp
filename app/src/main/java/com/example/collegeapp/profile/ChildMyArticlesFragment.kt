@@ -26,9 +26,9 @@ class ChildMyArticlesFragment : Fragment() {
         val postMyArticleAdapter = PostMyArticleAdapter()
 
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postprofile_childMyArticles)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postProfile_childMyArticles)
         recyclerView.adapter = postMyArticleAdapter
-        postMyArticleAdapter.submitList(myArticlesPostsLists())
+        postMyArticleAdapter.submitList(myArticlesPostsLists(requireContext()))
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
     }

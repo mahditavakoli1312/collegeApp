@@ -6,15 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
+import com.example.collegeapp.easyNavigate
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class HomeFragment : Fragment() {
-    val chipsList = listOf("نانو", "تکنولوزی", "خیام", "سعدی", "روانشناسی")
+    private val chipsList = listOf("نانو", "تکنولوزی", "خیام", "سعدی", "روانشناسی")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,10 +29,10 @@ class HomeFragment : Fragment() {
         val articleAdapter = ArticlesAdapter()
         val chipsGroup: ChipGroup = view.findViewById(R.id.chips_filter_homeFragment)
         rvArticle.adapter = articleAdapter
-        articleAdapter.submitList(RecyclerDataTemp().articleList())
+        articleAdapter.submitList(RecyclerDataTemp().articleList(requireContext()))
 
         view.findViewById<ImageView>(R.id.btn_newArticle_mainFragment).setOnClickListener {
-            FragmentNavigationMethod.navigate(
+            Navigation.easyNavigate(
                 action = R.id.action_homeFragment_to_newArticleFragment,
                 navController = findNavController()
             )

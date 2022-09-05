@@ -14,13 +14,13 @@
         android:layout_marginBottom="@dimen/margin_8"
         android:layoutDirection="rtl"
         android:scrollbars="none"
-        app:layout_constraintBottom_toTopOf="@id/tv_titleArticleRecycler_myarticle"
+        app:layout_constraintBottom_toTopOf="@id/tv_titleArticleRecycler_myArticle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chipsGroup_articleRecycler_myarticle"
+            android:id="@+id/chipsGroup_articleRecycler_myArticle"
             style="@style/Widget.MaterialComponents.Chip.Action"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -31,7 +31,7 @@
     </HorizontalScrollView>
 
     <ImageView
-        android:id="@+id/img_articleRecycler_myarticle"
+        android:id="@+id/img_articleRecycler_myArticle"
         style="@style/custom_image_article"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -40,29 +40,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_titleArticleRecycler_myarticle"
+        android:id="@+id/tv_titleArticleRecycler_myArticle"
         style="@style/custom_textView_title"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_8"
-        app:layout_constraintBottom_toBottomOf="@id/img_articleRecycler_myarticle"
+        app:layout_constraintBottom_toBottomOf="@id/img_articleRecycler_myArticle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/img_articleRecycler_myarticle"
-        app:layout_constraintTop_toTopOf="@id/img_articleRecycler_myarticle" />
+        app:layout_constraintStart_toEndOf="@id/img_articleRecycler_myArticle"
+        app:layout_constraintTop_toTopOf="@id/img_articleRecycler_myArticle" />
 
     <TextView
-        android:id="@+id/tv_inProgress_myarticles"
+        android:id="@+id/tv_inProgress_myArticles"
         style="@style/custom_textView_writer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center_vertical|start"
-        app:layout_constraintBottom_toTopOf="@id/pb_progressBar_myarticle"
+        app:layout_constraintBottom_toTopOf="@id/pb_progressBar_myArticle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_titleArticleRecycler_myarticle" />
+        app:layout_constraintTop_toBottomOf="@id/tv_titleArticleRecycler_myArticle" />
 
     <ProgressBar
-        android:id="@+id/pb_progressBar_myarticle"
+        android:id="@+id/pb_progressBar_myArticle"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:maxHeight="3dp"
@@ -72,7 +72,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_inProgress_myarticles" />
+        app:layout_constraintTop_toBottomOf="@id/tv_inProgress_myArticles" />
 
 
     <ImageView

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CollegeApp</string>
-    <string name="label_splashSreen">Splash Screen</string>
+    <string name="label_splashScreen">Splash Screen</string>
     <string name="label_register">ثبت نام</string>
     <string name="label_register_bold"><b>ثبت نام</b></string>
     <string name="label_login">ورود</string>
@@ -17,7 +17,7 @@
     <string name="label_search">جستجو</string>
     <string name="label_home">خانه</string>
     <string name="label_helium_info">هلیوم پلاس بستری برای اشتراک گذاری ایده‌ها و فکر افراد پیشرو در زمینه علم و دانش</string>
-    <string name="label_mobilenumber">شماره موبایل</string>
+    <string name="label_mobile_number">شماره موبایل</string>
     <string name="label_password">کلمه عبور</string>
     <string name="label_dontHaveAccount">حساب کاربری ندارید؟</string>
     <string name="label_dontHaveAccount_bold"><b>حساب کاربری ندارید؟</b></string>
@@ -29,8 +29,8 @@
     <string name="label_name">نام و نام خانوادگی</string>
     <string name="label_username">نام کاربری</string>
     <string name="label_email">پست الکترونیک</string>
-    <string name="label_searchbarstr">جستجو ...</string>
-    <string name="label_confrimRegisterStr">ثبت نام شما با موفقیت انجام شد.</string>
+    <string name="label_search_bar">جستجو ...</string>
+    <string name="label_confirmRegisterStr">ثبت نام شما با موفقیت انجام شد.</string>
     <string name="label_writer_time">%s • %s</string>
     <string name="label_add_tag">افزودن تگ</string>
     <string name="label_share_new_article">انتشار مقاله جدید</string>
@@ -42,6 +42,13 @@
     <string name="label_technology">تکنولوژی</string>
     <string name="label_internet_error">لطفا اتصال اینترنت خود را بررسی کنید</string>
     <string name="label_retry">تلاش مجدد</string>
-    <string name="label_ignor">رد کردن</string>
+    <string name="label_ignore">رد کردن</string>
     <string name="label_added_article_to_bookmark">مقاله به بوکمارک ها اضافه شد</string>
+    <string name="label_exit">از خروج مطمئنید؟</string>
+    <string name="label_fake_title_post">سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن سیلبسیبسیبسیبسیبسیبسیبسیبسیب است که نامش به نکویی نبرند</string>
+    <string name="label_time_fake">28 فروردین 1401</string>
+    <string name="label_writer_fake">سبحان بازوبندی</string>
+    <string name="label_tag_fake">نجوم شناسی</string>
+    <string name="label_fake_writer_mahdi">مهدی توکلی خراسانی</string>
+    <string name="label_mahdi">مهدی توکلی</string>
 </resources>

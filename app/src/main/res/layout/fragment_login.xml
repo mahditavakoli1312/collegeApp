@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_login_bold"
-        app:layout_constraintBottom_toTopOf="@+id/til_mobilenumber_loginFragment"
-        app:layout_constraintStart_toStartOf="@+id/til_mobilenumber_loginFragment" />
+        app:layout_constraintBottom_toTopOf="@+id/til_mobileNumber_loginFragment"
+        app:layout_constraintStart_toStartOf="@+id/til_mobileNumber_loginFragment" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontal075_loginFragment"
@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/til_pass_loginFragment" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_mobilenumber_loginFragment"
+        android:id="@+id/til_mobileNumber_loginFragment"
         style="@style/custom_inputEditTextLayout_gray"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -107,13 +107,13 @@
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
         app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
-        app:startIconDrawable="@drawable/ic_mobilenumber">
+        app:startIconDrawable="@drawable/ic_mobile_number">
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/custom_inputEditText_gray"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/label_mobilenumber"
+            android:hint="@string/label_mobile_number"
             android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,7 +126,7 @@
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
         app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
-        app:layout_constraintTop_toBottomOf="@id/til_mobilenumber_loginFragment"
+        app:layout_constraintTop_toBottomOf="@id/til_mobileNumber_loginFragment"
         app:startIconDrawable="@drawable/ic_pass">
 
 

@@ -31,21 +31,21 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
             when {
 
-                R.id.c_post_chipsgroup_searchFragment in checkedId -> {
+                R.id.c_post_chipsGroup_searchFragment in checkedId -> {
                     navController.navigate(
                         R.id.childPostSearchFragment2
                     )
                     currentState = 0
                 }
 
-                R.id.c_tags_chipsgroup_searchFragment in checkedId -> {
+                R.id.c_tags_chipsGroup_searchFragment in checkedId -> {
                     navController.navigate(
                         R.id.childTagSearchFragment2
                     )
                     currentState = 1
                 }
 
-                R.id.c_users_chipsgroup_searchFragment in checkedId -> {
+                R.id.c_users_chipsGroup_searchFragment in checkedId -> {
                     navController.navigate(
                         R.id.childUserSearchFragment
                     )

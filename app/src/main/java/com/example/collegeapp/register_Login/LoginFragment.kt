@@ -8,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.example.collegeapp.FragmentNavigationMethod
 import com.example.collegeapp.R
+import com.example.collegeapp.easyNavigateWithPopUp
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -39,7 +40,7 @@ class LoginFragment : Fragment() {
         snackBar.show()
         btn_login_loginFragment.setOnClickListener {
 
-            FragmentNavigationMethod.navigateWithPopUp(
+            Navigation.easyNavigateWithPopUp(
                 action = R.id.action_loginFragment_to_homeFragment,
                 navController = findNavController(),
                 popUpId = R.id.chooseLoginFragment,

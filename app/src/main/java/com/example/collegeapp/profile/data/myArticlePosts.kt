@@ -1,89 +1,90 @@
 package com.example.collegeapp.profile.data
 
+import android.content.Context
 import com.example.collegeapp.R
 import com.example.collegeapp.search.entities.MyArticleEntity
 
-fun myArticlesPostsLists(): List<MyArticleEntity> {
+fun myArticlesPostsLists(context: Context): List<MyArticleEntity> {
     return listOf(
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = true
 
         ),
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),
 
         MyArticleEntity(
-            title = "اسنپدراگون ۸ نسل یک پلاس احتمالاً ۲۰ درصد سریع است.".repeat(3),
-            time = "۲۱ فروردین ۱۴۰۱",
-            tag = "نجوم شناسی , سربازی , اختر شناسی , سعدیا , سلامتی",
+            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            time = context.getString(R.string.label_time_fake),
+            tag = context.getString(R.string.label_tag_fake),
             image = R.drawable.background_image,
-            writer = "مهدی توکلی",
+            writer = context.getString(R.string.label_writer_fake),
             inProgress = false
 
         ),

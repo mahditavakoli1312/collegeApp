@@ -85,8 +85,6 @@
         android:id="@+id/tv_isRegister_registerFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="@dimen/size16"
-        android:autoSizeTextType="uniform"
         android:maxLines="1"
         android:text="@string/label_isRegister"
         android:textColor="@color/white"
@@ -99,8 +97,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_2"
-        android:autoSizeMaxTextSize="@dimen/size16"
-        android:autoSizeTextType="uniform"
         android:gravity="start"
         android:maxLines="1"
         android:text="@string/label_loginStr_bold"
@@ -129,7 +125,7 @@
         app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_registerFragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_registerFragment"
         app:layout_constraintTop_toBottomOf="@id/tv_isRegister_registerFragment"
-        app:startIconDrawable="@drawable/ic_namename">
+        app:startIconDrawable="@drawable/ic_name">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -184,7 +180,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_mobilenumber_registerFragment"
+        android:id="@+id/til_mobileNumber_registerFragment"
         style="@style/custom_inputEditTextLayout_gray"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -193,14 +189,14 @@
         app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_registerFragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_registerFragment"
         app:layout_constraintTop_toBottomOf="@id/til_email_registerFragment"
-        app:startIconDrawable="@drawable/ic_mobilenumber">
+        app:startIconDrawable="@drawable/ic_mobile_number">
 
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/custom_inputEditText_gray"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/label_mobilenumber"
+            android:hint="@string/label_mobile_number"
             android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -214,7 +210,7 @@
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
         app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_registerFragment"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_registerFragment"
-        app:layout_constraintTop_toBottomOf="@id/til_mobilenumber_registerFragment"
+        app:layout_constraintTop_toBottomOf="@id/til_mobileNumber_registerFragment"
         app:startIconDrawable="@drawable/ic_pass">
 
 

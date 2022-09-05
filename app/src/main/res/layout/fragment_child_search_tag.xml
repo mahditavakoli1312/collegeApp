@@ -12,7 +12,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.chip.ChipGroup
-        android:id="@+id/cg_tagsearch_childSearchTagFragment"
+        android:id="@+id/cg_tagSearch_childSearchTagFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_16"

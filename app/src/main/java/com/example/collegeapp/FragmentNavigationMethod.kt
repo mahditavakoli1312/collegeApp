@@ -25,32 +25,3 @@ fun Navigation.easyNavigateWithPopUp(
         e.printStackTrace()
     }
 }
-
-class FragmentNavigationMethod {
-
-    companion object {
-
-        fun navigate(action: Int, navController: NavController) {
-            Navigation.easyNavigate(
-                action = action,
-                navController = navController
-            )
-
-        }
-
-        fun navigateWithPopUp(
-            action: Int,
-            navController: NavController,
-            popUpId: Int,
-            inclusive: Boolean
-        ) {
-            Navigation.easyNavigateWithPopUp(
-                action = action,
-                navController = navController,
-                popUpId = popUpId,
-                inclusive = inclusive
-            )
-        }
-
-    }
-}

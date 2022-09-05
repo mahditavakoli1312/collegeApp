@@ -25,9 +25,9 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
         super.onViewCreated(view, savedInstanceState)
         val searchPostAdapter = SearchPostAdapter()
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postssearch_searchFragment)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postsSearch_searchFragment)
         recyclerView.adapter = searchPostAdapter
-        searchPostAdapter.submitList(searchPostLists())
+        searchPostAdapter.submitList(searchPostLists(requireContext()))
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
     }

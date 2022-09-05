@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/img_bookmark_showArticleFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="@dimen/margin_16"
+        android:layout_width="@dimen/width_48"
+        android:layout_height="@dimen/width_48"
+        android:padding="@dimen/margin_12"
         android:src="@drawable/ic_bookmark"
         app:layout_constraintBottom_toTopOf="@id/gl_HorizontalStart_showArticleFragment"
         app:layout_constraintDimensionRatio="1:1"
@@ -20,9 +20,9 @@
 
     <ImageView
         android:id="@+id/img_back_showArticleFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="@dimen/margin_16"
+        android:layout_width="@dimen/width_48"
+        android:layout_height="@dimen/width_48"
+        android:padding="@dimen/margin_12"
         android:src="@drawable/ic_back"
         app:layout_constraintBottom_toTopOf="@id/gl_HorizontalStart_showArticleFragment"
         app:layout_constraintDimensionRatio="1:1"
