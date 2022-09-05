@@ -54,10 +54,9 @@ class MainActivity : AppCompatActivity() {
         if (navController.currentDestination?.id == R.id.homeFragment) {
             val now = System.currentTimeMillis()
             if (now - lastClick < 2000L) {
-                super.onBackPressed()
+                finish()
             } else {
-                Toast.makeText(globalMain, "از خروج مطمئنید ؟", Toast.LENGTH_SHORT)
-                    .show()
+                showMessage()
                 lastClick = now
             }
         } else if (navController.currentDestination?.id == R.id.searchFragment || navController.currentDestination?.id == R.id.profileFragment) {
@@ -69,6 +68,11 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
 
         }
+    }
+
+    fun showMessage() {
+        Toast.makeText(globalMain, "از خروج مطمئنید ؟", Toast.LENGTH_SHORT)
+            .show()
     }
 
 
