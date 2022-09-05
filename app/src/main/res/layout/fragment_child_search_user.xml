@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_childsearchpostfragment"
+        android:id="@+id/gl_verticalStart_childSearchPostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -20,14 +20,14 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal10_childsearchpostfragment"
+        android:id="@+id/gl_horizontal10_childSearchPostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.103" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal18_childsearchpostfragment"
+        android:id="@+id/gl_horizontal18_childSearchPostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -35,7 +35,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_userssearch_searchfragment"
+        android:id="@+id/rv_userssearch_childSearchPostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

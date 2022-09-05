@@ -25,35 +25,35 @@
         app:layout_constraintGuide_percent="@dimen/guid_0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal1_chooseLoginActivity"
+        android:id="@+id/gl_horizontal1_chooseLoginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".77" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal2_chooseLoginActivity"
+        android:id="@+id/gl_horizontal2_chooseLoginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".87" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_vertical1_chooseLoginActivity"
+        android:id="@+id/gl_vertical1_chooseLoginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal3_chooseLoginActivity"
+        android:id="@+id/gl_horizontal3_chooseLoginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".95" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_vertical2_chooseLoginActivity"
+        android:id="@+id/gl_vertical2_chooseLoginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -67,9 +67,9 @@
         android:text="@string/label_helium_info"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/btn_register_chooseLoginActivity"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
-        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginActivity" />
+        app:layout_constraintBottom_toTopOf="@id/btn_register_chooseLoginFragment"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginFragment" />
 
     <ImageView
         android:layout_width="0dp"
@@ -77,31 +77,31 @@
         android:layout_marginBottom="@dimen/margin_16"
         android:src="@drawable/ic_logo"
         app:layout_constraintBottom_toTopOf="@id/tv_info_chooseLoginFragment"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginFragment"
         app:layout_constraintStart_toStartOf="@id/gl_centerVertical_chooseLoginFragment" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_register_chooseLoginActivity"
+        android:id="@+id/btn_register_chooseLoginFragment"
         style="@style/custom_button_blue"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_register_bold"
-        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal2_chooseLoginActivity"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal2_chooseLoginFragment"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
-        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginActivity"
-        app:layout_constraintTop_toTopOf="@id/gl_horizontal1_chooseLoginActivity" />
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginFragment"
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal1_chooseLoginFragment" />
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login_chooseLoginActivity"
+        android:id="@+id/btn_login_chooseLoginFragment"
         style="@style/custom_button_transparent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_login_bold"
-        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal3_chooseLoginActivity"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal3_chooseLoginFragment"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginActivity"
-        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginActivity"
-        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_chooseLoginActivity" />
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical2_chooseLoginFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical1_chooseLoginFragment"
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_chooseLoginFragment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

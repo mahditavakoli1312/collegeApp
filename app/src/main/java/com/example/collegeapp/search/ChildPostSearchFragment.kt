@@ -17,7 +17,6 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_child_search_post, container, false)
     }
 
@@ -26,7 +25,7 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
         super.onViewCreated(view, savedInstanceState)
         val searchPostAdapter = SearchPostAdapter()
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postssearch_searchfragment)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postssearch_searchFragment)
         recyclerView.adapter = searchPostAdapter
         searchPostAdapter.submitList(searchPostLists())
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

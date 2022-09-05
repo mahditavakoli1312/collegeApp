@@ -7,72 +7,72 @@
     android:layoutDirection="rtl">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal2_profilefragmnet"
+        android:id="@+id/gl_horizontal2_profileFragmnet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.02" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal8_profilefragmnet"
+        android:id="@+id/gl_horizontal8_profileFragmnet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal22_profilefragmnet"
+        android:id="@+id/gl_horizontal22_profileFragmnet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.22" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_profilefragmnet"
+        android:id="@+id/gl_verticalStart_profileFragmnet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_profilefragmnet"
+        android:id="@+id/gl_verticalEnd_profileFragmnet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tl_tablayout_activitymain"
+        android:id="@+id/tl_tablayout_profileFragmnet"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_16"
         android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/gl_horizontal22_profilefragmnet"
-        app:layout_constraintTop_toBottomOf="@id/gl_horizontal8_profilefragmnet"
+        app:layout_constraintBottom_toTopOf="@id/gl_horizontal22_profileFragmnet"
+        app:layout_constraintTop_toBottomOf="@id/gl_horizontal8_profileFragmnet"
         app:tabIconTint="@color/tablayout_color"
         app:tabIndicatorColor="@color/white"
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="#80FFFFFF" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp_viewpager_activitymain"
+        android:id="@+id/vp_viewpager_profileFragmnet"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tl_tablayout_activitymain" />
+        app:layout_constraintTop_toBottomOf="@id/tl_tablayout_profileFragmnet" />
 
 
     <ImageView
 
-        android:id="@+id/iv_profileImg_profilefragment"
+        android:id="@+id/iv_profileImg_profileFragmnet"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_user_profile_circle_24"
-        app:layout_constraintBottom_toTopOf="@id/gl_horizontal8_profilefragmnet"
+        app:layout_constraintBottom_toTopOf="@id/gl_horizontal8_profileFragmnet"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_profilefragmnet"
-        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_profilefragmnet" />
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_profileFragmnet"
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_profileFragmnet" />
 
     <TextView
         android:id="@+id/tv_user_name_profile"
@@ -83,20 +83,20 @@
         android:text="مهدی توکلی"
         android:textColor="@color/white"
         android:textSize="@dimen/size22"
-        app:layout_constraintBottom_toTopOf="@id/gl_horizontal8_profilefragmnet"
-        app:layout_constraintStart_toEndOf="@id/iv_profileImg_profilefragment"
-        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_profilefragmnet" />
+        app:layout_constraintBottom_toTopOf="@id/gl_horizontal8_profileFragmnet"
+        app:layout_constraintStart_toEndOf="@id/iv_profileImg_profileFragmnet"
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_profileFragmnet" />
 
     <ImageView
         android:scaleType="fitXY"
-        android:id="@+id/iv_hamburgerIcon_profilefragment"
+        android:id="@+id/iv_hamburgerIcon_profileFragmnet"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/ic___leading_actionbar"
-        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal8_profilefragmnet"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal8_profileFragmnet"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_profilefragmnet"
-        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_profilefragmnet" />
+        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_profileFragmnet"
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal2_profileFragmnet" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

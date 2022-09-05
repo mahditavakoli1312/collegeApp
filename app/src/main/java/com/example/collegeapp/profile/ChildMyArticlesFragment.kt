@@ -18,7 +18,6 @@ class ChildMyArticlesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_child_my_articles, container, false)
     }
 
@@ -27,7 +26,7 @@ class ChildMyArticlesFragment : Fragment() {
         val postMyArticleAdapter = PostMyArticleAdapter()
 
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postprofile_bookmark)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postprofile_childMyArticles)
         recyclerView.adapter = postMyArticleAdapter
         postMyArticleAdapter.submitList(myArticlesPostsLists())
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

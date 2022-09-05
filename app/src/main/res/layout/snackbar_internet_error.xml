@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background_gray_dark">
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_verticalStart_snackLayout"
         android:layout_width="match_parent"
@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
     <ImageView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -29,7 +30,8 @@
         android:layout_marginTop="@dimen/margin_16"
         android:src="@drawable/ic_error"
         android:padding="@dimen/margin_4"
-        android:id="@+id/img_icon_snackLayout"/>
+        android:id="@+id/img_icon_snackLayout" />
+
     <TextView
         android:id="@+id/tv_desc_SnackLayout"
         android:layout_width="0dp"
@@ -41,7 +43,8 @@
         app:layout_constraintEnd_toStartOf="@id/img_icon_snackLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/gl_verticalStart_snackLayout"
-        android:text="@string/label_internet_error"/>
+        android:text="@string/label_internet_error" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +55,8 @@
         android:text="@string/label_retry"
         style="@style/custom_textView_Action_snack"
         android:layout_marginTop="@dimen/margin_16"
-        android:layout_marginBottom="@dimen/margin_16"/>
+        android:layout_marginBottom="@dimen/margin_16" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,5 +69,5 @@
         android:layout_marginEnd="@dimen/margin_16"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_16"/>
+        android:layout_marginTop="@dimen/margin_16" />
 </androidx.constraintlayout.widget.ConstraintLayout>
