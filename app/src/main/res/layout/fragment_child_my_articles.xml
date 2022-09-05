@@ -5,14 +5,14 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_child_myArticles"
+        android:id="@+id/gl_verticalStart_childMyArticles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_child_myArticles"
+        android:id="@+id/gl_verticalEnd_childMyArticles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -20,18 +20,18 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_postprofile_bookmark"
+        android:id="@+id/rv_postprofile_childMyArticles"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_child_myArticles"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_child_myArticles" />
+        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_childMyArticles"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_childMyArticles" />
 
     <View
         android:layout_width="0dp"
         android:layout_height="20dp"
         android:background="@drawable/gradient_toptobottom_recyclerview"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_child_myArticles"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_child_myArticles"
+        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_childMyArticles"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_childMyArticles"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

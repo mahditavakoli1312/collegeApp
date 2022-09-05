@@ -17,10 +17,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewPager = view.findViewById<ViewPager2>(R.id.vp_viewpager_activitymain)
+        val viewPager = view.findViewById<ViewPager2>(R.id.vp_viewpager_profileFragmnet)
         viewPager.adapter =
             ViewPagerAdapter_TabLayout(fragmentList, lifecycle, childFragmentManager)
-        val tabLayout = view.findViewById<TabLayout>(R.id.tl_tablayout_activitymain)
+        val tabLayout = view.findViewById<TabLayout>(R.id.tl_tablayout_profileFragmnet)
 
         TabLayoutMediator(
             tabLayout,

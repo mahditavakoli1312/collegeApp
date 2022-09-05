@@ -25,7 +25,7 @@ class ChildBookMarksFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val searchPostAdapter = SearchPostAdapter()
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postssearch_bookmark)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_postssearch_bookmarkFragment)
         recyclerView.adapter = searchPostAdapter
         searchPostAdapter.submitList(searchPostLists())
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

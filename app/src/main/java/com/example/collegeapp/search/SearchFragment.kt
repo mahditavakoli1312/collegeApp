@@ -18,7 +18,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val chipGroup = view.findViewById<ChipGroup>(R.id.cg_searchChips_searchfragment)
+        val chipGroup = view.findViewById<ChipGroup>(R.id.cg_searchChips_searchFragment)
         val checkedChipId = chipGroup.checkedChipId
         val checkedChipIds = chipGroup.checkedChipIds
 
@@ -32,7 +32,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
             when {
 
-                R.id.c_post_chipsgroup_searchfragment in checkedId -> {
+                R.id.c_post_chipsgroup_searchFragment in checkedId -> {
                     navController.navigate(
                         R.id.childPostSearchFragment2
                     )
@@ -40,7 +40,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 //                    Log.d("chippp", checkedId.toString())
                 }
 
-                R.id.c_tags_chipsgroup_searchfragment in checkedId -> {
+                R.id.c_tags_chipsgroup_searchFragment in checkedId -> {
                     navController.navigate(
                         R.id.childTagSearchFragment2
                     )
@@ -48,7 +48,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 //                    Log.d("chippp", checkedId.toString())
                 }
 
-                R.id.c_users_chipsgroup_searchfragment in checkedId -> {
+                R.id.c_users_chipsgroup_searchFragment in checkedId -> {
                     navController.navigate(
                         R.id.childUserSearchFragment
                     )

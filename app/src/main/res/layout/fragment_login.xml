@@ -23,25 +23,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_login_bold"
-        app:layout_constraintBottom_toTopOf="@+id/til_mobilenumber_loginfragment"
-        app:layout_constraintStart_toStartOf="@+id/til_mobilenumber_loginfragment" />
+        app:layout_constraintBottom_toTopOf="@+id/til_mobilenumber_loginFragment"
+        app:layout_constraintStart_toStartOf="@+id/til_mobilenumber_loginFragment" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal075_loginfragment"
+        android:id="@+id/gl_horizontal075_loginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.075" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal14_loginfragment"
+        android:id="@+id/gl_horizontal14_loginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.14" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_vertical50_loginfragment"
+        android:id="@+id/gl_vertical50_loginFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -51,35 +51,35 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/ic_logo"
-        app:layout_constraintBottom_toTopOf="@id/gl_horizontal14_loginfragment"
-        app:layout_constraintEnd_toStartOf="@id/gl_vertical50_loginfragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginfragment"
-        app:layout_constraintTop_toBottomOf="@+id/gl_horizontal075_loginfragment" />
+        app:layout_constraintBottom_toTopOf="@id/gl_horizontal14_loginFragment"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical50_loginFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+        app:layout_constraintTop_toBottomOf="@+id/gl_horizontal075_loginFragment" />
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal35_loginfragment"
+        android:id="@+id/gl_horizontal35_loginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal43_loginfragment"
+        android:id="@+id/gl_horizontal43_loginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_loginfragment"
+        android:id="@+id/gl_verticalStart_loginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_loginfragment"
+        android:id="@+id/gl_verticalEnd_loginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -94,19 +94,19 @@
         android:layout_marginTop="@dimen/margin_16"
         android:text="@string/label_login_bold"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginfragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginfragment"
-        app:layout_constraintTop_toBottomOf="@+id/til_pass_loginfragment" />
+        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+        app:layout_constraintTop_toBottomOf="@+id/til_pass_loginFragment" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_mobilenumber_loginfragment"
+        android:id="@+id/til_mobilenumber_loginFragment"
         style="@style/custom_inputEditTextLayout_gray"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/gl_horizontal43_loginfragment"
+        app:layout_constraintBottom_toTopOf="@id/gl_horizontal43_loginFragment"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginfragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginfragment"
+        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
         app:startIconDrawable="@drawable/ic_mobilenumber">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -118,15 +118,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_pass_loginfragment"
+        android:id="@+id/til_pass_loginFragment"
         style="@style/custom_inputEditTextLayout_gray"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_16"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginfragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginfragment"
-        app:layout_constraintTop_toBottomOf="@id/til_mobilenumber_loginfragment"
+        app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
+        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+        app:layout_constraintTop_toBottomOf="@id/til_mobilenumber_loginFragment"
         app:startIconDrawable="@drawable/ic_pass">
 
 
@@ -139,7 +139,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tv_dontHaveAccount_loginfragment"
+        android:id="@+id/tv_dontHaveAccount_loginFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_16"
@@ -148,12 +148,12 @@
         android:textColor="@color/white"
         android:textSize="@dimen/size16"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@+id/tv_register_loginfragment"
+        app:layout_constraintEnd_toStartOf="@+id/tv_register_loginFragment"
         app:layout_constraintStart_toStartOf="@+id/btn_login_loginFragment"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_loginFragment" />
 
     <TextView
-        android:id="@+id/tv_register_loginfragment"
+        android:id="@+id/tv_register_loginFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_8"
@@ -164,7 +164,7 @@
         android:textSize="@dimen/size16"
         app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
         app:layout_constraintEnd_toEndOf="@+id/btn_login_loginFragment"
-        app:layout_constraintStart_toEndOf="@+id/tv_dontHaveAccount_loginfragment"
+        app:layout_constraintStart_toEndOf="@+id/tv_dontHaveAccount_loginFragment"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_loginFragment" />
 
 

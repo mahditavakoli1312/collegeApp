@@ -12,7 +12,7 @@ class ChildTagSearchFragment : Fragment(R.layout.fragment_child_search_tag) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val chipGroup: ChipGroup = view.findViewById(R.id.cg_tagsearch_childsearchfragment)
+        val chipGroup: ChipGroup = view.findViewById(R.id.cg_tagsearch_childSearchTagFragment)
         getFakeTagList().forEach {
             chipGroup.addView(
                 Chip(

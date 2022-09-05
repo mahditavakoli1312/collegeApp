@@ -5,19 +5,19 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/iv_topDivider_childsearchtag"
+        android:id="@+id/iv_topDivider_childSearchTagFragment"
         android:layout_width="match_parent"
         android:layout_height="@dimen/stroke_2"
         android:background="@color/white_10"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.chip.ChipGroup
-        android:id="@+id/cg_tagsearch_childsearchfragment"
+        android:id="@+id/cg_tagsearch_childSearchTagFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_topDivider_childsearchtag"
+        app:layout_constraintTop_toBottomOf="@+id/iv_topDivider_childSearchTagFragment"
         app:selectionRequired="true"
         app:singleSelection="true">
 

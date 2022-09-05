@@ -25,14 +25,14 @@ class ChooseLoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btn_register_chooseLoginActivity.setOnClickListener {
+        btn_register_chooseLoginFragment.setOnClickListener {
             FragmentNavigationMethod.navigate(
                 action = R.id.action_chooseLoginFragment_to_registerFragment,
                 navController = findNavController(),
             )
         }
 
-        btn_login_chooseLoginActivity.setOnClickListener {
+        btn_login_chooseLoginFragment.setOnClickListener {
             FragmentNavigationMethod.navigate(
                 action = R.id.action_chooseLoginFragment_to_loginFragment,
                 navController = findNavController(),
