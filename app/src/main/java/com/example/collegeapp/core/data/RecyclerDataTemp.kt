@@ -3,8 +3,9 @@ package com.example.collegeapp.core.data
 import android.content.Context
 import com.example.collegeapp.R
 import com.example.collegeapp.features.article.data.ArticleEntity
+import javax.inject.Inject
 
-class RecyclerDataTemp {
+class RecyclerDataTemp @Inject constructor(){
     fun articleList(context: Context): List<ArticleEntity> {
         val resultList = mutableListOf<ArticleEntity>()
         resultList.add(

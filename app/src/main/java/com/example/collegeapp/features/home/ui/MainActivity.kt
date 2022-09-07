@@ -13,7 +13,9 @@ import com.example.collegeapp.R
 import com.example.collegeapp.easyNavigate
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     var lastClick = 0L

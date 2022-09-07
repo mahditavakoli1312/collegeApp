@@ -6,18 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
-import com.example.collegeapp.core.data.RecyclerDataTemp
 import com.example.collegeapp.easyNavigate
 import com.example.collegeapp.features.home.ui.adapters.ArticlesAdapter
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private val chipsList = listOf("نانو", "تکنولوزی", "خیام", "سعدی", "روانشناسی")
+    private val homeViewModel: HomeViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +34,7 @@ class HomeFragment : Fragment() {
         val articleAdapter = ArticlesAdapter()
         val chipsGroup: ChipGroup = view.findViewById(R.id.chips_filter_homeFragment)
         rvArticle.adapter = articleAdapter
-        articleAdapter.submitList(RecyclerDataTemp().articleList(requireContext()))
+        articleAdapter.submitList(homeViewModel.article.value)
 
         view.findViewById<ImageView>(R.id.btn_newArticle_mainFragment).setOnClickListener {
             Navigation.easyNavigate(
