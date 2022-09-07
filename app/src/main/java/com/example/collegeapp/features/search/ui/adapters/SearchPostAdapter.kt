@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.example.collegeapp.features.home.ui.MainActivity
 import com.example.collegeapp.R
 import com.example.collegeapp.easyNavigate
+import com.example.collegeapp.features.home.ui.MainActivity
 import com.example.collegeapp.features.search.data.entities.ArticleEntity
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup

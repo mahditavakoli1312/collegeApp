@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.collegeapp.R
-import com.example.collegeapp.features.home.ui.fragments.BottomSheetTagFragment
 import com.google.android.material.chip.Chip
 
 class NewArticleFragment : Fragment(R.layout.fragment_new_article) {

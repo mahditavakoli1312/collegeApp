@@ -10,9 +10,9 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
+import com.example.collegeapp.core.data.RecyclerDataTemp
 import com.example.collegeapp.easyNavigate
 import com.example.collegeapp.features.home.ui.adapters.ArticlesAdapter
-import com.example.collegeapp.core.data.RecyclerDataTemp
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
