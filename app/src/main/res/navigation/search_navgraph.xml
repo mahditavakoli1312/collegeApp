@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/childPostSearchFragment2"
-        android:name="com.example.collegeapp.search.ChildPostSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildPostSearchFragment"
         android:label="ChildPostSearchFragment">
         <action
             android:id="@+id/action_childPostSearchFragment2_to_childUserSearchFragment2"
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/childUserSearchFragment"
-        android:name="com.example.collegeapp.search.ChildUserSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildUserSearchFragment"
         android:label="ChildUserSearchFragment">
         <action
             android:id="@+id/action_childUserSearchFragment_to_childPostSearchFragment2"
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/childTagSearchFragment2"
-        android:name="com.example.collegeapp.search.ChildTagSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildTagSearchFragment"
         android:label="ChildTagSearchFragment">
         <action
             android:id="@+id/action_childTagSearchFragment2_to_childPostSearchFragment2"

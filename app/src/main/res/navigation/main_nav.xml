@@ -6,7 +6,7 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.collegeapp.register_Login.SplashFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/chooseLoginFragment"
-        android:name="com.example.collegeapp.register_Login.ChooseLoginFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.ChooseLoginFragment"
         android:label="fragment_choose_login"
         tools:layout="@layout/fragment_choose_login">
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.collegeapp.register_Login.LoginFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.collegeapp.register_Login.RegisterFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register">
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmRegisterFragment"
-        android:name="com.example.collegeapp.register_Login.ConfirmRegisterFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.ConfirmRegisterFragment"
         android:label="fragment_confirm_register"
         tools:layout="@layout/fragment_confirm_register">
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.collegeapp.profile.ProfileFragment"
+        android:name="com.example.collegeapp.features.profile.ui.fragments.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.collegeapp.search.SearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search">
         <action
@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.collegeapp.home.HomeFragment"
+        android:name="com.example.collegeapp.features.home.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -96,17 +96,17 @@
     </fragment>
     <fragment
         android:id="@+id/bookMarksFragment"
-        android:name="com.example.collegeapp.profile.ChildBookMarksFragment"
+        android:name="com.example.collegeapp.features.bookmark.ui.fragments.ChildBookMarksFragment"
         android:label="fragment_book_marks"
         tools:layout="@layout/fragment_child_book_marks" />
     <fragment
         android:id="@+id/myArticlesFragment"
-        android:name="com.example.collegeapp.profile.ChildMyArticlesFragment"
+        android:name="com.example.collegeapp.features.profile.ui.fragments.ChildMyArticlesFragment"
         android:label="fragment_my_articles"
         tools:layout="@layout/fragment_child_my_articles" />
     <fragment
         android:id="@+id/childPostSearchFragment"
-        android:name="com.example.collegeapp.search.ChildPostSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildPostSearchFragment"
         android:label="ChildPostSearchFragment"
         tools:layout="@layout/fragment_child_search_post">
         <action
@@ -115,22 +115,22 @@
     </fragment>
     <fragment
         android:id="@+id/childTagSearchFragment"
-        android:name="com.example.collegeapp.search.ChildTagSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildTagSearchFragment"
         android:label="ChildTagSearchFragment"
         tools:layout="@layout/fragment_child_search_tag" />
     <fragment
         android:id="@+id/childUserSearchFragment2"
-        android:name="com.example.collegeapp.search.ChildUserSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildUserSearchFragment"
         android:label="ChildUserSearchFragment"
         tools:layout="@layout/fragment_child_search_user" />
     <fragment
         android:id="@+id/newArticleFragment"
-        android:name="com.example.collegeapp.home.NewArticleFragment"
+        android:name="com.example.collegeapp.features.home.ui.fragments.NewArticleFragment"
         android:label="fragment_new_article"
         tools:layout="@layout/fragment_new_article" />
     <fragment
         android:id="@+id/showArticleFragment"
-        android:name="com.example.collegeapp.home.ShowArticleFragment"
+        android:name="com.example.collegeapp.features.home.ui.fragments.ShowArticleFragment"
         android:label="fragment_show_article"
         tools:layout="@layout/fragment_show_article" />
 </navigation>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
-    tools:context=".register_Login.LoginFragment">
+    tools:context=".features.authentication.ui.fragments.LoginFragment">
 
     <ImageView
         android:layout_width="match_parent"
