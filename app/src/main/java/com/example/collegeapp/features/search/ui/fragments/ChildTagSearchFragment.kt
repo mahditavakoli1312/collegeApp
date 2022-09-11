@@ -3,17 +3,23 @@ package com.example.collegeapp.features.search.ui.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.collegeapp.R
+import com.example.collegeapp.features.search.ui.SearchViewModel
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ChildTagSearchFragment : Fragment(R.layout.fragment_child_search_tag) {
+
+    private val searchViewModel: SearchViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val chipGroup: ChipGroup = view.findViewById(R.id.cg_tagSearch_childSearchTagFragment)
-        getFakeTagList().forEach {
+        searchViewModel.tagList.value?.forEach {
             chipGroup.addView(
                 Chip(
                     view.context,
@@ -33,31 +39,5 @@ class ChildTagSearchFragment : Fragment(R.layout.fragment_child_search_tag) {
 
     }
 
-    private fun getFakeTagList(): List<String> {
-        return listOf(
-            "تکنولوژِی",
-            "نجوم",
-            "مکانیک",
-            "تکنولوژِی",
-            "نجوم",
-            "نانوتکنولوژی",
-            "مکانیک",
-            "تکنولوژِی",
-            "نجوم",
-            "نانوتکنولوژی",
-            "مکانیک",
-            "تکنولوژِی",
-            "نجوم",
-            "نانوتکنولوژی",
-            "مکانیک",
-            "تکنولوژِی",
-            "نجوم",
-            "نانوتکنولوژی",
-            "مکانیک",
-            "تکنولوژِی",
-            "نجوم",
-            "نانوتکنولوژی",
-            "مکانیک",
-        )
-    }
+
 }

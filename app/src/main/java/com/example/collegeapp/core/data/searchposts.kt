@@ -2,7 +2,7 @@ package com.example.collegeapp.search.data
 
 import android.content.Context
 import com.example.collegeapp.R
-import com.example.collegeapp.features.search.data.entities.ArticleEntity
+import com.example.collegeapp.features.article.data.ArticleEntity
 
 fun searchPostLists(context: Context): List<ArticleEntity> {
     return listOf(
