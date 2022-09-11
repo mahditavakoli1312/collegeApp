@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.collegeapp.features.bookmark.ui.fragments.ChildBookMarksFragment
+import com.example.collegeapp.features.bookmark.ui.fragments.ChildBookmarksFragment
 import com.example.collegeapp.features.profile.ui.fragments.ChildMyArticlesFragment
 
 
@@ -20,7 +20,7 @@ class ViewPagerAdapterTabLayout(
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> ChildMyArticlesFragment()
-            1 -> ChildBookMarksFragment()
+            1 -> ChildBookmarksFragment()
             else -> ChildMyArticlesFragment()
 
         }
