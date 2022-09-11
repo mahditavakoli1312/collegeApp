@@ -22,7 +22,6 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class PostMyArticleAdapter :
-
     ListAdapter<MyArticleEntity, PostMyArticleAdapter.MyArticlePostHolder>(PostMyArticleDiffCallback) {
 
     class MyArticlePostHolder(itemView: View) :

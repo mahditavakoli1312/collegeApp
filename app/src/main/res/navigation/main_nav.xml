@@ -96,7 +96,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookMarksFragment"
-        android:name="com.example.collegeapp.features.bookmark.ui.fragments.ChildBookMarksFragment"
+        android:name="com.example.collegeapp.features.bookmark.ui.fragments.ChildBookmarksFragment"
         android:label="fragment_book_marks"
         tools:layout="@layout/fragment_child_book_marks" />
     <fragment

@@ -13,7 +13,6 @@ fun myArticlesPostsLists(context: Context): List<MyArticleEntity> {
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = true
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
