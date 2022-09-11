@@ -5,7 +5,7 @@ import com.example.collegeapp.R
 import com.example.collegeapp.features.article.data.ArticleEntity
 import javax.inject.Inject
 
-class RecyclerDataTemp @Inject constructor(){
+class RecyclerDataTemp @Inject constructor() {
     fun articleList(context: Context): List<ArticleEntity> {
         val resultList = mutableListOf<ArticleEntity>()
         resultList.add(
