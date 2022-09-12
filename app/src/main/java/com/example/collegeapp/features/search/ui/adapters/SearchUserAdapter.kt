@@ -1,34 +1,28 @@
 package com.example.collegeapp.features.search.ui.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.collegeapp.R
+import com.example.collegeapp.databinding.ItemUserSerarchviewholderBinding
 import com.example.collegeapp.features.search.data.entities.UserSearchEntity
 
 class SearchUserAdapter :
     ListAdapter<UserSearchEntity, SearchUserAdapter.SearchUserHolder>(SearchUserDiffCallback) {
 
-    class SearchUserHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-        private val textUser: TextView =
-            itemView.findViewById(R.id.tv_username_item_userSearchViewHolder)
+    class SearchUserHolder(private val itemBinding: ItemUserSerarchviewholderBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(userSearchEntity: UserSearchEntity) {
-
-            textUser.text = userSearchEntity.nameUser
-
+            itemBinding.userSearch = userSearchEntity
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchUserHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_user_serarchviewholder, parent, false)
-        return SearchUserHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ItemUserSerarchviewholderBinding.inflate(inflater , parent , false)
+        return SearchUserHolder(binding)
     }
 
     override fun onBindViewHolder(holder: SearchUserHolder, position: Int) {
