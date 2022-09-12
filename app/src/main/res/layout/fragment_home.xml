@@ -1,94 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black"
-    tools:context=".features.home.ui.fragments.HomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_HorizontalStart_homeFragment"
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.collegeapp.features.home.ui.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="@dimen/guid_0.08Start_percent" />
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".features.home.ui.fragments.HomeFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_homeFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_homeFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontalEnd_homeFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
-
-    <ImageView
-        android:id="@+id/img_addChips_homeFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_homeFragment"
-        app:layout_constraintBottom_toBottomOf="@id/gl_HorizontalStart_homeFragment"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_add"
-        android:padding="@dimen/margin_4"
-        app:layout_constraintDimensionRatio="1:1"
-        android:background="@drawable/tag_gray" />
-
-    <HorizontalScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:layoutDirection="rtl"
-        android:layout_marginStart="@dimen/margin_8"
-        app:layout_constraintTop_toTopOf="@id/img_addChips_homeFragment"
-        app:layout_constraintBottom_toBottomOf="@id/img_addChips_homeFragment"
-        app:layout_constraintStart_toEndOf="@id/img_addChips_homeFragment"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chips_filter_homeFragment"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_HorizontalStart_homeFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:selectionRequired="true"
-            app:singleLine="true">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/guid_0.08Start_percent" />
 
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalStart_homeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_articles_homeFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/gl_verticalEnd_homeFragment"
-        app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
-        app:layout_constraintTop_toBottomOf="@id/gl_HorizontalStart_homeFragment" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalEnd_homeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontalEnd_homeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
+        <ImageView
+            android:id="@+id/img_addChips_homeFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_homeFragment"
+            app:layout_constraintBottom_toBottomOf="@id/gl_HorizontalStart_homeFragment"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_add"
+            android:padding="@dimen/margin_4"
+            app:layout_constraintDimensionRatio="1:1"
+            android:background="@drawable/tag_gray" />
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layoutDirection="rtl"
+            android:layout_marginStart="@dimen/margin_8"
+            app:layout_constraintTop_toTopOf="@id/img_addChips_homeFragment"
+            app:layout_constraintBottom_toBottomOf="@id/img_addChips_homeFragment"
+            app:layout_constraintStart_toEndOf="@id/img_addChips_homeFragment"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chips_filter_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:selectionRequired="true"
+                app:singleLine="true">
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_articles_homeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_verticalEnd_homeFragment"
+            app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
+            app:layout_constraintTop_toBottomOf="@id/gl_HorizontalStart_homeFragment" />
 
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
-        app:layout_constraintBottom_toBottomOf="@id/gl_horizontalEnd_homeFragment"
-        android:background="@drawable/btn_circle_blue_primary_700"
-        android:src="@drawable/ic_new_article"
-        android:padding="@dimen/margin_16"
-        android:id="@+id/btn_newArticle_mainFragment" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
+            app:layout_constraintBottom_toBottomOf="@id/gl_horizontalEnd_homeFragment"
+            android:background="@drawable/btn_circle_blue_primary_700"
+            android:src="@drawable/ic_new_article"
+            android:padding="@dimen/margin_16"
+            android:id="@+id/btn_newArticle_mainFragment" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

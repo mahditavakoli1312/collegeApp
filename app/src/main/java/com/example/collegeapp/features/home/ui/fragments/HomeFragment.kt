@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
-    private val chipsList = listOf("نانو", "تکنولوزی", "خیام", "سعدی", "روانشناسی")
+
     private val homeViewModel: HomeViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +31,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val rvArticle: RecyclerView = view.findViewById(R.id.rv_articles_homeFragment)
         val articleAdapter = ArticlesAdapter()
         val chipsGroup: ChipGroup = view.findViewById(R.id.chips_filter_homeFragment)
@@ -44,24 +45,27 @@ class HomeFragment : Fragment() {
             )
         }
 
-        chipsList.forEach {
-            chipsGroup.addView(
-                Chip(
-                    view.context,
-                    null,
-                    com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
-                ).apply {
-                    text = it
-                    setChipBackgroundColorResource(R.color.white_10)
-                    setTextColor(view.resources.getColor(R.color.primary_200))
-                    setChipStrokeColorResource(R.color.tophomechips_bordercolor_selector)
-                    chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
-                    isClickable = true
-                    isCheckable = false
-                    setOnClickListener {
-                        isSelected = !isSelected
-                    }
-                })
+        homeViewModel.chipsList.observe(viewLifecycleOwner) {
+
+            it.forEach {
+                chipsGroup.addView(
+                    Chip(
+                        view.context,
+                        null,
+                        com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
+                    ).apply {
+                        text = it
+                        setChipBackgroundColorResource(R.color.white_10)
+                        setTextColor(view.resources.getColor(R.color.primary_200))
+                        setChipStrokeColorResource(R.color.tophomechips_bordercolor_selector)
+                        chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
+                        isClickable = true
+                        isCheckable = false
+                        setOnClickListener {
+                            isSelected = !isSelected
+                        }
+                    })
+            }
         }
 
 

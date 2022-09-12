@@ -12,8 +12,8 @@ import dagger.hilt.components.SingletonComponent
 abstract class ArticleModule {
 
     @Binds
-    abstract fun bindArticle(articleRepository: ArticleRepositoryImpl) : ArticleRepository
+    abstract fun bindArticle(articleRepository: ArticleRepositoryImpl): ArticleRepository
 
     @Binds
-    abstract fun bindMyArticle(myArticleRepository: MyArticleRepositoryImpl) : MyArticleRepository
+    abstract fun bindMyArticle(myArticleRepository: MyArticleRepositoryImpl): MyArticleRepository
 }

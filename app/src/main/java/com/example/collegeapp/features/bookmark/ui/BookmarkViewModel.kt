@@ -9,7 +9,7 @@ import javax.inject.Inject
 @HiltViewModel
 class BookmarkViewModel @Inject constructor(
     private val bookmarkRepository: BookmarkRepository
-) : ViewModel(){
+) : ViewModel() {
     private var _bookmark = MutableLiveData(bookmarkRepository.getBookmark())
     val bookmark = _bookmark
 }
