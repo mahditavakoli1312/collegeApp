@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class MyArticleRepositoryImpl @Inject constructor(
     private val articleDataSource: ArticleDataSource
-) : MyArticleRepository  {
+) : MyArticleRepository {
     override fun getArticle(): List<MyArticleEntity> {
         return articleDataSource.getMyArticle()
     }

@@ -1,15 +1,19 @@
 package com.example.collegeapp.features.authentication.ui.fragments
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.easyNavigateWithPopUp
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SplashFragment : Fragment() {
 
@@ -21,15 +25,25 @@ class SplashFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Handler().postDelayed({
-            Navigation.easyNavigateWithPopUp(
-                action = R.id.action_splashFragment_to_chooseLoginFragment,
-                navController = findNavController(),
-                popUpId = R.id.splashFragment,
-                inclusive = true
-            )
-        }, 3000)
+    override fun onResume() {
+        super.onResume()
+        try {
+            lifecycleScope.launch(Dispatchers.IO) {
+                delay(3000)
+                withContext(Dispatchers.Main) {
+                    Navigation.easyNavigateWithPopUp(
+                        action = R.id.action_splashFragment_to_chooseLoginFragment,
+                        navController = findNavController(),
+                        popUpId = R.id.splashFragment,
+                        inclusive = true
+                    )
+                }
+
+            }
+        } catch (e: Exception) {
+
+        }
+
     }
 
 
