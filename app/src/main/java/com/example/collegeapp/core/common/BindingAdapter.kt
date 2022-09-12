@@ -23,7 +23,7 @@ fun loadImg(imageView: ImageView, imageUrl: Int) {
     imageView.load(
         ResourcesCompat.getDrawable(
             imageView.resources,
-            R.drawable.background_image,
+            imageUrl,
             imageView.context.theme
         )
     ) {

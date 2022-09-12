@@ -1,24 +1,37 @@
 package com.example.collegeapp.features.search.ui.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.collegeapp.R
+import com.example.collegeapp.databinding.FragmentChildSearchTagBinding
 import com.example.collegeapp.features.search.ui.SearchViewModel
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChildTagSearchFragment : Fragment(R.layout.fragment_child_search_tag) {
-
+class ChildTagSearchFragment : Fragment() {
+    private lateinit var binding: FragmentChildSearchTagBinding
     private val searchViewModel: SearchViewModel by viewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_child_search_tag, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val chipGroup: ChipGroup = view.findViewById(R.id.cg_tagSearch_childSearchTagFragment)
+        val chipGroup: ChipGroup = binding.cgTagSearchChildSearchTagFragment
         searchViewModel.tagList.value?.forEach {
             chipGroup.addView(
                 Chip(
