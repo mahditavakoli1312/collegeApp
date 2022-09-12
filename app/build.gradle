@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 
@@ -44,7 +47,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.fragment:fragment:1.6.0-alpha01'
     implementation 'androidx.fragment:fragment-ktx:1.6.0-alpha01'
-    implementation 'androidx.fragment:fragment-testing:1.6.0-alpha01'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-common-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.5.1'

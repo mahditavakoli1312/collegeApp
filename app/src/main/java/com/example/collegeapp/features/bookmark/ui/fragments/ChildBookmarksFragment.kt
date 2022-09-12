@@ -11,12 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
 import com.example.collegeapp.features.bookmark.ui.BookmarkViewModel
 import com.example.collegeapp.features.search.ui.adapters.SearchPostAdapter
-import com.example.collegeapp.search.data.searchPostLists
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ChildBookmarksFragment : Fragment() {
-    private val viewModel : BookmarkViewModel by viewModels()
+    private val viewModel: BookmarkViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

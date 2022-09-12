@@ -11,13 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
 import com.example.collegeapp.features.profile.ui.ProfileViewModel
 import com.example.collegeapp.features.profile.ui.adapters.PostMyArticleAdapter
-import com.example.collegeapp.profile.data.myArticlesPostsLists
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class ChildMyArticlesFragment : Fragment() {
-    private val viewModel : ProfileViewModel by viewModels()
+    private val viewModel: ProfileViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
