@@ -1,27 +1,40 @@
 package com.example.collegeapp.features.profile.ui.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.collegeapp.R
+import com.example.collegeapp.databinding.FragmentProfileBinding
 import com.example.collegeapp.features.bookmark.ui.fragments.ChildBookmarksFragment
 import com.example.collegeapp.features.profile.ui.adapters.ViewPagerAdapterTabLayout
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class ProfileFragment : Fragment(R.layout.fragment_profile) {
-
+class ProfileFragment : Fragment() {
+    private lateinit var binding : FragmentProfileBinding
     private val tabTitleList = listOf("مقالات من", "بوکمارک ها")
     private val fragmentList = listOf(ChildMyArticlesFragment(), ChildBookmarksFragment())
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_profile , container , false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewPager = view.findViewById<ViewPager2>(R.id.vp_viewpager_profileFragment)
+        val viewPager = binding.vpViewpagerProfileFragment
         viewPager.adapter =
             ViewPagerAdapterTabLayout(fragmentList, lifecycle, childFragmentManager)
-        val tabLayout = view.findViewById<TabLayout>(R.id.tl_tabLayout_profileFragment)
+        val tabLayout = binding.tlTabLayoutProfileFragment
 
         TabLayoutMediator(
             tabLayout,
