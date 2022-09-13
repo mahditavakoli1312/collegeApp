@@ -1,165 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/black_light">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/img_top_bottomSheetTag"
-        android:layout_width="100dp"
-        android:layout_height="@dimen/stroke_2"
-        android:layout_marginTop="@dimen/margin_16"
-        android:background="@color/gray_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <ImageView
-        android:id="@+id/img_close_bottomSheetTag"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_16"
-        android:src="@drawable/ic_close"
-        app:layout_constraintBottom_toBottomOf="@id/tv_title_bottomSheetTag"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_bottomSheetTag"
-        app:layout_constraintTop_toTopOf="@id/img_top_bottomSheetTag" />
+    </data>
 
-    <TextView
-        android:id="@+id/tv_title_bottomSheetTag"
-        style="@style/custom_textView_header"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_16"
-        android:gravity="start|center_vertical"
-        android:text="@string/label_choose_tag"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_bottomSheetTag"
-        app:layout_constraintStart_toEndOf="@id/img_close_bottomSheetTag"
-        app:layout_constraintTop_toTopOf="@id/img_top_bottomSheetTag" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_choose_tags"
-        style="@style/custom_button_blue"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_16"
-        android:layout_marginBottom="@dimen/margin_16"
-        android:text="@string/label_choose"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_bottomSheetTag"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_bottomSheetTag"
-        app:layout_constraintTop_toBottomOf="@id/chips_tags_bottomSheetTag" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_bottomSheetTag"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+        android:background="@color/black_light">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_bottomSheetTag"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
+        <ImageView
+            android:id="@+id/img_top_bottomSheetTag"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/stroke_2"
+            android:layout_marginTop="@dimen/margin_16"
+            android:background="@color/gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chips_tags_bottomSheetTag"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_16"
-        android:layoutDirection="rtl"
-        app:layout_constraintBottom_toTopOf="@id/btn_choose_tags"
-        app:layout_constraintEnd_toEndOf="@id/gl_verticalStart_bottomSheetTag"
-        app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_bottomSheetTag"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_bottomSheetTag"
-        app:selectionRequired="true">
+        <ImageView
+            android:id="@+id/img_close_bottomSheetTag"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:src="@drawable/ic_close"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title_bottomSheetTag"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_bottomSheetTag"
+            app:layout_constraintTop_toTopOf="@id/img_top_bottomSheetTag" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/c_firs_bottomSheetTag"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tv_title_bottomSheetTag"
+            style="@style/custom_textView_header"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16"
-            android:backgroundTint="@color/tag_background"
-            android:layoutDirection="rtl"
-            android:text="@string/label_add_tag"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:chipBackgroundColor="@color/tag_background"
-            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-            app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+            android:gravity="start|center_vertical"
+            android:text="@string/label_choose_tag"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_bottomSheetTag"
+            app:layout_constraintStart_toEndOf="@id/img_close_bottomSheetTag"
+            app:layout_constraintTop_toTopOf="@id/img_top_bottomSheetTag" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/c_second_bottomSheetTag"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_choose_tags"
+            style="@style/custom_button_blue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:text="@string/label_choose"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_bottomSheetTag"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_bottomSheetTag"
+            app:layout_constraintTop_toBottomOf="@id/chips_tags_bottomSheetTag" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalEnd_bottomSheetTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalStart_bottomSheetTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chips_tags_bottomSheetTag"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16"
-            android:backgroundTint="@color/tag_background"
             android:layoutDirection="rtl"
-            android:text="@string/label_add_tag"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:chipBackgroundColor="@color/tag_background"
-            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-            app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+            app:layout_constraintBottom_toTopOf="@id/btn_choose_tags"
+            app:layout_constraintEnd_toEndOf="@id/gl_verticalStart_bottomSheetTag"
+            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_bottomSheetTag"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_bottomSheetTag"
+            app:selectionRequired="true">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/c_third_bottomSheetTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16"
-            android:backgroundTint="@color/tag_background"
-            android:layoutDirection="rtl"
-            android:text="@string/label_add_tag"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:chipBackgroundColor="@color/tag_background"
-            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-            app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/c_firs_bottomSheetTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:backgroundTint="@color/tag_background"
+                android:layoutDirection="rtl"
+                android:text="@string/label_add_tag"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:chipBackgroundColor="@color/tag_background"
+                app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+                app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/c_four_bottomSheetTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16"
-            android:backgroundTint="@color/tag_background"
-            android:layoutDirection="rtl"
-            android:text="@string/label_add_tag"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:chipBackgroundColor="@color/tag_background"
-            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-            app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/c_second_bottomSheetTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:backgroundTint="@color/tag_background"
+                android:layoutDirection="rtl"
+                android:text="@string/label_add_tag"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:chipBackgroundColor="@color/tag_background"
+                app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+                app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/c_five_bottomSheetTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16"
-            android:backgroundTint="@color/tag_background"
-            android:layoutDirection="rtl"
-            android:text="@string/label_add_tag"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:chipBackgroundColor="@color/tag_background"
-            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-            app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/c_third_bottomSheetTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:backgroundTint="@color/tag_background"
+                android:layoutDirection="rtl"
+                android:text="@string/label_add_tag"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:chipBackgroundColor="@color/tag_background"
+                app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+                app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/c_six_bottomSheetTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16"
-            android:backgroundTint="@color/tag_background"
-            android:layoutDirection="rtl"
-            android:text="@string/label_add_tag"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:chipBackgroundColor="@color/tag_background"
-            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-            app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
-    </com.google.android.material.chip.ChipGroup>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/c_four_bottomSheetTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:backgroundTint="@color/tag_background"
+                android:layoutDirection="rtl"
+                android:text="@string/label_add_tag"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:chipBackgroundColor="@color/tag_background"
+                app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+                app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/c_five_bottomSheetTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:backgroundTint="@color/tag_background"
+                android:layoutDirection="rtl"
+                android:text="@string/label_add_tag"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:chipBackgroundColor="@color/tag_background"
+                app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+                app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/c_six_bottomSheetTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:backgroundTint="@color/tag_background"
+                android:layoutDirection="rtl"
+                android:text="@string/label_add_tag"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:chipBackgroundColor="@color/tag_background"
+                app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+                app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment" />
+        </com.google.android.material.chip.ChipGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

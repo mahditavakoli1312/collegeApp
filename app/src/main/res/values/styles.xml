@@ -41,7 +41,7 @@
         <item name="boxCornerRadiusTopStart">@dimen/radius_8</item>
         <item name="boxBackgroundColor">@color/search_box</item>
         <item name="boxStrokeColor">@color/white</item>
-        <item name="layout_constraintHeight_min">55dp</item>
+        <item name="layout_constraintHeight_min">@dimen/search_layout_Height_min</item>
         <item name="boxStrokeWidth">@dimen/stroke_0</item>
         <item name="boxStrokeWidthFocused">@dimen/stroke_2</item>
         <item name="hintTextColor">@color/white</item>

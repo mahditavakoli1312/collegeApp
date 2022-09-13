@@ -21,7 +21,7 @@ class SearchUserAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchUserHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemUserSerarchviewholderBinding.inflate(inflater , parent , false)
+        val binding = ItemUserSerarchviewholderBinding.inflate(inflater, parent, false)
         return SearchUserHolder(binding)
     }
 

@@ -2,7 +2,6 @@ package com.example.collegeapp.features.search.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController

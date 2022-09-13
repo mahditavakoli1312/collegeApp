@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchPostBinding
 import com.example.collegeapp.features.search.ui.SearchViewModel
@@ -18,14 +17,15 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
 
-    private lateinit var binding : FragmentChildSearchPostBinding
+    private lateinit var binding: FragmentChildSearchPostBinding
     private val searchViewModel: SearchViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_child_search_post , container , false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_child_search_post, container, false)
         return binding.root
     }
 

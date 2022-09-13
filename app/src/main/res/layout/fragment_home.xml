@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="vm"
+            name="viewModel"
             type="com.example.collegeapp.features.home.ui.HomeViewModel" />
     </data>
 

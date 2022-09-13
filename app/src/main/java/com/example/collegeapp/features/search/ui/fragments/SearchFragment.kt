@@ -10,11 +10,11 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentSearchBinding
-import com.google.android.material.chip.ChipGroup
 
 class SearchFragment : Fragment() {
     private lateinit var navController: NavController
-    private lateinit var binding : FragmentSearchBinding
+    private lateinit var binding: FragmentSearchBinding
+
     companion object {
         private var currentState = 0
     }
@@ -24,7 +24,7 @@ class SearchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_search , container , false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)
         return binding.root
     }
 
