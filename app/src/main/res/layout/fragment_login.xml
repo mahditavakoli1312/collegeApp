@@ -118,7 +118,7 @@
             app:startIconDrawable="@drawable/ic_mobile_number">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:text="@{viewModel.sharedPhNumber}"
+                android:text="@{viewModel.sharedPhoneNumber}"
                 style="@style/custom_inputEditText_gray"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

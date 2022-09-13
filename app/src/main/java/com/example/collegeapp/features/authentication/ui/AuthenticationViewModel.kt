@@ -11,7 +11,7 @@ class AuthenticationViewModel @Inject constructor(
     private val authenticationRepository: AuthenticationRepository
 ) : ViewModel() {
 
-    val sharedPhNumber = MutableLiveData<String>()
+    val sharedPhoneNumber = MutableLiveData<String>()
     val sharedPassword = MutableLiveData<String>()
 
     fun setSharedPassword(password: String) {
@@ -19,7 +19,7 @@ class AuthenticationViewModel @Inject constructor(
     }
 
     fun setSharedPhNumber(username: String) {
-        sharedPhNumber.value = username
+        sharedPhoneNumber.value = username
     }
 
     /*
