@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchUserBinding
 import com.example.collegeapp.features.search.ui.SearchViewModel
@@ -32,7 +30,7 @@ class ChildUserSearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val searchUserAdapter = SearchUserAdapter()
-        val recyclerView =binding.rvUsersSearchChildSearchPostFragment
+        val recyclerView = binding.rvUsersSearchChildSearchPostFragment
         recyclerView.adapter = searchUserAdapter
         searchUserAdapter.submitList(searchViewModel.userList.value)
     }

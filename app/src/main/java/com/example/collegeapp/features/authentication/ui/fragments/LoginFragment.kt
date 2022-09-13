@@ -7,47 +7,72 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
+import com.example.collegeapp.databinding.FragmentLoginBinding
+import com.example.collegeapp.databinding.SnackbarLayoutBinding
 import com.example.collegeapp.easyNavigateWithPopUp
+import com.example.collegeapp.features.authentication.ui.AuthenticationViewModel
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_login.*
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
+    private val authenticationViewModel: AuthenticationViewModel by activityViewModels()
+    lateinit var binding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding = DataBindingUtil.inflate(
+            layoutInflater,
+            R.layout.fragment_login,
+            container,
+            false
+        )
+        return binding.root
     }
 
 
     @SuppressLint("RestrictedApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            viewModel = authenticationViewModel
+            lifecycleOwner = viewLifecycleOwner
+
+            btnLoginLoginFragment.setOnClickListener {
+
+                Navigation.easyNavigateWithPopUp(
+                    action = R.id.action_loginFragment_to_homeFragment,
+                    navController = findNavController(),
+                    popUpId = R.id.chooseLoginFragment,
+                    inclusive = true
+                )
+            }
+        }
+
+        // SnackBar
         val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
         val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
-        val customLayoutSnack = layoutInflater.inflate(R.layout.snackbar_internet_error, null)
+        val snackBarBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
+            layoutInflater,
+            R.layout.snackbar_layout,
+            null,
+            false
+        )
         val params = viewSnack.layoutParams as FrameLayout.LayoutParams
         params.gravity = Gravity.TOP
         viewSnack.layoutParams = params
         viewSnack.setBackgroundColor(view.resources.getColor(R.color.transparent100))
-        viewSnack.addView(customLayoutSnack, 0)
+        viewSnack.addView(snackBarBinding.root, 0)
         snackBar.show()
-        btn_login_loginFragment.setOnClickListener {
-
-            Navigation.easyNavigateWithPopUp(
-                action = R.id.action_loginFragment_to_homeFragment,
-                navController = findNavController(),
-                popUpId = R.id.chooseLoginFragment,
-                inclusive = true
-            )
-        }
-
 
     }
 }

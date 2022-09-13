@@ -2,9 +2,7 @@ package com.example.collegeapp.features.search.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.collegeapp.features.article.data.ArticleEntity
 import com.example.collegeapp.features.search.data.SearchRepository
-import com.example.collegeapp.features.search.data.entities.UserSearchEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
