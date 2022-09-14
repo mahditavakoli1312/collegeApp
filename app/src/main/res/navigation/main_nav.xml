@@ -80,7 +80,8 @@
             app:destination="@id/childPostSearchFragment" />
         <action
             android:id="@+id/action_searchFragment_to_showArticleFragment"
-            app:destination="@id/showArticleFragment" />
+            app:destination="@id/showArticleFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -132,5 +133,9 @@
         android:id="@+id/showArticleFragment"
         android:name="com.example.collegeapp.features.home.ui.fragments.ShowArticleFragment"
         android:label="fragment_show_article"
-        tools:layout="@layout/fragment_show_article" />
+        tools:layout="@layout/fragment_show_article" >
+        <argument android:name="articleID"
+            android:defaultValue="1"
+            app:argType="integer"/>
+    </fragment>
 </navigation>

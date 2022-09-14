@@ -34,7 +34,6 @@ class ProfileFragment : Fragment() {
         viewPager.adapter =
             ViewPagerAdapterTabLayout(fragmentList, lifecycle, childFragmentManager)
         val tabLayout = binding.tlTabLayoutProfileFragment
-
         TabLayoutMediator(
             tabLayout,
             viewPager
