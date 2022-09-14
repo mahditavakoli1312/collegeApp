@@ -8,7 +8,6 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.collegeapp.R
 
-
 @BindingAdapter("writer", "time")
 fun setWriterAndTime(textView: TextView, writer: String, time: String) {
     textView.text = textView.resources.getString(
@@ -30,6 +29,5 @@ fun loadImg(imageView: ImageView, imageUrl: Int) {
         error(R.drawable.ic_gallery)
         transformations(RoundedCornersTransformation(imageView.resources.getDimension(R.dimen.radius_8)))
     }
-
 }
 

@@ -18,6 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ShowArticleFragment : Fragment() {
+
     companion object {
         const val articleID: String = "article_id"
     }
@@ -31,7 +32,12 @@ class ShowArticleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_show_article, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_show_article,
+                container,
+                false
+            )
         return binding.root
     }
 
@@ -45,43 +51,37 @@ class ShowArticleFragment : Fragment() {
             }
 
             imgBookmarkShowArticleFragment.setOnClickListener {
-                showSnackBar(view)
-
+                showSnackBar()
             }
         }
     }
 
-    private fun showSnackBar(view: View) {
-
-        val snackBarDataBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
-            layoutInflater,
-            R.layout.snackbar_layout,
-            null,
-            false
-        )
-
-        val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
-        val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
-        viewSnack.setBackgroundColor(
-            ResourcesCompat.getColor(
-                view.resources,
-                R.color.transparent100,
-                view.context.theme
+    private fun showSnackBar() {
+        binding.apply {
+            val snackBarDataBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
+                layoutInflater,
+                R.layout.snackbar_layout,
+                null,
+                false
             )
-        )
-
-        viewSnack.addView(snackBarDataBinding.root, 0)
-
-        snackBarDataBinding.apply {
-
-            tvOkActionSnackLayout.visibility = View.GONE
-            tvCancelActionSnackLayout.visibility =
-                View.GONE
-            imgIconSnackLayout.visibility = View.GONE
-            tvDescSnackLayout.text =
-                getString(R.string.label_added_article_to_bookmark)
+            val snackBar: Snackbar = Snackbar.make(root, "", Snackbar.LENGTH_LONG)
+            val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
+            viewSnack.setBackgroundColor(
+                ResourcesCompat.getColor(
+                    root.resources,
+                    R.color.transparent100,
+                    root.context.theme
+                )
+            )
+            viewSnack.addView(snackBarDataBinding.root, 0)
+            snackBarDataBinding.apply {
+                tvOkActionSnackLayout.visibility = View.GONE
+                tvCancelActionSnackLayout.visibility = View.GONE
+                imgIconSnackLayout.visibility = View.GONE
+                tvDescSnackLayout.text = getString(R.string.label_added_article_to_bookmark)
+            }
+            snackBar.show()
         }
-
-        snackBar.show()
     }
+
 }

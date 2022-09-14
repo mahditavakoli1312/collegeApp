@@ -14,7 +14,6 @@ class SearchRepositoryImpl @Inject constructor(
     override fun getUsers() = dataSource.getUsers()
     override fun getTags() = dataSource.getTags()
 
-
     override fun getPostListBySearch(
         searchContent: String?,
     ): List<ArticleEntity> {

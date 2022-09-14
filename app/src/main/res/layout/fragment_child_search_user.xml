@@ -34,14 +34,12 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.18" />
 
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_verticalStart_childSearchPostFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_usersSearch_childSearchPostFragment"

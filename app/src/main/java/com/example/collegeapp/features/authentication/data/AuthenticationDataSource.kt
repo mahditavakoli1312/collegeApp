@@ -8,7 +8,6 @@ class AuthenticationDataSource @Inject constructor() {
       TODO The following methods should be changed based on the APIs
     */
 
-
     fun isLogin(): Boolean {
         return true
     }
@@ -17,13 +16,7 @@ class AuthenticationDataSource @Inject constructor() {
         return true
     }
 
-    fun register(
-        username: String,
-        password: String,
-        fullName: String,
-        email: String,
-        phoneNumber: String
-    ): Boolean {
+    fun register(userRegisterEntity: UserRegisterEntity): Boolean {
         return true
     }
 

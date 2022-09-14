@@ -11,7 +11,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentRegisterBinding
-import com.example.collegeapp.easyNavigateWithPopUp
+import com.example.collegeapp.core.common.easyNavigateWithPopUp
 import com.example.collegeapp.features.authentication.ui.AuthenticationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,7 +1,8 @@
 package com.example.collegeapp.features.article.data
 
+import com.example.collegeapp.features.article.data.impl.ArticleRepositoryImpl
 import com.example.collegeapp.features.profile.data.MyArticleRepository
-import com.example.collegeapp.features.profile.data.MyArticleRepositoryImpl
+import com.example.collegeapp.features.profile.data.impl.MyArticleRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,4 +17,5 @@ abstract class ArticleModule {
 
     @Binds
     abstract fun bindMyArticle(myArticleRepository: MyArticleRepositoryImpl): MyArticleRepository
+
 }

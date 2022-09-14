@@ -96,6 +96,5 @@
             app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_confirmFragment"
             app:layout_constraintStart_toEndOf="@id/gl_verticalStart_confirmFragment" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.collegeapp.features.search.ui.SearchViewModel" />
@@ -68,7 +67,7 @@
                 android:text="@string/label_posts"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                app:chipStrokeColor="@color/tophomechips_bordercolor_selector"
+                app:chipStrokeColor="@color/top_home_chips_bordercolor_selector"
                 app:chipStrokeWidth="@dimen/stroke_1" />
 
 
@@ -82,7 +81,7 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:chipStrokeColor="@color/tophomechips_bordercolor_selector"
+                app:chipStrokeColor="@color/top_home_chips_bordercolor_selector"
                 app:chipStrokeWidth="@dimen/stroke_1" />
 
             <com.google.android.material.chip.Chip
@@ -95,7 +94,7 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:chipStrokeColor="@color/tophomechips_bordercolor_selector"
+                app:chipStrokeColor="@color/top_home_chips_bordercolor_selector"
                 app:chipStrokeWidth="@dimen/stroke_1" />
 
         </com.google.android.material.chip.ChipGroup>
