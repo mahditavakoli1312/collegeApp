@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
         articleAdapter.submitList(homeViewModel.article.value)
 
         binding.apply {
-            
+
             viewModel = homeViewModel
             lifecycleOwner = viewLifecycleOwner
 
