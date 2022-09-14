@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.collegeapp.features.home.ui.ShowArticleViewModel" />
@@ -74,7 +75,7 @@
                     app:layout_constraintStart_toStartOf="@id/gl_vertical50_showArticle"
                     app:layout_constraintTop_toBottomOf="@id/img_article_showArticleFragment"
                     writer="@{viewModel.article.writer}"
-                    time="@{viewModel.article.time}"/>
+                    time="@{viewModel.article.time}" />
 
                 <TextView
                     android:id="@+id/tv_title_showArticleFragment"

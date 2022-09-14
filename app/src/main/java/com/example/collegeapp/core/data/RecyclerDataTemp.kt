@@ -10,112 +10,112 @@ class RecyclerDataTemp @Inject constructor() {
         val resultList = mutableListOf<ArticleEntity>()
         resultList.add(
             ArticleEntity(
-                1 ,
+                1,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake1)
             )
         )
         resultList.add(
             ArticleEntity(
-                2 ,
+                2,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake2)
             )
         )
         resultList.add(
             ArticleEntity(
-                3 ,
+                3,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake3)
             )
         )
         resultList.add(
             ArticleEntity(
-                4 ,
+                4,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake4)
             )
         )
         resultList.add(
             ArticleEntity(
-                5 ,
+                5,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake5)
             )
         )
         resultList.add(
             ArticleEntity(
-                6 ,
+                6,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake2)
             )
         )
         resultList.add(
             ArticleEntity(
-                7 ,
+                7,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake1)
             )
         )
         resultList.add(
             ArticleEntity(
-                8 ,
+                8,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake3)
             )
         )
         resultList.add(
             ArticleEntity(
-                9 ,
+                9,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake4)
             )
         )
         resultList.add(
             ArticleEntity(
-                10 ,
+                10,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake5)
             )
         )
         resultList.add(
             ArticleEntity(
-                11 ,
+                11,
                 context.getString(R.string.label_fake_title_post),
                 R.drawable.background_image,
                 context.getString(R.string.label_time_fake),
                 context.getString(R.string.label_writer_fake),
-                context.getString(R.string.label_tag_fake)
+                context.getString(R.string.label_tag_fake1)
             )
         )
         return resultList.toList()

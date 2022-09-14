@@ -9,7 +9,7 @@ import javax.inject.Inject
 @HiltViewModel
 class NewArticleViewModel @Inject constructor(
 
-) : ViewModel(){
+) : ViewModel() {
     val title = MutableLiveData<String>()
     val description = MutableLiveData<String>()
     val image = R.drawable.image_place_holder

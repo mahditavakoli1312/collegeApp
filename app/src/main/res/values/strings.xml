@@ -46,10 +46,15 @@
     <string name="label_added_article_to_bookmark">مقاله به بوکمارک ها اضافه شد</string>
     <string name="label_exit">از خروج مطمئنید؟</string>
     <string name="label_fake_title_post">سلام اسنپدراگون تا میتوانی دلی بدست اور که دل شکستن هنر نمی باشد سعدیا مرد نکونام نمیرد هرگز مرده آن سیلبسیبسیبسیبسیبسیبسیبسیبسیب است که نامش به نکویی نبرند</string>
+    <string name="label_fake_title_post_test">تست </string>
     <string name="label_time_fake">28 فروردین 1401</string>
     <string name="label_writer_fake">سبحان بازوبندی</string>
-    <string name="label_tag_fake">نجوم شناسی</string>
     <string name="label_fake_writer_mahdi">مهدی توکلی خراسانی</string>
     <string name="label_mahdi">مهدی توکلی</string>
     <string name="label_in_progress">در حال انتشار</string>
+    <string name="label_tag_fake1">نجوم شناسی</string>
+    <string name="label_tag_fake2">تکنولوژِی</string>
+    <string name="label_tag_fake3">نانوتکنولوژی</string>
+    <string name="label_tag_fake4">مکانیک</string>
+    <string name="label_tag_fake5">تست</string>
 </resources>

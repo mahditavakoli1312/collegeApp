@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchPostBinding
@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
 
     private lateinit var binding: FragmentChildSearchPostBinding
-    private val searchViewModel: SearchViewModel by viewModels()
+    private val searchViewModel: SearchViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,11 +32,17 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val searchPostAdapter = SearchPostAdapter()
-        val recyclerView = binding.rvPostsSearchSearchFragment
-        recyclerView.adapter = searchPostAdapter
-        searchPostAdapter.submitList(searchViewModel.postList.value)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        binding.apply {
+            rvPostsSearchSearchFragment.adapter = searchPostAdapter
+            rvPostsSearchSearchFragment.layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        searchViewModel.searchVariable.observe(viewLifecycleOwner) {
+            searchPostAdapter.submitList(searchViewModel.getPostListBySearch(it))
+        }
 
     }
 }

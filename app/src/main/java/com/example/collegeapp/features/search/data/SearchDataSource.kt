@@ -13,5 +13,5 @@ class SearchDataSource @Inject constructor(
 
     fun getPosts() = searchPostLists(context)
     fun getUsers() = searchUserLists(context)
-    fun getTags() = searchTagLists()
+    fun getTags() = searchTagLists(context)
 }

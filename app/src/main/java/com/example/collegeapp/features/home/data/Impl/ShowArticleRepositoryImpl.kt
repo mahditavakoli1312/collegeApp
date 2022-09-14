@@ -7,11 +7,11 @@ import javax.inject.Inject
 
 class ShowArticleRepositoryImpl @Inject constructor(
     private val showArticleDataSource: ShowArticleDataSource
-) : ShowArticleRepository{
+) : ShowArticleRepository {
 
     override fun getArticleData(articleID: Int): ArticleEntity? {
         showArticleDataSource.getArticles().forEach {
-            if(it.id == articleID)
+            if (it.id == articleID)
                 return it
         }
         return ArticleEntity()
