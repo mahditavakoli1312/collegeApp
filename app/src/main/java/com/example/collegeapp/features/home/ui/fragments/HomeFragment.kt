@@ -43,6 +43,7 @@ class HomeFragment : Fragment() {
         articleAdapter.submitList(homeViewModel.article.value)
 
         binding.apply {
+
             viewModel = homeViewModel
             lifecycleOwner = viewLifecycleOwner
 
@@ -56,7 +57,6 @@ class HomeFragment : Fragment() {
             }
 
             homeViewModel.chipsList.observe(viewLifecycleOwner) {
-
                 it.forEach {
                     chipsFilterHomeFragment.addView(
                         Chip(
@@ -76,6 +76,10 @@ class HomeFragment : Fragment() {
                             }
                         })
                 }
+            }
+
+            imgAddChipsHomeFragment.setOnClickListener {
+                BottomSheetTagFragment().show(parentFragmentManager, "")
             }
         }
 

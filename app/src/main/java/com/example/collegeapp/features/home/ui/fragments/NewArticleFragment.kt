@@ -19,6 +19,7 @@ class NewArticleFragment : Fragment(R.layout.fragment_new_article) {
         val imageArticle: ImageView = view.findViewById(R.id.img_article_newArticleFragment)
         val addTag: Chip = view.findViewById(R.id.c_addTag_newArticleFragment)
         val imageClose: ImageView = view.findViewById(R.id.img_close_newArticleFragment)
+
         imageArticle.load(
             ResourcesCompat.getDrawable(
                 resources,
@@ -31,7 +32,7 @@ class NewArticleFragment : Fragment(R.layout.fragment_new_article) {
         }
 
         addTag.setOnClickListener {
-            BottomSheetTagFragment().show(this.parentFragmentManager, "")
+            BottomSheetTagFragment().show(parentFragmentManager, "")
         }
 
         imageClose.setOnClickListener {

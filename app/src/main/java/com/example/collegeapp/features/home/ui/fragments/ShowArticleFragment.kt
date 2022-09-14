@@ -15,11 +15,14 @@ import com.example.collegeapp.databinding.SnackbarLayoutBinding
 import com.google.android.material.snackbar.Snackbar
 
 class ShowArticleFragment : Fragment(R.layout.fragment_show_article) {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val imageArticle: ImageView = view.findViewById(R.id.img_article_showArticleFragment)
         val writer: TextView = view.findViewById(R.id.tv_writerTimeArticleRecycler_showArticle)
         val imageBack: ImageView = view.findViewById(R.id.img_back_showArticleFragment)
+
         imageArticle.load(
             ResourcesCompat.getDrawable(
                 view.resources,
