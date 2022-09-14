@@ -26,6 +26,7 @@ class LoginFragment : Fragment() {
 
     private val authenticationViewModel: AuthenticationViewModel by activityViewModels()
     lateinit var binding: FragmentLoginBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,7 +52,7 @@ class LoginFragment : Fragment() {
             btnLoginLoginFragment.setOnClickListener {
 
                 Navigation.easyNavigateWithPopUp(
-                    action = R.id.action_loginFragment_to_homeFragment,
+                    action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(),
                     navController = findNavController(),
                     popUpId = R.id.chooseLoginFragment,
                     inclusive = true

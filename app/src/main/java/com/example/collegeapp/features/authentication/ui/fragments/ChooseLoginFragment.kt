@@ -37,14 +37,14 @@ class ChooseLoginFragment : Fragment() {
 
             btnRegisterChooseLoginFragment.setOnClickListener {
                 Navigation.easyNavigate(
-                    action = R.id.action_chooseLoginFragment_to_registerFragment,
+                    action = ChooseLoginFragmentDirections.actionChooseLoginFragmentToRegisterFragment(),
                     navController = findNavController(),
                 )
             }
 
             btnLoginChooseLoginFragment.setOnClickListener {
                 Navigation.easyNavigate(
-                    action = R.id.action_chooseLoginFragment_to_loginFragment,
+                    action = ChooseLoginFragmentDirections.actionChooseLoginFragmentToLoginFragment(),
                     navController = findNavController(),
                 )
             }

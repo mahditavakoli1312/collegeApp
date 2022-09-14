@@ -34,7 +34,7 @@ class SplashFragment : Fragment() {
                 delay(3000)
                 withContext(Dispatchers.Main) {
                     Navigation.easyNavigateWithPopUp(
-                        action = R.id.action_splashFragment_to_chooseLoginFragment,
+                        action = SplashFragmentDirections.actionSplashFragmentToChooseLoginFragment(),
                         navController = findNavController(),
                         popUpId = R.id.splashFragment,
                         inclusive = true
