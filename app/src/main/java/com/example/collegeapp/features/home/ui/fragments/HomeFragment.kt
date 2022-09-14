@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
 
             btnNewArticleMainFragment.setOnClickListener {
                 Navigation.easyNavigate(
-                    action = R.id.action_homeFragment_to_newArticleFragment,
+                    action = HomeFragmentDirections.actionHomeFragmentToNewArticleFragment(),
                     navController = findNavController()
                 )
             }

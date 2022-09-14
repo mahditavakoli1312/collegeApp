@@ -17,6 +17,7 @@ import com.example.collegeapp.features.authentication.ui.AuthenticationViewModel
 class ConfirmRegisterFragment : Fragment() {
 
     private val authenticationViewModel: AuthenticationViewModel by activityViewModels()
+
     lateinit var binding: FragmentConfirmRegisterBinding
 
     override fun onCreateView(
@@ -36,9 +37,10 @@ class ConfirmRegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
+
             btnLoginConfirmRegister.setOnClickListener {
                 Navigation.easyNavigateWithPopUp(
-                    action = R.id.action_confirmRegisterFragment_to_loginFragment,
+                    action = ConfirmRegisterFragmentDirections.actionConfirmRegisterFragmentToLoginFragment(),
                     navController = findNavController(),
                     popUpId = R.id.confirmRegisterFragment,
                     inclusive = true

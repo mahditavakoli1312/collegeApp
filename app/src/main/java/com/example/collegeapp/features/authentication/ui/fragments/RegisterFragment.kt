@@ -43,7 +43,7 @@ class RegisterFragment : Fragment() {
 
             btnRegisterRegisterFragment.setOnClickListener {
                 Navigation.easyNavigateWithPopUp(
-                    action = R.id.action_registerFragment_to_confirmRegisterFragment,
+                    action = RegisterFragmentDirections.actionRegisterFragmentToConfirmRegisterFragment(),
                     navController = findNavController(),
                     popUpId = R.id.registerFragment,
                     inclusive = true
