@@ -31,9 +31,7 @@ class SearchUserAdapter :
 
     }
 
-
 }
-
 
 object SearchUserDiffCallback : DiffUtil.ItemCallback<UserSearchEntity>() {
     override fun areItemsTheSame(oldItem: UserSearchEntity, newItem: UserSearchEntity): Boolean {

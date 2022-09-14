@@ -14,7 +14,8 @@ import com.example.collegeapp.features.home.ui.NewArticleViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NewArticleFragment : Fragment(R.layout.fragment_new_article) {
+class NewArticleFragment : Fragment() {
+
     private lateinit var binding: FragmentNewArticleBinding
     private val viewModel: NewArticleViewModel by viewModels()
 
@@ -23,7 +24,12 @@ class NewArticleFragment : Fragment(R.layout.fragment_new_article) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_article, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_new_article,
+            container,
+            false
+        )
         return binding.root
     }
 

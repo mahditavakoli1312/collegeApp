@@ -1,6 +1,6 @@
 package com.example.collegeapp.features.authentication.data
 
-import com.example.collegeapp.features.authentication.data.Impl.AuthenticationRepositoryImpl
+import com.example.collegeapp.features.authentication.data.impl.AuthenticationRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

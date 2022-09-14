@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.home.data.Impl
+package com.example.collegeapp.features.home.data.impl
 
 import com.example.collegeapp.features.home.data.NewArticleDataSource
 import com.example.collegeapp.features.home.data.NewArticleRepository

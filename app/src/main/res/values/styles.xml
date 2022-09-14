@@ -29,8 +29,6 @@
         <item name="hintTextColor">@color/white</item>
         <item name="android:textColorHint">@color/white_91</item>
         <item name="startIconTint">@color/white_91</item>
-
-
     </style>
 
     <style name="custom_searchEditTextLayout_gray" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -112,7 +110,7 @@
     </style>
 
     <style name="custom_chip_item" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="chipStrokeColor">@color/tophomechips_bordercolor_selector</item>
+        <item name="chipStrokeColor">@color/top_home_chips_bordercolor_selector</item>
         <item name="chipStrokeWidth">@dimen/stroke_1</item>
     </style>
 
@@ -127,7 +125,6 @@
         <item name="itemTextColor">@color/selector_bottom_nav</item>
         <item name="itemIconTint">@color/selector_bottom_nav</item>
     </style>
-
 
     <style name="custom_edit_text_title" parent="Widget.AppCompat.EditText">
         <item name="background">@color/transparent100</item>

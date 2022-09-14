@@ -9,7 +9,6 @@ import com.example.collegeapp.features.profile.ui.fragments.ChildMyArticlesFragm
 
 
 class ViewPagerAdapterTabLayout(
-
     private val fragmentLists: List<Fragment>,
     fragmentLifecycle: Lifecycle,
     fragmentManager: FragmentManager
@@ -22,9 +21,7 @@ class ViewPagerAdapterTabLayout(
             0 -> ChildMyArticlesFragment()
             1 -> ChildBookmarksFragment()
             else -> ChildMyArticlesFragment()
-
         }
     }
-
 
 }

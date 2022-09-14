@@ -1,12 +1,11 @@
 <resources>
-    <string name="app_name">CollegeApp</string>
-    <string name="label_splashScreen">Splash Screen</string>
+    <string name="app_name">هلیوم پلاس</string>
     <string name="label_register">ثبت نام</string>
     <string name="label_register_bold"><b>ثبت نام</b></string>
     <string name="label_login">ورود</string>
     <string name="label_login_bold"><b>ورود</b></string>
     <string name="label_bookmark">بوکمارک ها</string>
-    <string name="label_articles">مقالات من</string>
+    <string name="label_myArticles">مقالات من</string>
     <string name="label_users">کاربران</string>
     <string name="label_tags">تگ ها</string>
     <string name="label_posts">پست ها</string>
@@ -29,7 +28,7 @@
     <string name="label_name">نام و نام خانوادگی</string>
     <string name="label_username">نام کاربری</string>
     <string name="label_email">پست الکترونیک</string>
-    <string name="label_search_bar">جستجو ...</string>
+    <string name="label_search_bar">جستجو …</string>
     <string name="label_confirmRegisterStr">ثبت نام شما با موفقیت انجام شد.</string>
     <string name="label_writer_time">%s • %s</string>
     <string name="label_add_tag">افزودن تگ</string>
@@ -52,9 +51,9 @@
     <string name="label_fake_writer_mahdi">مهدی توکلی خراسانی</string>
     <string name="label_mahdi">مهدی توکلی</string>
     <string name="label_in_progress">در حال انتشار</string>
-    <string name="label_tag_fake1">نجوم شناسی</string>
-    <string name="label_tag_fake2">تکنولوژِی</string>
-    <string name="label_tag_fake3">نانوتکنولوژی</string>
-    <string name="label_tag_fake4">مکانیک</string>
-    <string name="label_tag_fake5">تست</string>
+    <string name="label_tag_fake_one">نجوم شناسی</string>
+    <string name="label_tag_fake_two">تکنولوژِی</string>
+    <string name="label_tag_fake_three">نانوتکنولوژی</string>
+    <string name="label_tag_fake_four">مکانیک</string>
+    <string name="label_tag_fake_five">تست</string>
 </resources>

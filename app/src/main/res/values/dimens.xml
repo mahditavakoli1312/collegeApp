@@ -38,12 +38,10 @@
     <dimen name="radius_8">8dp</dimen>
     <dimen name="radius_600">600dp</dimen>
 
-
     <!--strokes-->
     <dimen name="stroke_2">2dp</dimen>
     <dimen name="stroke_0">0dp</dimen>
     <dimen name="stroke_1">1dp</dimen>
-
 
     <!--min Sizes-->
     <dimen name="search_layout_Height_min">60dp</dimen>

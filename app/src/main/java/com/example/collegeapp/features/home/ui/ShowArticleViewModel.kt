@@ -2,7 +2,7 @@ package com.example.collegeapp.features.home.ui
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.collegeapp.features.home.data.Impl.ShowArticleRepositoryImpl
+import com.example.collegeapp.features.home.data.impl.ShowArticleRepositoryImpl
 import com.example.collegeapp.features.home.ui.fragments.ShowArticleFragment
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

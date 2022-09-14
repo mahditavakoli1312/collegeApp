@@ -1,4 +1,4 @@
-package com.example.collegeapp
+package com.example.collegeapp.core.common
 
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections

@@ -15,26 +15,30 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ChildMyArticlesFragment : Fragment() {
+
     private lateinit var binding: FragmentChildMyArticlesBinding
     private val viewModel: ProfileViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_child_my_articles, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_child_my_articles,
+                container,
+                false
+            )
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val postMyArticleAdapter = PostMyArticleAdapter()
-
-
         val recyclerView = binding.rvPostProfileChildMyArticles
         recyclerView.adapter = postMyArticleAdapter
         postMyArticleAdapter.submitList(viewModel.myArticle.value)
-
     }
 
 

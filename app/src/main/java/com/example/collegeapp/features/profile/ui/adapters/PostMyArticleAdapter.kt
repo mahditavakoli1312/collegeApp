@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
+import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.ItemMyarticleProfileviewholderBinding
-import com.example.collegeapp.easyNavigate
 import com.example.collegeapp.features.home.ui.MainActivity
 import com.example.collegeapp.features.search.data.entities.MyArticleEntity
 import com.google.android.material.chip.Chip
@@ -30,20 +30,20 @@ class PostMyArticleAdapter :
                 val progressBar = pbProgressBarMyArticle
                 val inProgress = tvInProgressMyArticles
                 val currentProgress = 74
-
                 progressBar.max = 100
-                chipsGroup.removeAllViews()
+
                 root.setOnClickListener {
                     val x =
                         MainActivity.globalMain?.findNavController(R.id.fcv_fragmentContainer_activityMain)
                             ?: root.findNavController()
-
                     Navigation.easyNavigate(
                         action = R.id.showArticleFragment,
                         navController = x
                     )
                 }
+
                 val tagsList = articleEntity.tag.split(",")
+                chipsGroup.removeAllViews()
                 tagsList.forEach {
                     chipsGroup.addView(Chip(root.context).apply {
                         text = it
@@ -52,7 +52,6 @@ class PostMyArticleAdapter :
                             R.drawable.tag_gray,
                             root.context.theme
                         )
-
                         setTextColor(
                             ResourcesCompat.getColor(
                                 root.resources,
@@ -60,22 +59,20 @@ class PostMyArticleAdapter :
                                 root.context.theme
                             )
                         )
-
                     })
                 }
+
                 if (articleEntity.inProgress) {
                     progressBar.visibility = View.VISIBLE
-                    ObjectAnimator.ofInt(progressBar, "progress", currentProgress).setDuration(2000)
+                    ObjectAnimator.ofInt(progressBar, "progress", currentProgress)
+                        .setDuration(2000)
                         .start()
                     inProgress.text = root.context.getString(R.string.label_in_progress)
-
                 } else {
                     progressBar.visibility = View.INVISIBLE
                     inProgress.text = articleEntity.time
                 }
             }
-
-
         }
     }
 
@@ -88,12 +85,9 @@ class PostMyArticleAdapter :
     override fun onBindViewHolder(holder: MyArticlePostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)
-
     }
 
-
 }
-
 
 object PostMyArticleDiffCallback : DiffUtil.ItemCallback<MyArticleEntity>() {
     override fun areItemsTheSame(oldItem: MyArticleEntity, newItem: MyArticleEntity): Boolean {

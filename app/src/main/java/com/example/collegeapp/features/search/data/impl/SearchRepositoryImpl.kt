@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.search.data.Impl
+package com.example.collegeapp.features.search.data.impl
 
 import com.example.collegeapp.features.article.data.ArticleEntity
 import com.example.collegeapp.features.search.data.SearchDataSource
@@ -11,9 +11,10 @@ class SearchRepositoryImpl @Inject constructor(
 ) : SearchRepository {
 
     override fun getPosts() = dataSource.getPosts()
-    override fun getUsers() = dataSource.getUsers()
-    override fun getTags() = dataSource.getTags()
 
+    override fun getUsers() = dataSource.getUsers()
+
+    override fun getTags() = dataSource.getTags()
 
     override fun getPostListBySearch(
         searchContent: String?,

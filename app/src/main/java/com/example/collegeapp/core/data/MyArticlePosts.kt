@@ -1,4 +1,4 @@
-package com.example.collegeapp.profile.data
+package com.example.collegeapp.core.data
 
 import android.content.Context
 import com.example.collegeapp.R
@@ -9,16 +9,15 @@ fun myArticlesPostsLists(context: Context): List<MyArticleEntity> {
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post_test).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake1),
+            tag = context.getString(R.string.label_tag_fake_one),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake2),
+            tag = context.getString(R.string.label_tag_fake_two),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = true
@@ -26,76 +25,66 @@ fun myArticlesPostsLists(context: Context): List<MyArticleEntity> {
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake3),
+            tag = context.getString(R.string.label_tag_fake_three),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake4),
+            tag = context.getString(R.string.label_tag_fake_four),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake5),
+            tag = context.getString(R.string.label_tag_fake_five),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake1),
+            tag = context.getString(R.string.label_tag_fake_one),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake2),
+            tag = context.getString(R.string.label_tag_fake_two),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake3),
+            tag = context.getString(R.string.label_tag_fake_three),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake4),
+            tag = context.getString(R.string.label_tag_fake_four),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
-
         MyArticleEntity(
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake5),
+            tag = context.getString(R.string.label_tag_fake_five),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake),
             inProgress = false
-
         ),
-
-        )
+    )
 }

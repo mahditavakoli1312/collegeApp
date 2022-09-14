@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
+import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.ItemArticleHomerecyclerBinding
-import com.example.collegeapp.easyNavigate
 import com.example.collegeapp.features.article.data.ArticleEntity
 import com.google.android.material.chip.Chip
 
@@ -24,13 +24,13 @@ class ArticlesAdapter :
             with(binding) {
                 articleBinding = article
                 chipsGroupArticleRecyclerHomeFragment.removeAllViews()
+                val tagsList = article.tag.split(",")
                 binding.root.setOnClickListener {
                     Navigation.easyNavigate(
                         action = R.id.action_homeFragment_to_showArticleFragment,
                         navController = binding.root.findNavController()
                     )
                 }
-                val tagsList = article.tag.split(",")
 
                 tagsList.forEach {
                     chipsGroupArticleRecyclerHomeFragment.addView(Chip(binding.root.context).apply {
@@ -41,13 +41,16 @@ class ArticlesAdapter :
                                 R.drawable.tag_gray,
                                 binding.root.context.theme
                             )
-                        setTextColor(binding.root.resources.getColor(R.color.primary_200))
-
+                        setTextColor(
+                            ResourcesCompat.getColor(
+                                root.resources,
+                                R.color.primary_200,
+                                root.context.theme
+                            )
+                        )
                     })
                 }
-
             }
-
         }
     }
 

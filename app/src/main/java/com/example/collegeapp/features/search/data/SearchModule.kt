@@ -1,6 +1,6 @@
 package com.example.collegeapp.features.search.data
 
-import com.example.collegeapp.features.search.data.Impl.SearchRepositoryImpl
+import com.example.collegeapp.features.search.data.impl.SearchRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -9,8 +9,9 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 
-abstract class SearchModuls {
+abstract class SearchModule {
 
     @Binds
     abstract fun getRepository(searchRepositoryImpl: SearchRepositoryImpl): SearchRepository
+
 }
