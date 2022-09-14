@@ -8,7 +8,6 @@
         <variable
             name="viewModel"
             type="com.example.collegeapp.features.home.ui.HomeViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

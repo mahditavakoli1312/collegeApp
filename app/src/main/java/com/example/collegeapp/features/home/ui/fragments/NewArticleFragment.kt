@@ -15,15 +15,15 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class NewArticleFragment : Fragment(R.layout.fragment_new_article) {
-    private lateinit var binding : FragmentNewArticleBinding
-    private val viewModel : NewArticleViewModel by viewModels()
+    private lateinit var binding: FragmentNewArticleBinding
+    private val viewModel: NewArticleViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_new_article , container , false )
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_article, container, false)
         return binding.root
     }
 

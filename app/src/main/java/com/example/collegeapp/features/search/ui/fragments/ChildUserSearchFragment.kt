@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchUserBinding
 import com.example.collegeapp.features.search.ui.SearchViewModel
@@ -15,8 +16,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ChildUserSearchFragment : Fragment() {
+
     private lateinit var binding: FragmentChildSearchUserBinding
-    private val searchViewModel: SearchViewModel by viewModels()
+    private val searchViewModel: SearchViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,9 +32,17 @@ class ChildUserSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val searchUserAdapter = SearchUserAdapter()
-        val recyclerView = binding.rvUsersSearchChildSearchPostFragment
-        recyclerView.adapter = searchUserAdapter
-        searchUserAdapter.submitList(searchViewModel.userList.value)
+        binding.apply {
+            rvUsersSearchChildSearchPostFragment.adapter = searchUserAdapter
+            rvUsersSearchChildSearchPostFragment.layoutManager =
+                LinearLayoutManager(requireContext())
+        }
+
+        searchViewModel.searchVariable.observe(viewLifecycleOwner) {
+            searchUserAdapter.submitList(searchViewModel.getUserListBySearch(it))
+        }
+
     }
 }

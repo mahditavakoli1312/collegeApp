@@ -6,5 +6,4 @@ import javax.inject.Inject
 
 class NewArticleRepositoryImpl @Inject constructor(
     private val newArticleDataSource: NewArticleDataSource
-) : NewArticleRepository{
-}
+) : NewArticleRepository

@@ -6,14 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentSearchBinding
+import com.example.collegeapp.features.search.ui.SearchViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchFragment : Fragment() {
+
     private lateinit var navController: NavController
     private lateinit var binding: FragmentSearchBinding
+    private val searchViewModel: SearchViewModel by activityViewModels()
 
     companion object {
         private var currentState = 0
@@ -31,38 +37,43 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val chipGroup = binding.cgSearchChipsSearchFragment
 
         val nestedNavHostFragment =
             childFragmentManager.findFragmentById(R.id.fcv_nestedFragmentHolder_searchFragment) as NavHostFragment
 
         navController = nestedNavHostFragment.navController
 
-        chipGroup.setOnCheckedStateChangeListener { _, checkedId ->
+        binding.apply {
 
-            when {
+            viewModel = searchViewModel
+            lifecycleOwner = viewLifecycleOwner
+            cgSearchChipsSearchFragment.setOnCheckedStateChangeListener { _, checkedId ->
 
-                binding.cPostChipsGroupSearchFragment.id in checkedId -> {
-                    navController.navigate(
-                        R.id.childPostSearchFragment2
-                    )
-                    currentState = 0
-                }
+                when {
 
-                binding.cTagsChipsGroupSearchFragment.id in checkedId -> {
-                    navController.navigate(
-                        R.id.childTagSearchFragment2
-                    )
-                    currentState = 1
-                }
+                    binding.cPostChipsGroupSearchFragment.id in checkedId -> {
+                        navController.navigate(
+                            R.id.childPostSearchFragment2
+                        )
+                        currentState = 0
+                    }
 
-                binding.cUsersChipsGroupSearchFragment.id in checkedId -> {
-                    navController.navigate(
-                        R.id.childUserSearchFragment
-                    )
-                    currentState = 2
+                    binding.cTagsChipsGroupSearchFragment.id in checkedId -> {
+                        navController.navigate(
+                            R.id.childTagSearchFragment2
+                        )
+                        currentState = 1
+                    }
+
+                    binding.cUsersChipsGroupSearchFragment.id in checkedId -> {
+                        navController.navigate(
+                            R.id.childUserSearchFragment
+                        )
+                        currentState = 2
+                    }
                 }
             }
+
         }
 
 

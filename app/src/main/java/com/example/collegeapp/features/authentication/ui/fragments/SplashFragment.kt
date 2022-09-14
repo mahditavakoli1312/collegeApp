@@ -18,12 +18,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SplashFragment : Fragment() {
-    private lateinit var binding : FragmentSplashBinding
+    private lateinit var binding: FragmentSplashBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_splash , container , false )
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_splash, container, false)
         return binding.root
     }
 

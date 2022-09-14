@@ -23,7 +23,7 @@ class AuthenticationViewModel @Inject constructor(
     }
 
     /*
-    The following methods should be changed based on the APIs
+      TODO The following methods should be changed based on the APIs
      */
     fun isLogin(): Boolean {
         return authenticationRepository.isLogin()

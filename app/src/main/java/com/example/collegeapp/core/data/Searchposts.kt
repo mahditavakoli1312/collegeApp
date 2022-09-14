@@ -8,9 +8,9 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
     return listOf(
         ArticleEntity(
             1,
-            title = context.getString(R.string.label_fake_title_post).repeat(3),
+            title = context.getString(R.string.label_fake_title_post_test).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake1),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
         ),
@@ -18,7 +18,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             2,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake2),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 
@@ -27,7 +27,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             3,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake3),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 
@@ -36,7 +36,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             4,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake4),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 
@@ -45,7 +45,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             5,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake5),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 
@@ -54,7 +54,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             6,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake1),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 
@@ -63,7 +63,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             7,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake1),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 
@@ -72,7 +72,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             8,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake2),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 
@@ -82,7 +82,7 @@ fun searchPostLists(context: Context): List<ArticleEntity> {
             9,
             title = context.getString(R.string.label_fake_title_post).repeat(3),
             time = context.getString(R.string.label_time_fake),
-            tag = context.getString(R.string.label_tag_fake),
+            tag = context.getString(R.string.label_tag_fake3),
             image = R.drawable.background_image,
             writer = context.getString(R.string.label_writer_fake)
 

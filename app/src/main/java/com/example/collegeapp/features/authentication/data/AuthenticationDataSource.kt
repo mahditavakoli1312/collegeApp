@@ -5,8 +5,9 @@ import javax.inject.Inject
 class AuthenticationDataSource @Inject constructor() {
 
     /*
-      The following methods should be changed based on the APIs
+      TODO The following methods should be changed based on the APIs
     */
+
 
     fun isLogin(): Boolean {
         return true
@@ -19,9 +20,9 @@ class AuthenticationDataSource @Inject constructor() {
     fun register(
         username: String,
         password: String,
-        fullname: String,
+        fullName: String,
         email: String,
-        phNumber: String
+        phoneNumber: String
     ): Boolean {
         return true
     }
