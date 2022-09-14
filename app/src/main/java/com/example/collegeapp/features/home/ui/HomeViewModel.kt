@@ -16,6 +16,6 @@ class HomeViewModel @Inject constructor(
     private var _article = MutableLiveData(articleRepository.getArticle())
     val article = _article
 
-    private var _chipsList = MutableLiveData(homeRepository.getHometags())
+    private var _chipsList = MutableLiveData(homeRepository.getHomeTags())
     val chipsList = _chipsList
 }

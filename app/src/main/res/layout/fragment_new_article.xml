@@ -1,115 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black"
-    tools:context=".features.home.ui.fragments.NewArticleFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_HorizontalStart_newArticleFragment"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.collegeapp.features.home.ui.NewArticleViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="@dimen/guid_0.08Start_percent" />
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".features.home.ui.fragments.NewArticleFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalStart_newArticleFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_HorizontalStart_newArticleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/guid_0.08Start_percent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_verticalEnd_newArticleFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalStart_newArticleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
 
-    <ImageView
-        android:id="@+id/img_close_newArticleFragment"
-        android:layout_width="@dimen/width_48"
-        android:layout_height="@dimen/width_48"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
-        app:layout_constraintBottom_toTopOf="@id/gl_HorizontalStart_newArticleFragment"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_close"
-        android:padding="@dimen/margin_12" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalEnd_newArticleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toEndOf="@id/img_close_newArticleFragment"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-        app:layout_constraintBottom_toTopOf="@id/gl_HorizontalStart_newArticleFragment"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="start|center_vertical"
-        style="@style/custom_textView_appBar"
-        android:text="@string/label_share_new_article" />
+        <ImageView
+            android:id="@+id/img_close_newArticleFragment"
+            android:layout_width="@dimen/width_48"
+            android:layout_height="@dimen/width_48"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
+            app:layout_constraintBottom_toTopOf="@id/gl_HorizontalStart_newArticleFragment"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_close"
+            android:padding="@dimen/margin_12" />
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-        app:layout_constraintTop_toBottomOf="@id/gl_HorizontalStart_newArticleFragment"
-        android:id="@+id/img_article_newArticleFragment"
-        app:layout_constraintDimensionRatio="@dimen/ratio_328_246" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/img_close_newArticleFragment"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+            app:layout_constraintBottom_toTopOf="@id/gl_HorizontalStart_newArticleFragment"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="start|center_vertical"
+            style="@style/custom_textView_appBar"
+            android:text="@string/label_share_new_article" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/c_addTag_newArticleFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:chipBackgroundColor="#333333"
-        android:layoutDirection="rtl"
-        app:chipIconVisible="true"
-        app:chipIcon="@drawable/ic_add"
-        app:chipIconTint="@color/white"
-        android:text="@string/label_add_tag"
-        app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-        app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment"
-        android:textColor="@color/white"
-        android:layout_marginTop="@dimen/margin_16"
-        android:textSize="16sp" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            imageUrl="@{viewModel.image}"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+            app:layout_constraintTop_toBottomOf="@id/gl_HorizontalStart_newArticleFragment"
+            android:id="@+id/img_article_newArticleFragment"
+            app:layout_constraintDimensionRatio="@dimen/ratio_328_246" />
 
-    <EditText
-        android:id="@+id/et_titleArticle_newArticleFragment"
-        android:textDirection="rtl"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:maxHeight="@dimen/max_height"
-        style="@style/custom_edit_text_title"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
-        app:layout_constraintTop_toBottomOf="@id/c_addTag_newArticleFragment"
-        android:layout_marginTop="@dimen/margin_16"
-        android:hint="@string/label_title_new_article" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/c_addTag_newArticleFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="#333333"
+            android:layoutDirection="rtl"
+            app:chipIconVisible="true"
+            app:chipIcon="@drawable/ic_add"
+            app:chipIconTint="@color/white"
+            android:text="@string/label_add_tag"
+            app:layout_constraintStart_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+            app:layout_constraintTop_toBottomOf="@id/img_article_newArticleFragment"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/margin_16"
+            android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/et_descArticle_newArticleFragment"
-        android:textDirection="rtl"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:maxHeight="@dimen/max_height"
-        style="@style/custom_edit_text_desc"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
-        app:layout_constraintTop_toBottomOf="@id/et_titleArticle_newArticleFragment"
-        android:layout_marginTop="@dimen/margin_16"
-        android:hint="@string/label_desc_new_article" />
+        <EditText
+            android:id="@+id/et_titleArticle_newArticleFragment"
+            android:textDirection="rtl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/max_height"
+            style="@style/custom_edit_text_title"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
+            app:layout_constraintTop_toBottomOf="@id/c_addTag_newArticleFragment"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@={viewModel.title}"
+            android:hint="@string/label_title_new_article" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_choose_tags"
-        style="@style/custom_button_blue"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_16"
-        android:text="@string/label_share_article"
-        app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
-        app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
-        app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="@dimen/margin_8" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/et_descArticle_newArticleFragment"
+            android:textDirection="rtl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/max_height"
+            style="@style/custom_edit_text_desc"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
+            app:layout_constraintTop_toBottomOf="@id/et_titleArticle_newArticleFragment"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@={viewModel.description}"
+            android:hint="@string/label_desc_new_article" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_choose_tags"
+            style="@style/custom_button_blue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/label_share_article"
+            app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_newArticleFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_newArticleFragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/margin_8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

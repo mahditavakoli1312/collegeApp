@@ -70,7 +70,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             writer="@{article.writer}"
             time="@{article.time}"
-            tools:text="@string/label_writer_time"
             android:gravity="center_vertical|start"
             style="@style/custom_textView_writer" />
 
