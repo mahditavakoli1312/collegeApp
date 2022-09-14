@@ -41,7 +41,7 @@ class ChildUserSearchFragment : Fragment() {
         }
 
         searchViewModel.searchVariable.observe(viewLifecycleOwner) {
-            searchUserAdapter.submitList(searchViewModel.getUserListBySearch(it))
+            searchUserAdapter.submitList(searchViewModel.getUserListBySearch())
         }
 
     }
