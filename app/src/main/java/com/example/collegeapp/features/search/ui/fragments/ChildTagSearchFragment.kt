@@ -41,7 +41,7 @@ class ChildTagSearchFragment : Fragment() {
         binding.apply {
             searchViewModel.searchVariable.observe(viewLifecycleOwner) {
                 cgTagSearchChildSearchTagFragment.removeAllViews()
-                searchViewModel.getTagListBySearch(it)?.forEach { tag ->
+                searchViewModel.getTagListBySearch()?.forEach { tag ->
                     cgTagSearchChildSearchTagFragment.addView(createChip(tag))
                 }
             }
