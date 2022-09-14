@@ -14,8 +14,8 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ProfileFragment : Fragment() {
+
     private lateinit var binding: FragmentProfileBinding
-    private val tabTitleList = listOf("مقالات من", "بوکمارک ها")
     private val fragmentList = listOf(ChildMyArticlesFragment(), ChildBookmarksFragment())
 
     override fun onCreateView(
@@ -23,13 +23,21 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_profile,
+            container,
+            false
+        )
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val tabTitleList = listOf(
+            requireContext().getString(R.string.label_myArticles),
+            requireContext().getString(R.string.label_bookmark)
+        )
         val viewPager = binding.vpViewpagerProfileFragment
         viewPager.adapter =
             ViewPagerAdapterTabLayout(fragmentList, lifecycle, childFragmentManager)
@@ -40,7 +48,6 @@ class ProfileFragment : Fragment() {
         ) { tab, pos ->
             tab.text = tabTitleList[pos]
         }.attach()
-
 
         setupTabIconsForTwo(
             tabLayout = tabLayout,

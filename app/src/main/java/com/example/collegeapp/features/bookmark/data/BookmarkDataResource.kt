@@ -1,7 +1,7 @@
 package com.example.collegeapp.features.bookmark.data
 
 import android.content.Context
-import com.example.collegeapp.search.data.searchPostLists
+import com.example.collegeapp.core.data.searchPostLists
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

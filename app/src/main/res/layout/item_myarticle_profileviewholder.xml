@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="myArticle"
             type="com.example.collegeapp.features.search.data.entities.MyArticleEntity" />

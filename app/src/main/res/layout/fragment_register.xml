@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewmodel"
             type="com.example.collegeapp.features.authentication.ui.AuthenticationViewModel" />
     </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -114,16 +112,6 @@
             app:layout_constraintEnd_toEndOf="@id/gl_vertical63_registerFragment"
             app:layout_constraintStart_toEndOf="@+id/tv_isRegister_registerFragment"
             app:layout_constraintTop_toBottomOf="@id/tv_registerTitle_registerFragment" />
-
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/gl_horizontal87_registerFragment"
-            app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_registerFragment"
-            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_registerFragment"
-            app:layout_constraintTop_toBottomOf="@id/tv_isRegister_registerFragment">
-
-        </ScrollView>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_name_registerFragment"

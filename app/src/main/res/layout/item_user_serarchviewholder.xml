@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="userSearch"
             type="com.example.collegeapp.features.search.data.entities.UserSearchEntity" />
@@ -51,7 +50,6 @@
             android:layout_height="@dimen/stroke_2"
             android:background="@color/white_10"
             app:layout_constraintBottom_toBottomOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

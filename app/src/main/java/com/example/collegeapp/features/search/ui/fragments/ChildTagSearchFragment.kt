@@ -26,7 +26,12 @@ class ChildTagSearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_child_search_tag, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_child_search_tag,
+                container,
+                false
+            )
         return binding.root
     }
 
@@ -35,36 +40,36 @@ class ChildTagSearchFragment : Fragment() {
 
         binding.apply {
             searchViewModel.searchVariable.observe(viewLifecycleOwner) {
-
                 cgTagSearchChildSearchTagFragment.removeAllViews()
-                searchViewModel.getTagListBySearch(it)?.forEach {
-                    cgTagSearchChildSearchTagFragment.addView(
-                        Chip(
-                            view.context,
-                            null,
-                            com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
-                        ).apply {
-                            text = it
-                            setChipBackgroundColorResource(R.color.white_10)
-                            setTextColor(
-                                ResourcesCompat.getColor(
-                                    root.resources,
-                                    R.color.primary_200,
-                                    root.context.theme
-                                )
-                            )
-                            setChipStrokeColorResource(R.color.transparent100)
-                            chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
-                            isClickable = true
-                            isCheckable = false
-
-                        })
+                searchViewModel.getTagListBySearch(it)?.forEach { tag ->
+                    cgTagSearchChildSearchTagFragment.addView(createChip(tag))
                 }
             }
         }
 
-
     }
 
-
+    private fun createChip(tagText: String): Chip {
+        binding.apply {
+            return Chip(
+                root.context,
+                null,
+                com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
+            ).apply {
+                text = tagText
+                setChipBackgroundColorResource(R.color.white_10)
+                setTextColor(
+                    ResourcesCompat.getColor(
+                        root.resources,
+                        R.color.primary_200,
+                        root.context.theme
+                    )
+                )
+                setChipStrokeColorResource(R.color.transparent100)
+                chipStrokeWidth = root.resources.getDimension(R.dimen.stroke_1)
+                isClickable = true
+                isCheckable = false
+            }
+        }
+    }
 }

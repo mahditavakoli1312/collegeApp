@@ -1,4 +1,4 @@
-package com.example.collegeapp.search.data
+package com.example.collegeapp.core.data
 
 import android.content.Context
 import com.example.collegeapp.R
@@ -59,7 +59,6 @@ fun searchUserLists(context: Context): List<UserSearchEntity> {
         ),
         UserSearchEntity(
             nameUser = context.getString(R.string.label_mahdi)
-        ),
-
         )
+    )
 }

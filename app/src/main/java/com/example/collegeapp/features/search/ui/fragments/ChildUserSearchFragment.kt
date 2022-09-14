@@ -26,23 +26,23 @@ class ChildUserSearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_child_search_user, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_child_search_user,
+                container,
+                false
+            )
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val searchUserAdapter = SearchUserAdapter()
         binding.apply {
             rvUsersSearchChildSearchPostFragment.adapter = searchUserAdapter
-            rvUsersSearchChildSearchPostFragment.layoutManager =
-                LinearLayoutManager(requireContext())
         }
-
         searchViewModel.searchVariable.observe(viewLifecycleOwner) {
             searchUserAdapter.submitList(searchViewModel.getUserListBySearch(it))
         }
-
     }
 }

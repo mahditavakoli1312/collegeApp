@@ -10,8 +10,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChooseLoginBinding
-import com.example.collegeapp.easyNavigate
-
+import com.example.collegeapp.core.common.easyNavigate
 
 class ChooseLoginFragment : Fragment() {
 
@@ -32,9 +31,7 @@ class ChooseLoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.apply {
-
             btnRegisterChooseLoginFragment.setOnClickListener {
                 Navigation.easyNavigate(
                     action = R.id.action_chooseLoginFragment_to_registerFragment,
@@ -51,6 +48,5 @@ class ChooseLoginFragment : Fragment() {
 
         }
     }
-
 
 }

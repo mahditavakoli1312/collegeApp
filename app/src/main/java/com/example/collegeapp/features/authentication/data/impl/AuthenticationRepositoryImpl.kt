@@ -1,7 +1,8 @@
-package com.example.collegeapp.features.authentication.data.Impl
+package com.example.collegeapp.features.authentication.data.impl
 
 import com.example.collegeapp.features.authentication.data.AuthenticationDataSource
 import com.example.collegeapp.features.authentication.data.AuthenticationRepository
+import com.example.collegeapp.features.authentication.data.UserRegisterEntity
 import javax.inject.Inject
 
 class AuthenticationRepositoryImpl @Inject constructor(
@@ -20,14 +21,8 @@ class AuthenticationRepositoryImpl @Inject constructor(
         return authenticationDataSource.login(username, password)
     }
 
-    override fun register(
-        username: String,
-        password: String,
-        fullname: String,
-        email: String,
-        phNumber: String
-    ): Boolean {
-        return authenticationDataSource.register(username, password, fullname, email, phNumber)
+    override fun register(userRegisterEntity: UserRegisterEntity): Boolean {
+        return authenticationDataSource.register(userRegisterEntity)
     }
 
 }

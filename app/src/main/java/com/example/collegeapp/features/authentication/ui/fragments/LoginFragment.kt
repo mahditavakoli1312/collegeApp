@@ -14,9 +14,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
+import com.example.collegeapp.core.common.easyNavigateWithPopUp
 import com.example.collegeapp.databinding.FragmentLoginBinding
 import com.example.collegeapp.databinding.SnackbarLayoutBinding
-import com.example.collegeapp.easyNavigateWithPopUp
 import com.example.collegeapp.features.authentication.ui.AuthenticationViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,6 +26,7 @@ class LoginFragment : Fragment() {
 
     private val authenticationViewModel: AuthenticationViewModel by activityViewModels()
     lateinit var binding: FragmentLoginBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,17 +40,15 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-
-    @SuppressLint("RestrictedApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        showSnackBar()
         binding.apply {
             viewModel = authenticationViewModel
             lifecycleOwner = viewLifecycleOwner
 
             btnLoginLoginFragment.setOnClickListener {
-
                 Navigation.easyNavigateWithPopUp(
                     action = R.id.action_loginFragment_to_homeFragment,
                     navController = findNavController(),
@@ -57,9 +56,14 @@ class LoginFragment : Fragment() {
                     inclusive = true
                 )
             }
+        }
 
-            // SnackBar
-            val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
+    }
+
+    @SuppressLint("RestrictedApi")
+    fun showSnackBar() {
+        binding.apply {
+            val snackBar: Snackbar = Snackbar.make(root, "", Snackbar.LENGTH_LONG)
             val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
             val snackBarBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
                 layoutInflater,
@@ -80,7 +84,5 @@ class LoginFragment : Fragment() {
             viewSnack.addView(snackBarBinding.root, 0)
             snackBar.show()
         }
-
-
     }
 }

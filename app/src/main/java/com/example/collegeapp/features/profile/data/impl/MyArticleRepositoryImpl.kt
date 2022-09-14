@@ -1,6 +1,7 @@
-package com.example.collegeapp.features.profile.data
+package com.example.collegeapp.features.profile.data.impl
 
 import com.example.collegeapp.features.article.data.ArticleDataSource
+import com.example.collegeapp.features.profile.data.MyArticleRepository
 import com.example.collegeapp.features.search.data.entities.MyArticleEntity
 import javax.inject.Inject
 

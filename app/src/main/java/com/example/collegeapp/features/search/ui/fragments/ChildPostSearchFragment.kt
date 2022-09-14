@@ -15,7 +15,7 @@ import com.example.collegeapp.features.search.ui.adapters.SearchPostAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
+class ChildPostSearchFragment : Fragment() {
 
     private lateinit var binding: FragmentChildSearchPostBinding
     private val searchViewModel: SearchViewModel by activityViewModels()
@@ -25,24 +25,25 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
         savedInstanceState: Bundle?
     ): View {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_child_search_post, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_child_search_post,
+                container,
+                false
+            )
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val searchPostAdapter = SearchPostAdapter()
-
         binding.apply {
             rvPostsSearchSearchFragment.adapter = searchPostAdapter
             rvPostsSearchSearchFragment.layoutManager = LinearLayoutManager(requireContext())
         }
-
         searchViewModel.searchVariable.observe(viewLifecycleOwner) {
             searchPostAdapter.submitList(searchViewModel.getPostListBySearch(it))
         }
-
     }
 }

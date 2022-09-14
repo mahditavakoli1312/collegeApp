@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
+import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.ItemPostSerarchviewholderBinding
-import com.example.collegeapp.easyNavigate
 import com.example.collegeapp.features.article.data.ArticleEntity
 import com.example.collegeapp.features.home.ui.MainActivity
 import com.google.android.material.chip.Chip
@@ -26,30 +26,37 @@ class SearchPostAdapter :
 
         fun bind(articleEntity: ArticleEntity) {
             binding.article = articleEntity
-            binding.root.setOnClickListener {
-                val x =
-                    MainActivity.globalMain?.findNavController(R.id.fcv_fragmentContainer_activityMain)
-                        ?: itemView.findNavController()
-
-                Navigation.easyNavigate(
-                    action = R.id.showArticleFragment,
-                    navController = x
-                )
-            }
             val tagsList = articleEntity.tag.split(",")
-            tagsList.forEach {
-                chipsGroup.addView(Chip(itemView.context).apply {
-                    text = it
-                    backgroundDrawable = ResourcesCompat.getDrawable(
-                        itemView.resources,
-                        R.drawable.tag_gray,
-                        itemView.context.theme
+            binding.apply {
+                root.setOnClickListener {
+                    val x =
+                        MainActivity.globalMain?.findNavController(R.id.fcv_fragmentContainer_activityMain)
+                            ?: itemView.findNavController()
+                    Navigation.easyNavigate(
+                        action = R.id.showArticleFragment,
+                        navController = x
                     )
-                    setTextColor(itemView.resources.getColor(R.color.primary_200))
+                }
 
-                })
+                tagsList.forEach {
+                    chipsGroup.addView(Chip(itemView.context).apply {
+                        text = it
+                        backgroundDrawable = ResourcesCompat.getDrawable(
+                            itemView.resources,
+                            R.drawable.tag_gray,
+                            itemView.context.theme
+                        )
+                        setTextColor(
+                            ResourcesCompat.getColor(
+                                root.resources,
+                                R.color.primary_200,
+                                root.context.theme
+                            )
+                        )
+
+                    })
+                }
             }
-
         }
     }
 
@@ -64,9 +71,7 @@ class SearchPostAdapter :
         holder.bind(post)
     }
 
-
 }
-
 
 object SearchPostDiffCallback : DiffUtil.ItemCallback<ArticleEntity>() {
     override fun areItemsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
