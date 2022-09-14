@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="userSearch"
             type="com.example.collegeapp.features.search.data.entities.UserSearchEntity" />

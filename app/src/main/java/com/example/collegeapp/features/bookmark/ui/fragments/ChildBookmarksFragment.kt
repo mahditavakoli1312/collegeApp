@@ -15,20 +15,21 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ChildBookmarksFragment : Fragment() {
-    private lateinit var binding : FragmentChildBookMarksBinding
+    private lateinit var binding: FragmentChildBookMarksBinding
     private val viewModel: BookmarkViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_child_book_marks , container , false )
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_child_book_marks, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val searchPostAdapter = SearchPostAdapter()
-        val recyclerView =binding.rvPostsSearchBookmarkFragment
+        val recyclerView = binding.rvPostsSearchBookmarkFragment
         recyclerView.adapter = searchPostAdapter
         searchPostAdapter.submitList(viewModel.bookmark.value)
 

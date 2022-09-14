@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildMyArticlesBinding
 import com.example.collegeapp.features.profile.ui.ProfileViewModel
@@ -16,13 +15,14 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ChildMyArticlesFragment : Fragment() {
-    private lateinit var binding : FragmentChildMyArticlesBinding
+    private lateinit var binding: FragmentChildMyArticlesBinding
     private val viewModel: ProfileViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_child_my_articles , container , false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_child_my_articles, container, false)
         return binding.root
     }
 
