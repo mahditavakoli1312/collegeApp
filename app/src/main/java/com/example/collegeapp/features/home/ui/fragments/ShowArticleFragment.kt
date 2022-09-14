@@ -24,6 +24,7 @@ class ShowArticleFragment : Fragment() {
 
     private lateinit var binding: FragmentShowArticleBinding
     private val viewModel: ShowArticleViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,39 +45,43 @@ class ShowArticleFragment : Fragment() {
             }
 
             imgBookmarkShowArticleFragment.setOnClickListener {
+                showSnackBar(view)
 
-                val snackBarDataBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
-                    layoutInflater,
-                    R.layout.snackbar_layout,
-                    null,
-                    false
-                )
-
-                val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
-                val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
-                viewSnack.setBackgroundColor(
-                    ResourcesCompat.getColor(
-                        root.resources,
-                        R.color.transparent100,
-                        root.context.theme
-                    )
-                )
-                viewSnack.addView(snackBarDataBinding.root, 0)
-
-                snackBarDataBinding.apply {
-
-                    tvOkActionSnackLayout.visibility = View.GONE
-                    tvCancelActionSnackLayout.visibility =
-                        View.GONE
-                    imgIconSnackLayout.visibility = View.GONE
-                    tvDescSnackLayout.text =
-                        getString(R.string.label_added_article_to_bookmark)
-                }
-
-                snackBar.show()
             }
         }
+    }
 
+    private fun showSnackBar(view: View) {
 
+        val snackBarDataBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
+            layoutInflater,
+            R.layout.snackbar_layout,
+            null,
+            false
+        )
+
+        val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
+        val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
+        viewSnack.setBackgroundColor(
+            ResourcesCompat.getColor(
+                view.resources,
+                R.color.transparent100,
+                view.context.theme
+            )
+        )
+
+        viewSnack.addView(snackBarDataBinding.root, 0)
+
+        snackBarDataBinding.apply {
+
+            tvOkActionSnackLayout.visibility = View.GONE
+            tvCancelActionSnackLayout.visibility =
+                View.GONE
+            imgIconSnackLayout.visibility = View.GONE
+            tvDescSnackLayout.text =
+                getString(R.string.label_added_article_to_bookmark)
+        }
+
+        snackBar.show()
     }
 }

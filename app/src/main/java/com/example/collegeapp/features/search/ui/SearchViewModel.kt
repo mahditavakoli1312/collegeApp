@@ -13,7 +13,7 @@ class SearchViewModel @Inject constructor(
     private val searchRepository: SearchRepository
 ) : ViewModel() {
 
-    private val _searchVariable = MutableLiveData<String>("")
+    private val _searchVariable = MutableLiveData("")
     val searchVariable = _searchVariable
 
 

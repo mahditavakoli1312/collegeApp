@@ -60,28 +60,34 @@ class LoginFragment : Fragment() {
             }
 
             // SnackBar
-            val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
-            val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
-            val snackBarBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
-                layoutInflater,
-                R.layout.snackbar_layout,
-                null,
-                false
-            )
-            val params = viewSnack.layoutParams as FrameLayout.LayoutParams
-            params.gravity = Gravity.TOP
-            viewSnack.layoutParams = params
-            viewSnack.setBackgroundColor(
-                ResourcesCompat.getColor(
-                    root.resources,
-                    R.color.transparent100,
-                    root.context.theme
-                )
-            )
-            viewSnack.addView(snackBarBinding.root, 0)
-            snackBar.show()
+            showSnackBar(view)
         }
-
-
     }
+
+    @SuppressLint("RestrictedApi")
+    private fun showSnackBar(view: View){
+        val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
+        val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
+
+        val snackBarBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
+            layoutInflater,
+            R.layout.snackbar_layout,
+            null,
+            false
+        )
+
+        val params = viewSnack.layoutParams as FrameLayout.LayoutParams
+        params.gravity = Gravity.TOP
+        viewSnack.layoutParams = params
+        viewSnack.setBackgroundColor(
+            ResourcesCompat.getColor(
+                view.resources,
+                R.color.transparent100,
+                view.context.theme
+            )
+        )
+        viewSnack.addView(snackBarBinding.root, 0)
+        snackBar.show()
+    }
+
 }
