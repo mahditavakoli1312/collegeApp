@@ -36,6 +36,7 @@ class SearchPostAdapter :
                     navController = x
                 )
             }
+
             val tagsList = articleEntity.tag.split(",")
             tagsList.forEach {
                 chipsGroup.addView(Chip(itemView.context).apply {
@@ -63,7 +64,6 @@ class SearchPostAdapter :
         val post = getItem(position)
         holder.bind(post)
     }
-
 
 }
 

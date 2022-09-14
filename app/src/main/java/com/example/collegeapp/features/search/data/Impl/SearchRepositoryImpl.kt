@@ -9,6 +9,7 @@ import javax.inject.Inject
 class SearchRepositoryImpl @Inject constructor(
     private val dataSource: SearchDataSource
 ) : SearchRepository {
+
     override fun getPosts() = dataSource.getPosts()
     override fun getUsers() = dataSource.getUsers()
     override fun getTags() = dataSource.getTags()
