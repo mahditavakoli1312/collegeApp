@@ -22,7 +22,7 @@ class NewArticleFragment : Fragment(R.layout.fragment_new_article) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater , R.layout.fragment_new_article , container , false )
         return binding.root
     }

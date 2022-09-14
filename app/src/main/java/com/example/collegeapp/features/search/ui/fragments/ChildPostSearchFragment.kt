@@ -23,7 +23,7 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_child_search_post, container, false)
         return binding.root

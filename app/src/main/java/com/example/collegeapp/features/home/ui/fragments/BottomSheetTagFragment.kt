@@ -17,7 +17,7 @@ class BottomSheetTagFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         bindin = DataBindingUtil.inflate(
             layoutInflater,
             R.layout.fragment_bottom_sheet_tags,
