@@ -16,25 +16,16 @@ class SearchViewModel @Inject constructor(
     private val _searchVariable = MutableLiveData<String>("")
     val searchVariable = _searchVariable
 
-    private val _postList = MutableLiveData(searchRepository.getPosts())
-    private val _userList = MutableLiveData(searchRepository.getUsers())
-    private val _tagList = MutableLiveData(searchRepository.getTags())
 
-    fun getPostListBySearch(searchContent: String): List<ArticleEntity>? {
-        return _postList.value?.filter { article ->
-            article.title.contains(searchContent)
-        }
+    fun getPostListBySearch(): List<ArticleEntity>? {
+        return searchRepository.getPostListBySearch(_searchVariable.value)
     }
 
-    fun getUserListBySearch(searchContent: String): List<UserSearchEntity>? {
-        return _userList.value?.filter { user ->
-            user.nameUser.contains(searchContent)
-        }
+    fun getUserListBySearch(): List<UserSearchEntity>? {
+        return searchRepository.getUserListBySearch(searchVariable.value)
     }
 
-    fun getTagListBySearch(searchContent: String): List<String>? {
-        return _tagList.value?.filter { tag ->
-            tag.contains(searchContent)
-        }
+    fun getTagListBySearch(): List<String>? {
+        return searchRepository.getTagListBySearch(searchVariable.value)
     }
 }

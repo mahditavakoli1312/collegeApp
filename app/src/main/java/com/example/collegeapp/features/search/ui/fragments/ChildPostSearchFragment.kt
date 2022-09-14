@@ -41,7 +41,7 @@ class ChildPostSearchFragment : Fragment(R.layout.fragment_child_search_post) {
         }
 
         searchViewModel.searchVariable.observe(viewLifecycleOwner) {
-            searchPostAdapter.submitList(searchViewModel.getPostListBySearch(it))
+            searchPostAdapter.submitList(searchViewModel.getPostListBySearch())
         }
 
     }

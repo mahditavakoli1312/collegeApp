@@ -37,7 +37,7 @@ class ChildTagSearchFragment : Fragment() {
             searchViewModel.searchVariable.observe(viewLifecycleOwner) {
 
                 cgTagSearchChildSearchTagFragment.removeAllViews()
-                searchViewModel.getTagListBySearch(it)?.forEach {
+                searchViewModel.getTagListBySearch()?.forEach {
                     cgTagSearchChildSearchTagFragment.addView(
                         Chip(
                             view.context,
