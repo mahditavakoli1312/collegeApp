@@ -22,7 +22,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
         return binding.root
     }
@@ -34,7 +34,6 @@ class ProfileFragment : Fragment() {
         viewPager.adapter =
             ViewPagerAdapterTabLayout(fragmentList, lifecycle, childFragmentManager)
         val tabLayout = binding.tlTabLayoutProfileFragment
-
         TabLayoutMediator(
             tabLayout,
             viewPager

@@ -7,5 +7,5 @@ import javax.inject.Inject
 class HomeRepositoryImpl @Inject constructor(
     private val homeDataSource: HomeDataSource
 ) : HomeRepository {
-    override fun getHometags() = homeDataSource.getHomeTags()
+    override fun getHomeTags() = homeDataSource.getHomeTags()
 }

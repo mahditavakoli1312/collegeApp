@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -28,7 +29,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(
             layoutInflater,
             R.layout.fragment_login,
@@ -56,23 +57,30 @@ class LoginFragment : Fragment() {
                     inclusive = true
                 )
             }
+
+            // SnackBar
+            val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
+            val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
+            val snackBarBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
+                layoutInflater,
+                R.layout.snackbar_layout,
+                null,
+                false
+            )
+            val params = viewSnack.layoutParams as FrameLayout.LayoutParams
+            params.gravity = Gravity.TOP
+            viewSnack.layoutParams = params
+            viewSnack.setBackgroundColor(
+                ResourcesCompat.getColor(
+                    root.resources,
+                    R.color.transparent100,
+                    root.context.theme
+                )
+            )
+            viewSnack.addView(snackBarBinding.root, 0)
+            snackBar.show()
         }
 
-        // SnackBar
-        val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
-        val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
-        val snackBarBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
-            layoutInflater,
-            R.layout.snackbar_layout,
-            null,
-            false
-        )
-        val params = viewSnack.layoutParams as FrameLayout.LayoutParams
-        params.gravity = Gravity.TOP
-        viewSnack.layoutParams = params
-        viewSnack.setBackgroundColor(view.resources.getColor(R.color.transparent100))
-        viewSnack.addView(snackBarBinding.root, 0)
-        snackBar.show()
 
     }
 }

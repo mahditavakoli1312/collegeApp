@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -23,7 +24,7 @@ class ChildTagSearchFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_child_search_tag, container, false)
         return binding.root
@@ -31,24 +32,33 @@ class ChildTagSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val chipGroup: ChipGroup = binding.cgTagSearchChildSearchTagFragment
-        searchViewModel.tagList.value?.forEach {
-            chipGroup.addView(
-                Chip(
-                    view.context,
-                    null,
-                    com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
-                ).apply {
-                    text = it
-                    setChipBackgroundColorResource(R.color.white_10)
-                    setTextColor(view.resources.getColor(R.color.primary_200))
-                    setChipStrokeColorResource(R.color.transparent100)
-                    chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
-                    isClickable = true
-                    isCheckable = false
+        binding.apply {
+            val chipGroup: ChipGroup = binding.cgTagSearchChildSearchTagFragment
+            searchViewModel.tagList.value?.forEach {
+                chipGroup.addView(
+                    Chip(
+                        view.context,
+                        null,
+                        com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
+                    ).apply {
+                        text = it
+                        setChipBackgroundColorResource(R.color.white_10)
+                        setTextColor(
+                            ResourcesCompat.getColor(
+                                root.resources,
+                                R.color.primary_200,
+                                root.context.theme
+                            )
+                        )
+                        setChipStrokeColorResource(R.color.transparent100)
+                        chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
+                        isClickable = true
+                        isCheckable = false
 
-                })
+                    })
+            }
         }
+
 
     }
 

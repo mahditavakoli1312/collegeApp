@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -26,7 +27,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(
             layoutInflater,
             R.layout.fragment_home,
@@ -66,7 +67,13 @@ class HomeFragment : Fragment() {
                         ).apply {
                             text = it
                             setChipBackgroundColorResource(R.color.white_10)
-                            setTextColor(view.resources.getColor(R.color.primary_200))
+                            setTextColor(
+                                ResourcesCompat.getColor(
+                                    root.resources,
+                                    R.color.primary_200,
+                                    root.context.theme
+                                )
+                            )
                             setChipStrokeColorResource(R.color.tophomechips_bordercolor_selector)
                             chipStrokeWidth = view.resources.getDimension(R.dimen.stroke_1)
                             isClickable = true

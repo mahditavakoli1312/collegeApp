@@ -3,10 +3,11 @@ package com.example.collegeapp.features.article.data
 import androidx.annotation.DrawableRes
 
 data class ArticleEntity(
-    val title: String,
+    val id: Int = -1,
+    val title: String = "",
     @DrawableRes
-    val image: Int,
-    val time: String,
-    val writer: String,
-    val tag: String
+    val image: Int = 0,
+    val time: String = "",
+    val writer: String = "",
+    val tag: String = ""
 )

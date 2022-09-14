@@ -1,43 +1,44 @@
 package com.example.collegeapp.features.home.ui.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
-import androidx.core.content.res.ResourcesCompat
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import coil.load
-import coil.transform.RoundedCornersTransformation
 import com.example.collegeapp.R
-import com.google.android.material.chip.Chip
+import com.example.collegeapp.databinding.FragmentNewArticleBinding
+import com.example.collegeapp.features.home.ui.NewArticleViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NewArticleFragment : Fragment(R.layout.fragment_new_article) {
+    private lateinit var binding : FragmentNewArticleBinding
+    private val viewModel : NewArticleViewModel by viewModels()
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_new_article , container , false )
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val imageArticle: ImageView = view.findViewById(R.id.img_article_newArticleFragment)
-        val addTag: Chip = view.findViewById(R.id.c_addTag_newArticleFragment)
-        val imageClose: ImageView = view.findViewById(R.id.img_close_newArticleFragment)
+        binding.apply {
+            viewModel = this@NewArticleFragment.viewModel
+            lifecycleOwner = viewLifecycleOwner
+            cAddTagNewArticleFragment.setOnClickListener {
+                BottomSheetTagFragment().show(parentFragmentManager, "")
+            }
 
-        imageArticle.load(
-            ResourcesCompat.getDrawable(
-                resources,
-                R.drawable.image_place_holder,
-                view.context.theme
-            )
-
-        ) {
-            transformations(RoundedCornersTransformation(view.resources.getDimension(R.dimen.radius_8)))
+            imgCloseNewArticleFragment.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
-
-        addTag.setOnClickListener {
-            BottomSheetTagFragment().show(parentFragmentManager, "")
-        }
-
-        imageClose.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
     }
 }
