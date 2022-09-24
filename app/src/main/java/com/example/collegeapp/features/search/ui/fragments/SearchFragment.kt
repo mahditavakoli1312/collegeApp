@@ -49,7 +49,7 @@ class SearchFragment : Fragment() {
         }
     }
 
-    private fun handleSearchChip(){
+    private fun handleSearchChip() {
         binding.apply {
             cgSearchChipsSearchFragment.setOnCheckedStateChangeListener { _, checkedId ->
                 when {
