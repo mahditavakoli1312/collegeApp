@@ -12,9 +12,9 @@ import dagger.hilt.components.SingletonComponent
 abstract class HomeModule {
 
     @Binds
-    abstract fun getHomeRepo(homeRepositoryImpl: HomeRepositoryImpl): HomeRepository
+    abstract fun bindHomeRepository(homeRepositoryImpl: HomeRepositoryImpl): HomeRepository
 
     @Binds
-    abstract fun getShowRepo(showArticleRepositoryImpl: ShowArticleRepositoryImpl): ShowArticleRepository
+    abstract fun bindShowArticleRepository(showArticleRepositoryImpl: ShowArticleRepositoryImpl): ShowArticleRepository
 
 }

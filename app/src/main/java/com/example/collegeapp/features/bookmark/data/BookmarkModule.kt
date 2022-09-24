@@ -11,6 +11,6 @@ import dagger.hilt.components.SingletonComponent
 abstract class BookmarkModule {
 
     @Binds
-    abstract fun getBookmark(bookmarkRepositoryImpl: BookmarkRepositoryImpl): BookmarkRepository
+    abstract fun bindBookmark(bookmarkRepositoryImpl: BookmarkRepositoryImpl): BookmarkRepository
 
 }
