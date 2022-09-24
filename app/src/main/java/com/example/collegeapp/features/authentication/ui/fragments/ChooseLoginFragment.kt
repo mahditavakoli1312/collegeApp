@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
-import com.example.collegeapp.databinding.FragmentChooseLoginBinding
 import com.example.collegeapp.core.common.easyNavigate
+import com.example.collegeapp.databinding.FragmentChooseLoginBinding
 
 class ChooseLoginFragment : Fragment() {
 

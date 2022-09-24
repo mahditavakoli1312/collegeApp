@@ -4,16 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
+import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.FragmentShowArticleBinding
-import com.example.collegeapp.databinding.SnackbarLayoutBinding
 import com.example.collegeapp.features.home.ui.ShowArticleViewModel
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -51,37 +49,16 @@ class ShowArticleFragment : Fragment() {
             }
 
             imgBookmarkShowArticleFragment.setOnClickListener {
-                showSnackBar()
-            }
-        }
-    }
-
-    private fun showSnackBar() {
-        binding.apply {
-            val snackBarDataBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
-                layoutInflater,
-                R.layout.snackbar_layout,
-                null,
-                false
-            )
-            val snackBar: Snackbar = Snackbar.make(root, "", Snackbar.LENGTH_LONG)
-            val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
-            viewSnack.setBackgroundColor(
-                ResourcesCompat.getColor(
-                    root.resources,
-                    R.color.transparent100,
-                    root.context.theme
+                CustomSnackBar.Builder(
+                    view = view,
+                    requiredActivity = requireActivity()
                 )
-            )
-            viewSnack.addView(snackBarDataBinding.root, 0)
-            snackBarDataBinding.apply {
-                tvOkActionSnackLayout.visibility = View.GONE
-                tvCancelActionSnackLayout.visibility = View.GONE
-                imgIconSnackLayout.visibility = View.GONE
-                tvDescSnackLayout.text = getString(R.string.label_added_article_to_bookmark)
+                    .setDescriptionText(
+                        view.resources.getString(R.string.label_added_article_to_bookmark)
+                    )
+                    .build()
+                    .showSnackBar()
             }
-            snackBar.show()
         }
     }
-
 }

@@ -3,7 +3,7 @@ package com.example.collegeapp.features.home.ui
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -11,10 +11,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigate
+import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.ActivityMainBinding
-import com.example.collegeapp.databinding.SnackbarLayoutBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         globalMain = this
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         val navHost =
             supportFragmentManager.findFragmentById(R.id.fcv_fragmentContainer_activityMain)
@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
         }
-
     }
 
     override fun onBackPressed() {
@@ -65,7 +64,13 @@ class MainActivity : AppCompatActivity() {
             if (now - lastClick < 2000L) {
                 finish()
             } else {
-                showMassage(binding.root)
+                CustomSnackBar.Builder(
+                    view = binding.root,
+                    requiredActivity = this
+                )
+                    .setDescriptionText(getString(R.string.label_exit))
+                    .build()
+                    .showSnackBar()
                 lastClick = now
             }
         } else if (navController.currentDestination?.id == R.id.searchFragment ||
@@ -79,29 +84,5 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
-
-    private fun showMassage(view: View) {
-        val snackBar: Snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
-        val viewSnack: Snackbar.SnackbarLayout = snackBar.view as Snackbar.SnackbarLayout
-        val snackBarBinding: SnackbarLayoutBinding = DataBindingUtil.inflate(
-            layoutInflater,
-            R.layout.snackbar_layout,
-            null,
-            false
-        )
-        snackBarBinding.apply {
-            tvOkActionSnackLayout.visibility = View.GONE
-            tvCancelActionSnackLayout.visibility = View.GONE
-            imgIconSnackLayout.visibility = View.GONE
-            tvDescSnackLayout.text = getString(R.string.label_exit)
-        }
-        viewSnack.setBackgroundColor(
-            ResourcesCompat.getColor(view.resources, R.color.transparent100, view.context.theme)
-        )
-        viewSnack.addView(snackBarBinding.root, 0)
-        snackBar.show()
-    }
-
-
 }
 

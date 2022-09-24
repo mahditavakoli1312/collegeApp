@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchUserBinding
 import com.example.collegeapp.features.search.ui.SearchViewModel

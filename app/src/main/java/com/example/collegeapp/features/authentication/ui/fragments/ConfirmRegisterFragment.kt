@@ -10,8 +10,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
-import com.example.collegeapp.databinding.FragmentConfirmRegisterBinding
 import com.example.collegeapp.core.common.easyNavigateWithPopUp
+import com.example.collegeapp.databinding.FragmentConfirmRegisterBinding
 import com.example.collegeapp.features.authentication.ui.AuthenticationViewModel
 
 class ConfirmRegisterFragment : Fragment() {

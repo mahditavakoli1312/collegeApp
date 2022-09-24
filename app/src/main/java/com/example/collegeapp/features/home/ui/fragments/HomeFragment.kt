@@ -74,7 +74,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun createChip(chipText: String) : Chip {
+    private fun createChip(chipText: String): Chip {
         binding.apply {
             return Chip(
                 root.context,
