@@ -46,6 +46,7 @@ class SearchFragment : Fragment() {
         binding.apply {
             viewModel = searchViewModel
             lifecycleOwner = viewLifecycleOwner
+
         }
     }
 

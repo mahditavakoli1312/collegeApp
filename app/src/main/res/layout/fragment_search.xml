@@ -100,7 +100,7 @@
         </com.google.android.material.chip.ChipGroup>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_name_registerFragment"
+            android:id="@+id/til_search_searchFragment"
             style="@style/custom_inputEditTextLayout_gray"
             android:layout_width="0dp"
             android:layout_height="0dp"
