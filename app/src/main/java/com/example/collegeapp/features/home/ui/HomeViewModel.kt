@@ -13,6 +13,7 @@ class HomeViewModel @Inject constructor(
     articleRepository: ArticleRepository,
     private val homeRepository: HomeRepository
 ) : ViewModel() {
+
     /*   init {
            viewModelScope.launch(Dispatchers.IO) {
                Log.d("ListRemote", articleRepository.getSingleArticleRemote(1).toString())
