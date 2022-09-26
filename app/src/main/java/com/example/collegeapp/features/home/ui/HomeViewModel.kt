@@ -14,6 +14,12 @@ class HomeViewModel @Inject constructor(
     private val homeRepository: HomeRepository
 ) : ViewModel() {
 
+    /*   init {
+           viewModelScope.launch(Dispatchers.IO) {
+               Log.d("ListRemote", articleRepository.getSingleArticleRemote(1).toString())
+           }
+       }
+   */
     var tagSearchContent = MutableLiveData<List<String>>()
     private var _article = MutableLiveData(articleRepository.getArticle())
     val article = _article
