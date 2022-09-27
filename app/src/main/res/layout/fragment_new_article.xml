@@ -6,14 +6,14 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.collegeapp.features.home.ui.NewArticleViewModel" />
+            type="com.example.collegeapp.features.article.ui.viewModels.NewArticleViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        tools:context=".features.home.ui.fragments.NewArticleFragment">
+        tools:context=".features.article.ui.fragments.NewArticleFragment">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_HorizontalStart_newArticleFragment"

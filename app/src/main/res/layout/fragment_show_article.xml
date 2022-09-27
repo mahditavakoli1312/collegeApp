@@ -6,14 +6,14 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.collegeapp.features.home.ui.ShowArticleViewModel" />
+            type="com.example.collegeapp.features.article.ui.viewModels.ShowArticleViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        tools:context=".features.home.ui.fragments.ShowArticleFragment">
+        tools:context=".features.article.ui.fragments.ShowArticleFragment">
 
         <ImageView
             android:id="@+id/img_bookmark_showArticleFragment"
@@ -73,9 +73,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/gl_vertical50_showArticle"
                     app:layout_constraintTop_toBottomOf="@id/img_article_showArticleFragment"
-                    writer="@{viewModel.article.writer}"
-                    time="@{viewModel.article.time}" />
-
+                    writer="@{viewModel.article.author}"
+                    time="@{viewModel.article.createdTime}" />
+                <!--Todo Change writer and time-->
                 <TextView
                     android:id="@+id/tv_title_showArticleFragment"
                     style="@style/custom_textView_header"
@@ -122,7 +122,7 @@
                         android:layout_marginTop="@dimen/margin_16"
                         android:backgroundTint="@color/tag_background"
                         android:layoutDirection="rtl"
-                        android:text="@{viewModel.article.tag}"
+                        android:text="@{viewModel.article.tag.title}"
                         android:textColor="@color/primary_200"
                         android:textSize="16sp"
                         app:chipBackgroundColor="@color/tag_background"

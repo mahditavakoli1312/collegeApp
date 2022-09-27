@@ -125,12 +125,12 @@
         tools:layout="@layout/fragment_child_search_user" />
     <fragment
         android:id="@+id/newArticleFragment"
-        android:name="com.example.collegeapp.features.home.ui.fragments.NewArticleFragment"
+        android:name="com.example.collegeapp.features.article.ui.fragments.NewArticleFragment"
         android:label="fragment_new_article"
         tools:layout="@layout/fragment_new_article" />
     <fragment
         android:id="@+id/showArticleFragment"
-        android:name="com.example.collegeapp.features.home.ui.fragments.ShowArticleFragment"
+        android:name="com.example.collegeapp.features.article.ui.fragments.ShowArticleFragment"
         android:label="fragment_show_article"
         tools:layout="@layout/fragment_show_article">
         <argument

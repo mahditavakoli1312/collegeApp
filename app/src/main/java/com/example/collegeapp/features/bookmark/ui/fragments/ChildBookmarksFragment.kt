@@ -7,7 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
+import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.FragmentChildBookMarksBinding
 import com.example.collegeapp.features.bookmark.ui.BookmarkViewModel
 import com.example.collegeapp.features.search.ui.adapters.SearchPostAdapter
@@ -35,9 +39,14 @@ class ChildBookmarksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchPostAdapter = SearchPostAdapter()
+        val searchPostAdapter = SearchPostAdapter{
+            Navigation.easyNavigate(
+                action = R.id.showArticleFragment,
+                navController = findNavController()
+            )
+        }
         val recyclerView = binding.rvPostsSearchBookmarkFragment
         recyclerView.adapter = searchPostAdapter
-        searchPostAdapter.submitList(viewModel.bookmark.value)
+        //searchPostAdapter.submitList(viewModel.bookmark.value)
     }
 }

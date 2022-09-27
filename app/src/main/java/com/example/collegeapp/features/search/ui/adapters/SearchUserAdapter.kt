@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.databinding.ItemUserSerarchviewholderBinding
 import com.example.collegeapp.features.search.data.entities.UserSearchEntity
 
-class SearchUserAdapter :
+class SearchUserAdapter(
+    private val onItemClick : () -> Unit
+):
     ListAdapter<UserSearchEntity, SearchUserAdapter.SearchUserHolder>(SearchUserDiffCallback) {
 
-    class SearchUserHolder(private val itemBinding: ItemUserSerarchviewholderBinding) :
+    class SearchUserHolder(val itemBinding: ItemUserSerarchviewholderBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(userSearchEntity: UserSearchEntity) {
@@ -28,7 +30,7 @@ class SearchUserAdapter :
     override fun onBindViewHolder(holder: SearchUserHolder, position: Int) {
         val user = getItem(position)
         holder.bind(user)
-
+        holder.itemBinding.root.setOnClickListener { onItemClick() }
     }
 
 }
