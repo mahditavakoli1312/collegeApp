@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegeapp.R
+import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.FragmentChildSearchPostBinding
 import com.example.collegeapp.features.search.ui.SearchViewModel
 import com.example.collegeapp.features.search.ui.adapters.SearchPostAdapter
@@ -37,13 +41,18 @@ class ChildPostSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchPostAdapter = SearchPostAdapter()
+        val searchPostAdapter = SearchPostAdapter{
+            Navigation.easyNavigate(
+                action = R.id.showArticleFragment,
+                navController = findNavController()
+            )
+        }
         binding.apply {
             rvPostsSearchSearchFragment.adapter = searchPostAdapter
             rvPostsSearchSearchFragment.layoutManager = LinearLayoutManager(requireContext())
         }
         searchViewModel.searchVariable.observe(viewLifecycleOwner) {
-            searchPostAdapter.submitList(searchViewModel.getPostListBySearch())
+            //searchPostAdapter.submitList(searchViewModel.getPostListBySearch())
         }
     }
 }

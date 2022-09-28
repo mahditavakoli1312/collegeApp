@@ -3,59 +3,47 @@ package com.example.collegeapp.features.search.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
-import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.ItemPostSerarchviewholderBinding
-import com.example.collegeapp.features.article.data.ArticleEntity
-import com.example.collegeapp.features.home.ui.MainActivity
+import com.example.collegeapp.features.article.ui.model.ArticleView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
-class SearchPostAdapter :
-    ListAdapter<ArticleEntity, SearchPostAdapter.SearchPostHolder>(SearchPostDiffCallback) {
+class SearchPostAdapter(
+    private val onItemClick: () -> Unit
+) :
+    ListAdapter<ArticleView, SearchPostAdapter.SearchPostHolder>(SearchPostDiffCallback) {
 
-    class SearchPostHolder(private val binding: ItemPostSerarchviewholderBinding) :
+    class SearchPostHolder(val binding: ItemPostSerarchviewholderBinding) :
         RecyclerView.ViewHolder(binding.root) {
         private val chipsGroup: ChipGroup =
             binding.chipsGroupArticleRecyclerHomeFragment
 
-        fun bind(articleEntity: ArticleEntity) {
-            binding.article = articleEntity
-            val tagsList = articleEntity.tag.split(",")
+        fun bind(articleView: ArticleView) {
+            binding.article = articleView
             binding.apply {
-                root.setOnClickListener {
-                    val x =
-                        MainActivity.globalMain?.findNavController(R.id.fcv_fragmentContainer_activityMain)
-                            ?: itemView.findNavController()
-                    Navigation.easyNavigate(
-                        action = R.id.showArticleFragment,
-                        navController = x
+
+                chipsGroup.addView(Chip(itemView.context).apply {
+                    text = articleView.tag.title
+                    id = articleView.tag.id
+                    backgroundDrawable = ResourcesCompat.getDrawable(
+                        itemView.resources,
+                        R.drawable.tag_gray,
+                        itemView.context.theme
                     )
-                }
-
-                tagsList.forEach {
-                    chipsGroup.addView(Chip(itemView.context).apply {
-                        text = it
-                        backgroundDrawable = ResourcesCompat.getDrawable(
-                            itemView.resources,
-                            R.drawable.tag_gray,
-                            itemView.context.theme
+                    setTextColor(
+                        ResourcesCompat.getColor(
+                            root.resources,
+                            R.color.primary_200,
+                            root.context.theme
                         )
-                        setTextColor(
-                            ResourcesCompat.getColor(
-                                root.resources,
-                                R.color.primary_200,
-                                root.context.theme
-                            )
-                        )
+                    )
 
-                    })
-                }
+                })
+
             }
         }
     }
@@ -69,16 +57,17 @@ class SearchPostAdapter :
     override fun onBindViewHolder(holder: SearchPostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)
+        holder.binding.root.setOnClickListener { onItemClick() }
     }
 
 }
 
-object SearchPostDiffCallback : DiffUtil.ItemCallback<ArticleEntity>() {
-    override fun areItemsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
+object SearchPostDiffCallback : DiffUtil.ItemCallback<ArticleView>() {
+    override fun areItemsTheSame(oldItem: ArticleView, newItem: ArticleView): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
+    override fun areContentsTheSame(oldItem: ArticleView, newItem: ArticleView): Boolean {
         return oldItem.hashCode() == newItem.hashCode()
     }
 }
