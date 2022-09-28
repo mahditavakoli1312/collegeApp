@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 
 data class ArticleBaseResponse(
-    @SerializedName("data") var data: ArticleDataResponse? = ArticleDataResponse()
+   var data: List<ArticleDataResponse>? = listOf()
 )

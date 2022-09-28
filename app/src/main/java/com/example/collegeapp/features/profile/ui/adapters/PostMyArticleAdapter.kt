@@ -18,7 +18,9 @@ import com.example.collegeapp.features.search.data.entities.MyArticleEntity
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
-class PostMyArticleAdapter :
+class PostMyArticleAdapter(
+    private val onItemClick: () -> Unit
+) :
     ListAdapter<MyArticleEntity, PostMyArticleAdapter.MyArticlePostHolder>(PostMyArticleDiffCallback) {
 
     class MyArticlePostHolder(val binding: ItemMyarticleProfileviewholderBinding) :
@@ -85,6 +87,7 @@ class PostMyArticleAdapter :
     override fun onBindViewHolder(holder: MyArticlePostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)
+        holder.binding.root.setOnClickListener { onItemClick() }
     }
 
 }

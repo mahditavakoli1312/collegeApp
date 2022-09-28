@@ -13,8 +13,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.FragmentHomeBinding
-import com.example.collegeapp.features.home.ui.HomeViewModel
+import com.example.collegeapp.features.article.ui.model.TagView
 import com.example.collegeapp.features.home.ui.adapters.ArticlesAdapter
+import com.example.collegeapp.features.home.ui.viewModel.HomeViewModel
 import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,7 +24,7 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
     lateinit var binding: FragmentHomeBinding
-    private val tagSelectedList = mutableListOf<String>()
+    private val tagSelectedList = mutableListOf<TagView>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,8 +41,15 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val articleAdapter = ArticlesAdapter()
-        articleAdapter.submitList(homeViewModel.article.value)
+        val articleAdapter = ArticlesAdapter {
+            Navigation.easyNavigate(
+                action = R.id.action_homeFragment_to_showArticleFragment,
+                navController = findNavController()
+            )
+        }
+        homeViewModel.article.observe(viewLifecycleOwner) {
+            articleAdapter.submitList(it)
+        }
         createChipGroup()
         binding.apply {
             viewModel = homeViewModel
@@ -74,14 +82,14 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun createChip(chipText: String): Chip {
+    private fun createChip(chip: TagView): Chip {
         binding.apply {
             return Chip(
                 root.context,
                 null,
                 com.google.android.material.R.style.Widget_MaterialComponents_Chip_Filter
             ).apply {
-                text = chipText
+                text = chip.title
                 setChipBackgroundColorResource(R.color.white_10)
                 setTextColor(
                     ResourcesCompat.getColor(
@@ -90,6 +98,7 @@ class HomeFragment : Fragment() {
                         root.context.theme
                     )
                 )
+                id = chip.id
                 setChipStrokeColorResource(R.color.top_home_chips_bordercolor_selector)
                 chipStrokeWidth = root.resources.getDimension(R.dimen.stroke_1)
                 isClickable = true
@@ -97,8 +106,8 @@ class HomeFragment : Fragment() {
                 setOnClickListener {
                     isSelected = !isSelected
                     if (isSelected)
-                        tagSelectedList.add(text.toString())
-                    else tagSelectedList.remove(text.toString())
+                        tagSelectedList.add(chip)
+                    else tagSelectedList.remove(chip)
                     homeViewModel.tagSearchContent.postValue(tagSelectedList)
                 }
             }

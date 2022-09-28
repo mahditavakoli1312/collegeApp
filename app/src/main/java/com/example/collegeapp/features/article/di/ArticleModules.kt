@@ -1,10 +1,11 @@
 package com.example.collegeapp.features.article.di
 
-import com.example.collegeapp.features.article.data.ArticleRepository
-import com.example.collegeapp.features.article.data.dataSource.remote.ArticleApi
-import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
-import com.example.collegeapp.features.article.data.dataSource.remote.impl.ArticleRemoteDataSourceImpl
-import com.example.collegeapp.features.article.data.impl.ArticleRepositoryImpl
+
+import com.example.collegeapp.features.article.data.datasource.remote.ArticleApi
+import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
+import com.example.collegeapp.features.article.data.datasource.remote.impl.ArticleRemoteDataSourceImpl
+import com.example.collegeapp.features.article.data.repository.ArticleRepository
+import com.example.collegeapp.features.article.data.repository.impl.ArticleRepositoryImpl
 import com.example.collegeapp.features.profile.data.MyArticleRepository
 import com.example.collegeapp.features.profile.data.impl.MyArticleRepositoryImpl
 import dagger.Binds
@@ -25,7 +26,7 @@ abstract class ArticleModules {
     abstract fun bindMyArticle(myArticleRepository: MyArticleRepositoryImpl): MyArticleRepository
 
     @Binds
-    abstract fun bindArticleRemoteDataSource(impl: ArticleRemoteDataSourceImpl):
+    abstract fun bindArticleRemoteDataSource(articleRemoteDataSourceImpl: ArticleRemoteDataSourceImpl):
             ArticleRemoteDataSource
 
     companion object {

@@ -7,7 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
+import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.FragmentChildMyArticlesBinding
 import com.example.collegeapp.features.profile.ui.ProfileViewModel
 import com.example.collegeapp.features.profile.ui.adapters.PostMyArticleAdapter
@@ -35,7 +39,12 @@ class ChildMyArticlesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val postMyArticleAdapter = PostMyArticleAdapter()
+        val postMyArticleAdapter = PostMyArticleAdapter{
+            Navigation.easyNavigate(
+                action = R.id.showArticleFragment,
+                navController = findNavController()
+            )
+        }
         val recyclerView = binding.rvPostProfileChildMyArticles
         recyclerView.adapter = postMyArticleAdapter
         postMyArticleAdapter.submitList(viewModel.myArticle.value)
