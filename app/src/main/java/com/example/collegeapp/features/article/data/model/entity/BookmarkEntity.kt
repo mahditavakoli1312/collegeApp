@@ -1,12 +1,16 @@
 package com.example.collegeapp.features.article.data.model.entity
 
 import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "bookmark",
-    primaryKeys = ["id", "serverId"],
+    indices = [
+        Index(value = ["serverId"], unique = true)
+    ]
 )
 data class BookmarkEntity(
-    val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val serverId: Int
 )
