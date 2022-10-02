@@ -1,12 +1,10 @@
 package com.example.collegeapp.features.article.ui.viewModels
 
 import android.content.Context
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.collegeapp.R
 import com.example.collegeapp.core.networkUtils.ResultWrapper
+import com.example.collegeapp.features.article.data.model.entity.BookmarkEntity
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.ui.model.ArticleView
 import com.example.collegeapp.features.article.ui.model.TagView
@@ -16,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+
 
 @HiltViewModel
 class ShowArticleViewModel @Inject constructor(
@@ -48,13 +47,17 @@ class ShowArticleViewModel @Inject constructor(
     private val _fragmentStateMessage = MutableLiveData<String>()
     val fragmentStateMessage = _fragmentStateMessage
 
+    private val _bookmark = MutableLiveData<Boolean>()
+    val isBookmark: LiveData<Boolean> = _bookmark
+
     init {
         fetchArticleDetails()
+        bookmarksIsExist()
     }
 
     fun fetchArticleDetails() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = articleRepository.getArticleDetails(_articleId.value!!)
+            val response = articleRepository.getArticleDetails(_articleId.value ?: -1)
             withContext(Dispatchers.Main) {
                 when (response) {
                     is ResultWrapper.ApplicationError -> {
@@ -81,6 +84,51 @@ class ShowArticleViewModel @Inject constructor(
                 }
             }
 
+        }
+    }
+
+
+    private fun addToBookmarks() {
+        viewModelScope.launch(Dispatchers.IO) {
+            articleRepository.insertBookmark(
+                BookmarkEntity(
+                    serverId = _articleId.value ?: -1
+                )
+            )
+        }
+
+    }
+
+
+    private fun removeFromBookmarks() {
+        viewModelScope.launch(Dispatchers.IO) {
+            articleRepository.removeBookmarkByServerId(
+                serverId = _articleId.value ?: -1
+            )
+        }
+    }
+
+
+    private fun bookmarksIsExist() {
+        viewModelScope.launch(Dispatchers.IO) {
+            withContext(Dispatchers.Main) {
+                _bookmark.postValue(
+                    articleRepository.bookmarksIsExist(
+                        serverId = _articleId.value ?: -1
+                    )
+                )
+            }
+        }
+    }
+
+
+    fun bookmarkLogic() {
+        if (_bookmark.value == true) {
+            removeFromBookmarks()
+            _bookmark.postValue(false)
+        } else {
+            addToBookmarks()
+            _bookmark.postValue(true)
         }
     }
 }
