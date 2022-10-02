@@ -1,12 +1,11 @@
-package com.example.collegeapp.features.article.data.datasource.remote
+package com.example.collegeapp.features.article.data.dataSource.remote
 
-import com.example.collegeapp.features.article.data.model.ArticleBaseResponse
-import com.example.collegeapp.features.article.data.model.ArticleDataResponse
-import com.example.collegeapp.features.article.data.model.ArticleTagResponse
-import com.example.collegeapp.features.article.data.model.TagBaseResponse
+import com.example.collegeapp.features.article.data.model.response.ArticleDataResponse
+import com.example.collegeapp.features.article.data.model.response.ArticleDetailBaseResponse
+import com.example.collegeapp.features.article.data.model.response.ArticleTagResponse
 
 interface ArticleRemoteDataSource {
-    suspend fun getSingleArticle(id: Int): ArticleBaseResponse?
-    suspend fun getArticles() : List<ArticleDataResponse>?
-    suspend fun getTags() : List<ArticleTagResponse>?
+    suspend fun getArticleDetails(id: Int): ArticleDetailBaseResponse?
+    suspend fun getArticles(): List<ArticleDataResponse>?
+    suspend fun getTags(): List<ArticleTagResponse>?
 }

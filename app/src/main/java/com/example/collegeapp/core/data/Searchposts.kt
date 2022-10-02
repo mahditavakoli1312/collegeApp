@@ -1,10 +1,8 @@
 package com.example.collegeapp.core.data
 
-import android.content.Context
-import com.example.collegeapp.R
-import com.example.collegeapp.features.article.data.model.ArticleEntity
+import com.example.collegeapp.features.article.data.model.entity.ArticleEntity
 
-fun searchPostLists(context: Context): List<ArticleEntity> {
+fun searchPostLists(): List<ArticleEntity> {
     return listOf(
         /*ArticleEntity(
             1,

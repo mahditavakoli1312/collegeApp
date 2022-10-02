@@ -1,19 +1,18 @@
-package com.example.collegeapp.features.article.data.datasource.remote.impl
+package com.example.collegeapp.features.article.data.dataSource.remote.impl
 
 import com.example.collegeapp.core.networkUtils.bodyOrThrow
-import com.example.collegeapp.features.article.data.datasource.remote.ArticleApi
-import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
-import com.example.collegeapp.features.article.data.model.ArticleBaseResponse
-import com.example.collegeapp.features.article.data.model.ArticleDataResponse
-import com.example.collegeapp.features.article.data.model.ArticleTagResponse
-import com.example.collegeapp.features.article.data.model.TagBaseResponse
+import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
+import com.example.collegeapp.features.article.data.model.response.ArticleDataResponse
+import com.example.collegeapp.features.article.data.model.response.ArticleDetailBaseResponse
+import com.example.collegeapp.features.article.data.model.response.ArticleTagResponse
+import com.example.collegeapp.features.article.data.network.api.ArticleApi
 import javax.inject.Inject
 
 class ArticleRemoteDataSourceImpl @Inject constructor(
     private val api: ArticleApi
 ) : ArticleRemoteDataSource {
-    override suspend fun getSingleArticle(id: Int): ArticleBaseResponse? {
-        return api.getSingleArticle(id).bodyOrThrow()
+    override suspend fun getArticleDetails(id: Int): ArticleDetailBaseResponse? {
+        return api.getArticleDetails(id).bodyOrThrow()
     }
 
     override suspend fun getArticles(): List<ArticleDataResponse>? {

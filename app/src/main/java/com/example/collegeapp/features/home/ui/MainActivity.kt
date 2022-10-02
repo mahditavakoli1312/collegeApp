@@ -5,21 +5,16 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.collegeapp.R
-import com.example.collegeapp.core.common.LocalDatabase
 import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.ActivityMainBinding
-import com.example.collegeapp.features.article.data.model.ArticleEntity
-import com.example.collegeapp.features.article.data.model.TagEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -27,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     lateinit var binding: ActivityMainBinding
     var lastClick = 0L
+
     companion object {
         var globalMain: MainActivity? = null
             get() {

@@ -26,14 +26,14 @@ class CustomSnackBar private constructor(
 
         var view: View,
         var requiredActivity: Activity,
-        var descriptionText: String = view.resources.getString(R.string.label_internet_error),
-        var color: Int = ResourcesCompat.getColor(
+        private var descriptionText: String = view.resources.getString(R.string.label_internet_error),
+        private var color: Int = ResourcesCompat.getColor(
             view.resources,
             R.color.transparent100,
             view.context.theme
         ),
-        var gravity: Int? = null,
-        var snackbarLayout: Int = R.layout.snackbar_layout
+        private var gravity: Int? = null,
+        private var snackbarLayout: Int = R.layout.snackbar_layout
     ) {
 
         fun setDescriptionText(descriptionText: String) =

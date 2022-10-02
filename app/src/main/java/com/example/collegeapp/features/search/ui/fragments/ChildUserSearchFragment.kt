@@ -36,7 +36,7 @@ class ChildUserSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchUserAdapter = SearchUserAdapter{
+        val searchUserAdapter = SearchUserAdapter {
 
         }
         binding.apply {

@@ -1,7 +1,6 @@
 package com.example.collegeapp.features.article.ui.model
 
-import com.example.collegeapp.features.article.data.model.ArticleTagResponse
-import com.example.collegeapp.features.article.data.model.TagEntity
+import com.example.collegeapp.features.article.data.model.entity.TagEntity
 
 data class TagView(
     val id: Int,

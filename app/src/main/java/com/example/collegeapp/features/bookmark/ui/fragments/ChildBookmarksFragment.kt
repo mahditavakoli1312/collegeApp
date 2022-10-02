@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigate
@@ -39,7 +38,7 @@ class ChildBookmarksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchPostAdapter = SearchPostAdapter{
+        val searchPostAdapter = SearchPostAdapter {
             Navigation.easyNavigate(
                 action = R.id.showArticleFragment,
                 navController = findNavController()

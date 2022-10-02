@@ -1,6 +1,6 @@
 package com.example.collegeapp.features.search.data.impl
 
-import com.example.collegeapp.features.article.data.model.ArticleEntity
+import com.example.collegeapp.features.article.data.model.entity.ArticleEntity
 import com.example.collegeapp.features.search.data.SearchDataSource
 import com.example.collegeapp.features.search.data.SearchRepository
 import com.example.collegeapp.features.search.data.entities.UserSearchEntity

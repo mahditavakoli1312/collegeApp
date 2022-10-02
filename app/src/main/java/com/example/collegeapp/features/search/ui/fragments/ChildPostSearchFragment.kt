@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegeapp.R
@@ -41,7 +40,7 @@ class ChildPostSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchPostAdapter = SearchPostAdapter{
+        val searchPostAdapter = SearchPostAdapter {
             Navigation.easyNavigate(
                 action = R.id.showArticleFragment,
                 navController = findNavController()
