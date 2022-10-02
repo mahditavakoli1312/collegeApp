@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ShowArticleFragment : Fragment() {
 
     private lateinit var binding: FragmentShowArticleBinding
-    private val viewModel: ShowArticleViewModel by viewModels()
+    private val showArticleViewModel: ShowArticleViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +38,7 @@ class ShowArticleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.fragmentState.observe(viewLifecycleOwner) { fragmentState ->
+        showArticleViewModel.fragmentState.observe(viewLifecycleOwner) { fragmentState ->
             when (fragmentState) {
                 UserFragmentState.SUCCESS -> {
 
@@ -49,7 +49,7 @@ class ShowArticleFragment : Fragment() {
                         requiredActivity = requireActivity(),
                         view = view
                     )
-                        .setDescriptionText(viewModel.fragmentStateMessage.value ?: "")
+                        .setDescriptionText(showArticleViewModel.fragmentStateMessage.value ?: "")
                         .build()
                         .showSnackBar()
                     findNavController().popBackStack()
@@ -59,7 +59,7 @@ class ShowArticleFragment : Fragment() {
                         requiredActivity = requireActivity(),
                         view = view
                     )
-                        .setDescriptionText(viewModel.fragmentStateMessage.value ?: "")
+                        .setDescriptionText(showArticleViewModel.fragmentStateMessage.value ?: "")
                         .build()
                         .showSnackBar()
                     findNavController().popBackStack()
@@ -71,23 +71,34 @@ class ShowArticleFragment : Fragment() {
 
         }
         binding.apply {
-            viewModel = this@ShowArticleFragment.viewModel
+            viewModel = this@ShowArticleFragment.showArticleViewModel
             lifecycleOwner = viewLifecycleOwner
             imgBackShowArticleFragment.setOnClickListener {
                 findNavController().popBackStack()
             }
 
             imgBookmarkShowArticleFragment.setOnClickListener {
-                imgBookmarkShowArticleFragment.setImageResource(R.drawable.ic_bookmarked)
-                CustomSnackBar.Builder(
-                    view = view,
-                    requiredActivity = requireActivity()
-                )
-                    .setDescriptionText(
-                        view.resources.getString(R.string.label_added_article_to_bookmark)
+                if (showArticleViewModel.isBookmark.value == false) {
+                    CustomSnackBar.Builder(
+                        view = view,
+                        requiredActivity = requireActivity()
                     )
-                    .build()
-                    .showSnackBar()
+                        .setDescriptionText(
+                            view.resources.getString(R.string.label_added_article_to_bookmark)
+                        )
+                        .build()
+                        .showSnackBar()
+                }
+                showArticleViewModel.bookmarkLogic()
+            }
+
+            showArticleViewModel.isBookmark.observe(viewLifecycleOwner) { isBookmarkk ->
+                if (!isBookmarkk) {
+                    imgBookmarkShowArticleFragment.setImageResource(R.drawable.ic_bookmark)
+                } else {
+                    imgBookmarkShowArticleFragment.setImageResource(R.drawable.ic_bookmarked)
+                }
+
             }
         }
     }

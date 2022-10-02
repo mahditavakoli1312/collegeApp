@@ -13,5 +13,5 @@ interface ArticleDetailsDao {
     suspend fun insertArticleDetails(article: ArticleDetailsEntity)
 
     @Query("SELECT * FROM article_details WHERE id = :id")
-    fun getArticleDetailsById(id: Int): ArticleDetailsEntity
+    fun getArticleDetailsById(id: Int): ArticleDetailsEntity?
 }

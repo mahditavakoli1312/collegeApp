@@ -95,11 +95,11 @@ class ArticleRepositoryImpl @Inject constructor(
     private suspend fun insertArticleDetailsToLocalDatabase(article: ArticleDetailsEntity) =
         articleLocalDataSource.insertArticleDetails(article)
 
-    private fun getArticleViewByIdFromLocalDataSource(id: Int): ArticleView =
-        articleLocalDataSource.getArticleDetailsById(id).toArticleView()
+    private fun getArticleViewByIdFromLocalDataSource(id: Int): ArticleView? =
+        articleLocalDataSource.getArticleDetailsById(id)?.toArticleView()
 
 
-    override suspend fun getArticleDetails(id: Int): ResultWrapper<ArticleView> {
+    override suspend fun getArticleDetails(id: Int): ResultWrapper<ArticleView?> {
         return safeApiCall(
             localData = getArticleViewByIdFromLocalDataSource(id),
             api = {
@@ -110,6 +110,15 @@ class ArticleRepositoryImpl @Inject constructor(
                 return@safeApiCall getArticleViewByIdFromLocalDataSource(id)
             })
     }
+
+    override suspend fun insertBookmark(bookmarkEntity: BookmarkEntity) =
+        articleLocalDataSource.insertBookmark(bookmarkEntity = bookmarkEntity)
+
+    override suspend fun removeBookmarkByServerId(serverId: Int) =
+        articleLocalDataSource.removeBookmarkByServerId(serverId = serverId)
+
+    override suspend fun bookmarksIsExist(serverId: Int): Boolean =
+        articleLocalDataSource.bookmarksIsExist(serverId = serverId)
 
 
 }
