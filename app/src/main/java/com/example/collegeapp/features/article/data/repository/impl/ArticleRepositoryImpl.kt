@@ -2,7 +2,7 @@ package com.example.collegeapp.features.article.data.repository.impl
 
 import com.example.collegeapp.core.networkUtils.ResultWrapper
 import com.example.collegeapp.core.networkUtils.safeApiCall
-import com.example.collegeapp.features.article.data.datasource.local.ArticleLocalDataSource
+import com.example.collegeapp.features.article.data.dataSource.local.ArticleLocalDataSource
 import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.model.entity.*
 import com.example.collegeapp.features.article.data.repository.ArticleRepository

@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.article.data.datasource.local
+package com.example.collegeapp.features.article.data.dataSource.local
 
 import com.example.collegeapp.core.common.LocalDatabase
 import com.example.collegeapp.features.article.data.dp.dao.ArticleDetailsDao
