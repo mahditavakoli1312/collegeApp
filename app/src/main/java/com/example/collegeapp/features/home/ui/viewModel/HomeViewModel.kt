@@ -54,7 +54,7 @@ class HomeViewModel @Inject constructor(
                             }
                         }
                     }
-                    _fragmentState.postValue(UserFragmentState.APPERROR)
+                    _fragmentState.postValue(UserFragmentState.APP_ERROR)
                 }
                 is ResultWrapper.Failure -> {
                     _fragmentStateMessage.postValue("${response.message} ${response.code}")
@@ -78,7 +78,7 @@ class HomeViewModel @Inject constructor(
                             }
                         }
                     }
-                    _fragmentState.postValue(UserFragmentState.APPERROR)
+                    _fragmentState.postValue(UserFragmentState.APP_ERROR)
                 }
                 is ResultWrapper.Failure -> {
                     _fragmentStateMessage.postValue("${response.message} ${response.code}")
