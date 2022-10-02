@@ -2,8 +2,8 @@ package com.example.collegeapp.features.article.di
 
 
 import com.example.collegeapp.core.common.LocalDatabase
-import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
-import com.example.collegeapp.features.article.data.datasource.remote.impl.ArticleRemoteDataSourceImpl
+import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
+import com.example.collegeapp.features.article.data.dataSource.remote.impl.ArticleRemoteDataSourceImpl
 import com.example.collegeapp.features.article.data.dp.dao.ArticleDetailsDao
 import com.example.collegeapp.features.article.data.network.api.ArticleApi
 import com.example.collegeapp.features.article.data.repository.ArticleRepository

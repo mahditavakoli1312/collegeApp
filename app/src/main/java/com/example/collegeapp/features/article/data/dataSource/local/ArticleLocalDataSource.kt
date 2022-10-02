@@ -1,25 +1,38 @@
-package com.example.collegeapp.features.article.data.datasource.local
+package com.example.collegeapp.features.article.data.dataSource.local
 
 import com.example.collegeapp.core.common.LocalDatabase
-import com.example.collegeapp.features.article.data.model.ArticleEntity
-import com.example.collegeapp.features.article.data.model.TagEntity
+import com.example.collegeapp.features.article.data.dp.dao.ArticleDetailsDao
+import com.example.collegeapp.features.article.data.model.entity.ArticleDetailsEntity
+import com.example.collegeapp.features.article.data.model.entity.ArticleEntity
+import com.example.collegeapp.features.article.data.model.entity.TagEntity
 import javax.inject.Inject
 
 class ArticleLocalDataSource @Inject constructor(
-    private val localDatabase: LocalDatabase
+    // TODO Sobhan BazuBandi : delete database access from datasource
+    private val localDatabase: LocalDatabase,
+    private val articleDao: ArticleDetailsDao
 ) {
 
-    fun getArticles() = localDatabase.getArticleDao().getArticles()
+    suspend fun getArticles() = localDatabase.getArticleDao().getArticles()
 
     //TODO Change authorId to sharedPref
     fun getMyArticle() = localDatabase.getArticleDao().getArticleWithAuthorId(1)
 
-    fun getAllTags() = localDatabase.getTagDao().getAllTags()
+    suspend fun getAllTags(): List<TagEntity> = localDatabase.getTagDao().getAllTags()
 
-    fun addTags(tags : List<TagEntity>) = localDatabase.getTagDao().insertTags(tags)
+    suspend fun insertTags(tags: List<TagEntity>) = localDatabase.getTagDao().insertTags(tags)
 
-    suspend fun getArticleWithId(articleId : Int) = localDatabase.getArticleDao().getArticleWithId(articleId)
 
-    fun addArticles(articles: List<ArticleEntity>) = localDatabase.getArticleDao().insertArticles(articles)
+    suspend fun getArticleWithId(articleId: Int) =
+        localDatabase.getArticleDao().getArticleWithId(articleId)
+
+    fun insertArticles(articles: List<ArticleEntity>) =
+        localDatabase.getArticleDao().insertArticles(articles)
+
+    fun getArticleDetailsById(id: Int): ArticleDetailsEntity =
+        articleDao.getArticleDetailsById(id)
+
+    suspend fun insertArticleDetails(article: ArticleDetailsEntity) =
+        articleDao.insertArticleDetails(article = article)
 
 }
