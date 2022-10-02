@@ -8,5 +8,5 @@ import javax.inject.Inject
 class BookmarkDataResource @Inject constructor(
     @ApplicationContext val context: Context
 ) {
-    fun getBookmark() = searchPostLists(context)
+    fun getBookmark() = searchPostLists()
 }

@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.article.data.model
+package com.example.collegeapp.features.article.data.model.response
 
 import com.google.gson.annotations.SerializedName
 

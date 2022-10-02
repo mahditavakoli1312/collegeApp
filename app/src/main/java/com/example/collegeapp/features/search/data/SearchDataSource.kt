@@ -10,7 +10,7 @@ import javax.inject.Inject
 class SearchDataSource @Inject constructor(
     @ApplicationContext val context: Context
 ) {
-    fun getPosts() = searchPostLists(context)
+    fun getPosts() = searchPostLists()
     fun getUsers() = searchUserLists(context)
     fun getTags() = searchTagLists(context)
 }

@@ -1,5 +1,6 @@
 package com.example.collegeapp.core.networkUtils
 
+import org.json.JSONObject
 import retrofit2.Response
 
 fun <T> Response<T>.bodyOrThrow(): T? {
@@ -7,6 +8,15 @@ fun <T> Response<T>.bodyOrThrow(): T? {
         return body()
     else {
         /*TODO : check errorBody */
-        throw NetworkException(serverMessage = errorBody().toString(), code = code())
+        var errorMessage: String
+        try {
+            errorMessage = JSONObject(errorBody()?.string())
+                .getString("message")
+        } catch (e: Exception) {
+            errorMessage = errorBody().toString()
+        }
+        throw NetworkException(
+            serverMessage = errorMessage, code = code()
+        )
     }
 }

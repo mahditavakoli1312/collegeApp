@@ -41,10 +41,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val articleAdapter = ArticlesAdapter {
-            Navigation.easyNavigate(
-                action = R.id.action_homeFragment_to_showArticleFragment,
-                navController = findNavController()
+        val articleAdapter = ArticlesAdapter { articleId ->
+            val action =
+                HomeFragmentDirections.actionHomeFragmentToShowArticleFragment(articleID = articleId)
+            findNavController().navigate(
+                action
             )
         }
         homeViewModel.article.observe(viewLifecycleOwner) {
@@ -73,7 +74,7 @@ class HomeFragment : Fragment() {
     private fun createChipGroup() {
         binding.apply {
             homeViewModel.chipsList.observe(viewLifecycleOwner) {
-                it.forEach { tag ->
+                it?.forEach { tag ->
                     chipsFilterHomeFragment.addView(
                         createChip(tag)
                     )

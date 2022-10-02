@@ -11,7 +11,7 @@ import com.example.collegeapp.databinding.ItemArticleHomerecyclerBinding
 import com.example.collegeapp.features.article.ui.model.ArticleView
 import com.google.android.material.chip.Chip
 
-class ArticlesAdapter(private val onItemClick: () -> Unit) :
+class ArticlesAdapter(private val onItemClick: (articleId: Int) -> Unit) :
     ListAdapter<ArticleView, ArticlesAdapter.ArticleViewHolder>(ArticleDiffCallBack) {
 
     class ArticleViewHolder(val binding: ItemArticleHomerecyclerBinding) :
@@ -52,7 +52,7 @@ class ArticlesAdapter(private val onItemClick: () -> Unit) :
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val article = getItem(position)
         holder.bind(article)
-        holder.binding.root.setOnClickListener { onItemClick() }
+        holder.binding.root.setOnClickListener { onItemClick(article.id) }
     }
 }
 

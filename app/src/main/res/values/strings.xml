@@ -56,4 +56,5 @@
     <string name="label_tag_fake_three">نانوتکنولوژی</string>
     <string name="label_tag_fake_four">مکانیک</string>
     <string name="label_tag_fake_five">تست</string>
+    <string name="label_appError">ارتباط برقرار نشد</string>
 </resources>

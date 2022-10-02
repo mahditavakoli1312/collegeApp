@@ -1,11 +1,11 @@
-package com.example.collegeapp.features.article.data.datasource.local
+package com.example.collegeapp.features.article.data.dp.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.collegeapp.features.article.data.model.ArticleEntity
+import com.example.collegeapp.features.article.data.model.entity.ArticleEntity
 
 @Dao
 interface ArticleDao {
@@ -14,17 +14,17 @@ interface ArticleDao {
     suspend fun insertArticle(articleEntity: ArticleEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertArticles(articles : List<ArticleEntity>)
+    fun insertArticles(articles: List<ArticleEntity>)
 
     @Query("SELECT * FROM articles")
-    fun getArticles(): LiveData<List<ArticleEntity>>
+    suspend fun getArticles(): List<ArticleEntity>
 
     @Query("SELECT * FROM articles WHERE id = :articleId")
     suspend fun getArticleWithId(articleId: Int): ArticleEntity
 
     @Query("SELECT * FROM articles WHERE tag_id IN (:tags)")
-    fun getArticleWithTags(tags : List<Int>): LiveData<List<ArticleEntity>>
+    fun getArticleWithTags(tags: List<Int>): LiveData<List<ArticleEntity>>
 
     @Query("SELECT * FROM articles WHERE author_id = :authorId")
-    fun getArticleWithAuthorId(authorId : Int): LiveData<List<ArticleEntity>>
+    fun getArticleWithAuthorId(authorId: Int): LiveData<List<ArticleEntity>>
 }

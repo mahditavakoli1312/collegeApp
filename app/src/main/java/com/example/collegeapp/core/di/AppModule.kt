@@ -2,7 +2,6 @@ package com.example.collegeapp.core.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.collegeapp.core.common.LocalDatabase
 import dagger.Module
 import dagger.Provides
@@ -17,7 +16,9 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideLocalDatabase(@ApplicationContext context: Context) : LocalDatabase{
-        return Room.databaseBuilder(context , LocalDatabase::class.java , "helium").build()
+    fun provideLocalDatabase(@ApplicationContext context: Context): LocalDatabase {
+        return Room.databaseBuilder(context, LocalDatabase::class.java, "helium").build()
     }
+
+
 }

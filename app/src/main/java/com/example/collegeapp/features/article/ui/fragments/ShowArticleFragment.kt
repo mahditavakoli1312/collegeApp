@@ -12,14 +12,11 @@ import com.example.collegeapp.R
 import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.FragmentShowArticleBinding
 import com.example.collegeapp.features.article.ui.viewModels.ShowArticleViewModel
+import com.example.collegeapp.features.article.ui.viewModels.UserFragmentState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ShowArticleFragment : Fragment() {
-
-    companion object {
-        const val articleID: String = "article_id"
-    }
 
     private lateinit var binding: FragmentShowArticleBinding
     private val viewModel: ShowArticleViewModel by viewModels()
@@ -41,6 +38,38 @@ class ShowArticleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.fragmentState.observe(viewLifecycleOwner) { fragmentState ->
+            when (fragmentState) {
+                UserFragmentState.SUCCESS -> {
+
+                }
+                UserFragmentState.FAILURE -> {
+
+                    CustomSnackBar.Builder(
+                        requiredActivity = requireActivity(),
+                        view = view
+                    )
+                        .setDescriptionText(viewModel.fragmentStateMessage.value ?: "")
+                        .build()
+                        .showSnackBar()
+                    findNavController().popBackStack()
+                }
+                UserFragmentState.APPERROR -> {
+                    CustomSnackBar.Builder(
+                        requiredActivity = requireActivity(),
+                        view = view
+                    )
+                        .setDescriptionText(viewModel.fragmentStateMessage.value ?: "")
+                        .build()
+                        .showSnackBar()
+                    findNavController().popBackStack()
+                }
+                UserFragmentState.INITIAL_STATE -> {
+
+                }
+            }
+
+        }
         binding.apply {
             viewModel = this@ShowArticleFragment.viewModel
             lifecycleOwner = viewLifecycleOwner

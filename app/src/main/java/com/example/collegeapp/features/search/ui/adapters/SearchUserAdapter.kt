@@ -9,8 +9,8 @@ import com.example.collegeapp.databinding.ItemUserSerarchviewholderBinding
 import com.example.collegeapp.features.search.data.entities.UserSearchEntity
 
 class SearchUserAdapter(
-    private val onItemClick : () -> Unit
-):
+    private val onItemClick: () -> Unit
+) :
     ListAdapter<UserSearchEntity, SearchUserAdapter.SearchUserHolder>(SearchUserDiffCallback) {
 
     class SearchUserHolder(val itemBinding: ItemUserSerarchviewholderBinding) :
