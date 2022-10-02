@@ -1,6 +1,7 @@
 package com.example.collegeapp.features.article.ui.viewModels
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.collegeapp.R
 import com.example.collegeapp.core.networkUtils.ResultWrapper
@@ -15,6 +16,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
+const val TAG = "GOOGLE_KAM_KHERAD"
 
 @HiltViewModel
 class ShowArticleViewModel @Inject constructor(
@@ -61,16 +63,28 @@ class ShowArticleViewModel @Inject constructor(
             withContext(Dispatchers.Main) {
                 when (response) {
                     is ResultWrapper.ApplicationError -> {
-                        response.message.apply {
-                            when (this) {
-                                else -> {
-                                    //todo change context to provide module
-                                    _fragmentStateMessage.postValue(context.getString(R.string.label_appError))
+                        try {
+                            if (response.localData != null) {
+
+                                response.message.apply {
+                                    Log.d(TAG, "fetchArticleDetails: ${response.message}")
+                                    when (this) {
+                                        else -> {
+                                            //todo change context to provide module
+                                            _fragmentStateMessage.postValue(context.getString(R.string.label_appError))
+                                        }
+                                    }
                                 }
+                                _fragmentState.postValue(UserFragmentState.APP_ERROR)
+                                _articleDetail.postValue(response.localData)
+                            } else {
+                                _fragmentStateMessage.postValue(context.getString(R.string.label_no_remote_no_local))
+                                _fragmentState.postValue(UserFragmentState.NO_REMOTE_NO_LOCAL)
                             }
+                        } catch (exception: Exception) {
+                            _fragmentStateMessage.postValue(context.getString(R.string.label_unknown_error))
+                            _fragmentState.postValue(UserFragmentState.UNKNOWN_STATE)
                         }
-                        _fragmentState.postValue(UserFragmentState.APPERROR)
-                        _articleDetail.postValue(response.localData)
                     }
                     is ResultWrapper.Failure -> {
                         _fragmentStateMessage.postValue("${response.message} ${response.code}")
@@ -136,6 +150,8 @@ class ShowArticleViewModel @Inject constructor(
 enum class UserFragmentState {
     SUCCESS,
     FAILURE,
-    APPERROR,
-    INITIAL_STATE
+    APP_ERROR,
+    INITIAL_STATE,
+    NO_REMOTE_NO_LOCAL,
+    UNKNOWN_STATE,
 }
