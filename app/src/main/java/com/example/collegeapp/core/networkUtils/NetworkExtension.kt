@@ -11,9 +11,12 @@ fun <T> Response<T>.bodyOrThrow(): T? {
         var errorMessage: String
         try {
             errorMessage = JSONObject(errorBody()?.string())
-                .getString("message")
+                .getJSONArray("message")
+                .get(0).toString()
         } catch (e: Exception) {
-            errorMessage = errorBody().toString()
+            errorMessage = JSONObject(errorBody()?.string())
+                .getString("message")
+
         }
         throw NetworkException(
             serverMessage = errorMessage, code = code()
