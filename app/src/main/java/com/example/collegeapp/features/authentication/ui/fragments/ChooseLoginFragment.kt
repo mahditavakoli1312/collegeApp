@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigate
+import com.example.collegeapp.core.common.easyNavigateWithPopUp
 import com.example.collegeapp.databinding.FragmentChooseLoginBinding
 
 class ChooseLoginFragment : Fragment() {
@@ -33,16 +34,20 @@ class ChooseLoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             btnRegisterChooseLoginFragment.setOnClickListener {
-                Navigation.easyNavigate(
+                Navigation.easyNavigateWithPopUp(
                     action = ChooseLoginFragmentDirections.actionChooseLoginFragmentToRegisterFragment(),
                     navController = findNavController(),
+                    popUpId = R.id.chooseLoginFragment ,
+                    inclusive = true
                 )
             }
 
             btnLoginChooseLoginFragment.setOnClickListener {
-                Navigation.easyNavigate(
+                Navigation.easyNavigateWithPopUp(
                     action = ChooseLoginFragmentDirections.actionChooseLoginFragmentToLoginFragment(),
                     navController = findNavController(),
+                    popUpId = R.id.chooseLoginFragment ,
+                    inclusive = true
                 )
             }
 

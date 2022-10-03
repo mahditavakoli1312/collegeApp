@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.authentication.data
+package com.example.collegeapp.features.authentication.data.model.entity
 
 data class UserRegisterEntity(
     val username: String,
