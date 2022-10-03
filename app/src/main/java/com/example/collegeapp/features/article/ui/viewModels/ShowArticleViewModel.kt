@@ -5,10 +5,11 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.example.collegeapp.R
 import com.example.collegeapp.core.networkUtils.ResultWrapper
-import com.example.collegeapp.features.article.data.model.entity.BookmarkEntity
+import com.example.collegeapp.features.article.data.model.entity.toBookmarkEntity
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.ui.model.ArticleView
 import com.example.collegeapp.features.article.ui.model.TagView
+import com.example.collegeapp.features.bookmark.ui.model.BookmarkView
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -105,9 +106,9 @@ class ShowArticleViewModel @Inject constructor(
     private fun addToBookmarks() {
         viewModelScope.launch(Dispatchers.IO) {
             articleRepository.insertBookmark(
-                BookmarkEntity(
+                BookmarkView(
                     serverId = _articleId.value ?: -1
-                )
+                ).toBookmarkEntity()
             )
         }
 
