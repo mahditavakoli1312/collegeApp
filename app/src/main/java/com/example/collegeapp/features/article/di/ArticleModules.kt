@@ -4,8 +4,10 @@ package com.example.collegeapp.features.article.di
 import com.example.collegeapp.core.common.LocalDatabase
 import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.dataSource.remote.impl.ArticleRemoteDataSourceImpl
+import com.example.collegeapp.features.article.data.dp.dao.ArticleDao
 import com.example.collegeapp.features.article.data.dp.dao.ArticleDetailsDao
 import com.example.collegeapp.features.article.data.dp.dao.BookmarkDao
+import com.example.collegeapp.features.article.data.dp.dao.TagDao
 import com.example.collegeapp.features.article.data.network.api.ArticleApi
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.data.repository.impl.ArticleRepositoryImpl
@@ -46,6 +48,13 @@ abstract class ArticleModules {
         fun provideBookmarkDao(database: LocalDatabase): BookmarkDao =
             database.getBookmarkDao()
 
+        @Provides
+        fun provideTagDao(database: LocalDatabase): TagDao =
+            database.getTagDao()
+
+        @Provides
+        fun provideArticleDao(database: LocalDatabase): ArticleDao =
+            database.getArticleDao()
     }
 
 }
