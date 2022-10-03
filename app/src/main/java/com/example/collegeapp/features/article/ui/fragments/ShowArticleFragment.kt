@@ -73,6 +73,27 @@ class ShowArticleFragment : Fragment() {
                         .setDescriptionText(showArticleViewModel.fragmentStateMessage.value ?: "")
                         .build()
                         .showSnackBar()
+                }
+                UserFragmentState.APP_ERROR -> {
+                    CustomSnackBar.Builder(
+                        requiredActivity = requireActivity(),
+                        view = view
+                    )
+                        .setDescriptionText(showArticleViewModel.fragmentStateMessage.value ?: "")
+                        .build()
+                        .showSnackBar()
+                }
+                UserFragmentState.INITIAL_STATE -> {
+
+                }
+                UserFragmentState.NO_REMOTE_NO_LOCAL -> {
+                    CustomSnackBar.Builder(
+                        requiredActivity = requireActivity(),
+                        view = view
+                    )
+                        .setDescriptionText(showArticleViewModel.fragmentStateMessage.value ?: "")
+                        .build()
+                        .showSnackBar()
                     findNavController().popBackStack()
                 }
                 UserFragmentState.UNKNOWN_STATE -> {

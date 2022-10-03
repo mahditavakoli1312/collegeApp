@@ -25,7 +25,8 @@
     <string name="label_registerTitle"><b>ثبت نام</b></string>
     <string name="label_isRegister">قبلا ثبت نام کرده اید؟</string>
     <string name="label_loginStr_bold"><b>وارد شوید.</b></string>
-    <string name="label_name">نام و نام خانوادگی</string>
+    <string name="label_name">نام</string>
+    <string name="label_family">نام خانوادگی</string>
     <string name="label_username">نام کاربری</string>
     <string name="label_email">پست الکترونیک</string>
     <string name="label_search_bar">جستجو …</string>
@@ -59,4 +60,15 @@
     <string name="label_appError">ارتباط برقرار نشد</string>
     <string name="label_no_remote_no_local">عدم ارتباط ، عدم وجود مقاله در حافظه محلی</string>
     <string name="label_unknown_error">خطای ناشناخته. گزارش دهید</string>
+    <string name="label_name_length_error">نام باید حداقل 3 حرف باشد</string>
+    <string name="label_name_persian_error">نام باید شامل حروف فارسی باشد</string>
+    <string name="label_last_name_length_error">نام خانوادگی باید حداقل 3 حرف باشد</string>
+    <string name="label_last_name_persian_error">نام خانوادگی باید فارسی باشد</string>
+    <string name="label_username_length_error">نام کاربری باید حداقل 6 حرف باشد</string>
+    <string name="label_username_pattern_error">نام کاربری باید شامل _ و حروف انگلیسی و اعداد باشد</string>
+    <string name="label_phone_number_error">شماره موبایل معتبر نیست</string>
+    <string name="label_email_error">ایمیل معتبر نیست</string>
+    <string name="label_password_error">پسورد معتبر نیست</string>
+    <string name="label_password_length_error">رمز عبور باید حداقل 6 حرف باشد</string>
+    <string name="label_validation_true">تمامی فیلد ها باید درست باشند</string>
 </resources>
