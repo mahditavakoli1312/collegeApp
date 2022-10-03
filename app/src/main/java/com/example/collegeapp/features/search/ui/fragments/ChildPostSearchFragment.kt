@@ -50,6 +50,7 @@ class ChildPostSearchFragment : Fragment() {
             rvPostsSearchSearchFragment.adapter = searchPostAdapter
             rvPostsSearchSearchFragment.layoutManager = LinearLayoutManager(requireContext())
         }
+        //todo change this items
         searchViewModel.searchVariable.observe(viewLifecycleOwner) {
             //searchPostAdapter.submitList(searchViewModel.getPostListBySearch())
         }

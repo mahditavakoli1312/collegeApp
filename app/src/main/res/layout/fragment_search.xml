@@ -123,18 +123,16 @@
                 android:hint="@string/label_search_bar"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_nestedFragmentHolder_searchFragment"
+<!--todo delete nav graph search-->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_nestedFragmentHolder_searchFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:defaultNavHost="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_searchFragment"
             app:layout_constraintStart_toEndOf="@id/gl_verticalStart_searchFragment"
-            app:layout_constraintTop_toBottomOf="@id/gl_horizontal18_searchFragment"
-            app:navGraph="@navigation/search_navgraph" />
+            app:layout_constraintTop_toBottomOf="@id/gl_horizontal18_searchFragment" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

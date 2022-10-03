@@ -8,10 +8,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
+import androidx.viewpager2.widget.ViewPager2
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentSearchBinding
 import com.example.collegeapp.features.search.ui.SearchViewModel
+import com.example.collegeapp.features.search.ui.adapters.SearchViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,38 +40,60 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val nestedNavHostFragment =
-            childFragmentManager.findFragmentById(R.id.fcv_nestedFragmentHolder_searchFragment) as NavHostFragment
-        navController = nestedNavHostFragment.navController
+        handleSearchViewPager()
         handleSearchChip()
         binding.apply {
             viewModel = searchViewModel
             lifecycleOwner = viewLifecycleOwner
-
         }
     }
+
+    private fun handleSearchViewPager() {
+        binding.apply {
+            vpNestedFragmentHolderSearchFragment.adapter = SearchViewPagerAdapter(requireActivity())
+            vpNestedFragmentHolderSearchFragment.registerOnPageChangeCallback(object :
+                ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    when (position) {
+                        0 -> cPostChipsGroupSearchFragment.isChecked = true
+                        1 -> cTagsChipsGroupSearchFragment.isChecked = true
+                        2 -> cUsersChipsGroupSearchFragment.isChecked = true
+                    }
+
+                }
+
+                override fun onPageScrollStateChanged(state: Int) {
+                    super.onPageScrollStateChanged(state)
+                }
+
+                override fun onPageScrolled(
+                    position: Int,
+                    positionOffset: Float,
+                    positionOffsetPixels: Int
+                ) {
+                    super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                }
+            })
+        }
+    }
+
 
     private fun handleSearchChip() {
         binding.apply {
             cgSearchChipsSearchFragment.setOnCheckedStateChangeListener { _, checkedId ->
                 when {
                     binding.cPostChipsGroupSearchFragment.id in checkedId -> {
-                        navController.navigate(
-                            R.id.childPostSearchFragment2
-                        )
                         currentState = 0
+                        vpNestedFragmentHolderSearchFragment.setCurrentItem(0, true)
                     }
                     binding.cTagsChipsGroupSearchFragment.id in checkedId -> {
-                        navController.navigate(
-                            R.id.childTagSearchFragment2
-                        )
                         currentState = 1
+                        vpNestedFragmentHolderSearchFragment.setCurrentItem(1, true)
                     }
                     binding.cUsersChipsGroupSearchFragment.id in checkedId -> {
-                        navController.navigate(
-                            R.id.childUserSearchFragment
-                        )
                         currentState = 2
+                        vpNestedFragmentHolderSearchFragment.setCurrentItem(2, true)
                     }
                 }
             }
