@@ -35,7 +35,6 @@ abstract class ArticleModules {
             ArticleRemoteDataSource
 
     companion object {
-
         @Provides
         fun provideArticleApi(retrofit: Retrofit): ArticleApi =
             retrofit.create(ArticleApi::class.java)

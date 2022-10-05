@@ -15,7 +15,7 @@ suspend fun <T> safeApiCall(api: suspend () -> T, localData: T): ResultWrapper<T
             }
             else -> {
                 ResultWrapper.ApplicationError(
-                    message = exception.message.toString(),
+                    message = exception.localizedMessage,
                     localData = localData
                 )
             }

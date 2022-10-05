@@ -6,22 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegeapp.R
-import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.FragmentChildSearchPostBinding
-import com.example.collegeapp.features.search.ui.SearchViewModel
 import com.example.collegeapp.features.search.ui.adapters.SearchPostAdapter
+import com.example.collegeapp.features.search.ui.viewModel.SearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ChildPostSearchFragment : Fragment() {
 
     private lateinit var binding: FragmentChildSearchPostBinding
-    private val searchViewModel: SearchViewModel by activityViewModels()
+    private val searchViewModel: SearchViewModel by viewModels(
+        ownerProducer = { requireParentFragment() },
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,19 +40,25 @@ class ChildPostSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchPostAdapter = SearchPostAdapter {
-            Navigation.easyNavigate(
-                action = R.id.showArticleFragment,
-                navController = findNavController()
-            )
+        val searchPostAdapter = SearchPostAdapter { articleId ->
+            val action =
+                SearchFragmentDirections.actionSearchFragmentToShowArticleFragment(articleID = articleId)
+            parentFragment?.findNavController()
+                ?.navigate(
+                    action
+                )
+
         }
         binding.apply {
             rvPostsSearchSearchFragment.adapter = searchPostAdapter
             rvPostsSearchSearchFragment.layoutManager = LinearLayoutManager(requireContext())
         }
-        //todo change this items
-        searchViewModel.searchVariable.observe(viewLifecycleOwner) {
-            //searchPostAdapter.submitList(searchViewModel.getPostListBySearch())
+        searchViewModel.articles.observe(viewLifecycleOwner) { articles ->
+            searchPostAdapter.submitList(
+                articles
+            )
         }
+
+
     }
 }

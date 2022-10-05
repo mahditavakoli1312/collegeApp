@@ -6,21 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.NavController
+import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.collegeapp.R
+import com.example.collegeapp.core.ui.CustomSnackBar
+import com.example.collegeapp.core.ui.FragmentState
 import com.example.collegeapp.databinding.FragmentSearchBinding
-import com.example.collegeapp.features.search.ui.SearchViewModel
 import com.example.collegeapp.features.search.ui.adapters.SearchViewPagerAdapter
+import com.example.collegeapp.features.search.ui.viewModel.SearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
-
-    private lateinit var navController: NavController
     private lateinit var binding: FragmentSearchBinding
-    private val searchViewModel: SearchViewModel by activityViewModels()
+    private val searchViewModel: SearchViewModel by viewModels()
     private var currentState = 0
 
 
@@ -40,17 +39,45 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         handleSearchViewPager()
         handleSearchChip()
+
         binding.apply {
             viewModel = searchViewModel
             lifecycleOwner = viewLifecycleOwner
         }
+
+        searchViewModel.fragmentState.observe(viewLifecycleOwner) { fragmentState ->
+            when (fragmentState) {
+                FragmentState.SUCCESS -> {}
+                FragmentState.FAILURE -> {}
+                FragmentState.APP_ERROR -> {}
+                FragmentState.INITIAL_STATE -> {}
+                FragmentState.NO_REMOTE_NO_LOCAL -> {}
+                FragmentState.UNKNOWN_STATE -> {
+                    CustomSnackBar.Builder(
+                        requiredActivity = requireActivity(),
+                        view = view
+                    )
+                        .setDescriptionText(searchViewModel.fragmentStateMessage.value ?: "")
+                        .build()
+                        .showSnackBar()
+                }
+            }
+
+        }
+
+        searchViewModel.searchVariable.observe(viewLifecycleOwner) { searchContent ->
+            searchViewModel.fetchSearchData()
+        }
     }
+
 
     private fun handleSearchViewPager() {
         binding.apply {
-            vpNestedFragmentHolderSearchFragment.adapter = SearchViewPagerAdapter(requireActivity())
+            vpNestedFragmentHolderSearchFragment.adapter =
+                SearchViewPagerAdapter(childFragmentManager, lifecycle)
             vpNestedFragmentHolderSearchFragment.registerOnPageChangeCallback(object :
                 ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
@@ -60,20 +87,8 @@ class SearchFragment : Fragment() {
                         1 -> cTagsChipsGroupSearchFragment.isChecked = true
                         2 -> cUsersChipsGroupSearchFragment.isChecked = true
                     }
-
                 }
 
-                override fun onPageScrollStateChanged(state: Int) {
-                    super.onPageScrollStateChanged(state)
-                }
-
-                override fun onPageScrolled(
-                    position: Int,
-                    positionOffset: Float,
-                    positionOffsetPixels: Int
-                ) {
-                    super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-                }
             })
         }
     }

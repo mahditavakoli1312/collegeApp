@@ -14,18 +14,18 @@ import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.ItemMyarticleProfileviewholderBinding
 import com.example.collegeapp.features.home.ui.MainActivity
-import com.example.collegeapp.features.search.data.entities.MyArticleEntity
+import com.example.collegeapp.features.profile.ui.model.MyArticleView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class PostMyArticleAdapter(
     private val onItemClick: () -> Unit
 ) :
-    ListAdapter<MyArticleEntity, PostMyArticleAdapter.MyArticlePostHolder>(PostMyArticleDiffCallback) {
+    ListAdapter<MyArticleView, PostMyArticleAdapter.MyArticlePostHolder>(PostMyArticleDiffCallback) {
 
     class MyArticlePostHolder(val binding: ItemMyarticleProfileviewholderBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(articleEntity: MyArticleEntity) {
+        fun bind(articleEntity: MyArticleView) {
             binding.apply {
                 myArticle = articleEntity
                 val chipsGroup: ChipGroup = binding.chipsGroupArticleRecyclerMyArticle
@@ -92,12 +92,12 @@ class PostMyArticleAdapter(
 
 }
 
-object PostMyArticleDiffCallback : DiffUtil.ItemCallback<MyArticleEntity>() {
-    override fun areItemsTheSame(oldItem: MyArticleEntity, newItem: MyArticleEntity): Boolean {
+object PostMyArticleDiffCallback : DiffUtil.ItemCallback<MyArticleView>() {
+    override fun areItemsTheSame(oldItem: MyArticleView, newItem: MyArticleView): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: MyArticleEntity, newItem: MyArticleEntity): Boolean {
+    override fun areContentsTheSame(oldItem: MyArticleView, newItem: MyArticleView): Boolean {
         return oldItem.hashCode() == newItem.hashCode()
     }
 }

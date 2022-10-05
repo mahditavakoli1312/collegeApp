@@ -1,8 +1,8 @@
-package com.example.collegeapp.features.search.data.entities
+package com.example.collegeapp.features.profile.ui.model
 
 import androidx.annotation.DrawableRes
 
-data class MyArticleEntity(
+data class MyArticleView(
     val title: String,
     @DrawableRes
     val image: Int,

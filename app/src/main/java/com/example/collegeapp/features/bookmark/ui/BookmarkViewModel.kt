@@ -10,6 +10,6 @@ import javax.inject.Inject
 class BookmarkViewModel @Inject constructor(
     private val bookmarkRepository: BookmarkRepository
 ) : ViewModel() {
-    private var _bookmark = MutableLiveData(bookmarkRepository.getBookmark())
+    private val _bookmark = MutableLiveData(bookmarkRepository.getBookmark())
     val bookmark = _bookmark
 }
