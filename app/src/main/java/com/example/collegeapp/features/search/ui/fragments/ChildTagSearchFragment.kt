@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchTagBinding
-import com.example.collegeapp.features.search.ui.SearchViewModel
+import com.example.collegeapp.features.search.ui.viewModel.SearchViewModel
 import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +18,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class ChildTagSearchFragment : Fragment() {
 
     private lateinit var binding: FragmentChildSearchTagBinding
-    private val searchViewModel: SearchViewModel by activityViewModels()
+    private val searchViewModel: SearchViewModel by viewModels(
+        ownerProducer = { requireParentFragment() },
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,9 +41,9 @@ class ChildTagSearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            searchViewModel.searchVariable.observe(viewLifecycleOwner) {
+            searchViewModel.tags.observe(viewLifecycleOwner) { tags ->
                 cgTagSearchChildSearchTagFragment.removeAllViews()
-                searchViewModel.getTagListBySearch()?.forEach { tag ->
+                tags?.forEach { tag ->
                     cgTagSearchChildSearchTagFragment.addView(createChip(tag))
                 }
             }

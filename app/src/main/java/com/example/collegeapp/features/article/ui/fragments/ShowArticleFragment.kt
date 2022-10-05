@@ -10,9 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.core.ui.CustomSnackBar
+import com.example.collegeapp.core.ui.FragmentState
 import com.example.collegeapp.databinding.FragmentShowArticleBinding
 import com.example.collegeapp.features.article.ui.viewModels.ShowArticleViewModel
-import com.example.collegeapp.features.article.ui.viewModels.UserFragmentState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,10 +40,10 @@ class ShowArticleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         showArticleViewModel.fragmentState.observe(viewLifecycleOwner) { fragmentState ->
             when (fragmentState) {
-                UserFragmentState.SUCCESS -> {
+                FragmentState.SUCCESS -> {
 
                 }
-                UserFragmentState.FAILURE -> {
+                FragmentState.FAILURE -> {
 
                     CustomSnackBar.Builder(
                         requiredActivity = requireActivity(),
@@ -53,7 +53,7 @@ class ShowArticleFragment : Fragment() {
                         .build()
                         .showSnackBar()
                 }
-                UserFragmentState.APP_ERROR -> {
+                FragmentState.APP_ERROR -> {
                     CustomSnackBar.Builder(
                         requiredActivity = requireActivity(),
                         view = view
@@ -62,10 +62,10 @@ class ShowArticleFragment : Fragment() {
                         .build()
                         .showSnackBar()
                 }
-                UserFragmentState.INITIAL_STATE -> {
+                FragmentState.INITIAL_STATE -> {
 
                 }
-                UserFragmentState.NO_REMOTE_NO_LOCAL -> {
+                FragmentState.NO_REMOTE_NO_LOCAL -> {
                     CustomSnackBar.Builder(
                         requiredActivity = requireActivity(),
                         view = view
@@ -96,7 +96,7 @@ class ShowArticleFragment : Fragment() {
                         .showSnackBar()
                     findNavController().popBackStack()
                 }
-                UserFragmentState.UNKNOWN_STATE -> {
+                FragmentState.UNKNOWN_STATE -> {
                     CustomSnackBar.Builder(
                         requiredActivity = requireActivity(),
                         view = view

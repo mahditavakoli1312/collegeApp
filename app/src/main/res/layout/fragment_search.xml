@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.collegeapp.features.search.ui.SearchViewModel" />
+            type="com.example.collegeapp.features.search.ui.viewModel.SearchViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,18 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchUserBinding
-import com.example.collegeapp.features.search.ui.SearchViewModel
 import com.example.collegeapp.features.search.ui.adapters.SearchUserAdapter
+import com.example.collegeapp.features.search.ui.viewModel.SearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ChildUserSearchFragment : Fragment() {
 
     private lateinit var binding: FragmentChildSearchUserBinding
-    private val searchViewModel: SearchViewModel by activityViewModels()
+    private val searchViewModel: SearchViewModel by viewModels(
+        ownerProducer = { requireParentFragment() },
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,8 +44,8 @@ class ChildUserSearchFragment : Fragment() {
         binding.apply {
             rvUsersSearchChildSearchPostFragment.adapter = searchUserAdapter
         }
-        searchViewModel.searchVariable.observe(viewLifecycleOwner) {
-            searchUserAdapter.submitList(searchViewModel.getUserListBySearch())
+        searchViewModel.user.observe(viewLifecycleOwner) { users ->
+            searchUserAdapter.submitList(users)
         }
     }
 }

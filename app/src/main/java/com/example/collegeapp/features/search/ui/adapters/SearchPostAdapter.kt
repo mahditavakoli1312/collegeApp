@@ -8,27 +8,27 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.ItemPostSerarchviewholderBinding
-import com.example.collegeapp.features.article.ui.model.ArticleView
+import com.example.collegeapp.features.search.ui.model.SearchArticleView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class SearchPostAdapter(
-    private val onItemClick: () -> Unit
+    private val onItemClick: (articleId: Int) -> Unit
 ) :
-    ListAdapter<ArticleView, SearchPostAdapter.SearchPostHolder>(SearchPostDiffCallback) {
+    ListAdapter<SearchArticleView, SearchPostAdapter.SearchPostHolder>(SearchPostDiffCallback) {
 
     class SearchPostHolder(val binding: ItemPostSerarchviewholderBinding) :
         RecyclerView.ViewHolder(binding.root) {
         private val chipsGroup: ChipGroup =
             binding.chipsGroupArticleRecyclerHomeFragment
 
-        fun bind(articleView: ArticleView) {
+        fun bind(articleView: SearchArticleView) {
             binding.article = articleView
             binding.apply {
 
                 chipsGroup.addView(Chip(itemView.context).apply {
-                    text = articleView.tag.title
-                    id = articleView.tag.id
+                    text = articleView.tags.first().name
+                    id = articleView.tags.first().id ?: -1
                     backgroundDrawable = ResourcesCompat.getDrawable(
                         itemView.resources,
                         R.drawable.tag_gray,
@@ -57,17 +57,20 @@ class SearchPostAdapter(
     override fun onBindViewHolder(holder: SearchPostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)
-        holder.binding.root.setOnClickListener { onItemClick() }
+        holder.binding.root.setOnClickListener { onItemClick(post.id ?: -1) }
     }
 
 }
 
-object SearchPostDiffCallback : DiffUtil.ItemCallback<ArticleView>() {
-    override fun areItemsTheSame(oldItem: ArticleView, newItem: ArticleView): Boolean {
+object SearchPostDiffCallback : DiffUtil.ItemCallback<SearchArticleView>() {
+    override fun areItemsTheSame(oldItem: SearchArticleView, newItem: SearchArticleView): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: ArticleView, newItem: ArticleView): Boolean {
+    override fun areContentsTheSame(
+        oldItem: SearchArticleView,
+        newItem: SearchArticleView
+    ): Boolean {
         return oldItem.hashCode() == newItem.hashCode()
     }
 }
