@@ -74,7 +74,7 @@ class ShowArticleFragment : Fragment() {
                         .build()
                         .showSnackBar()
                 }
-                UserFragmentState.APP_ERROR -> {
+                FragmentState.APP_ERROR -> {
                     CustomSnackBar.Builder(
                         requiredActivity = requireActivity(),
                         view = view
@@ -83,10 +83,10 @@ class ShowArticleFragment : Fragment() {
                         .build()
                         .showSnackBar()
                 }
-                UserFragmentState.INITIAL_STATE -> {
+                FragmentState.INITIAL_STATE -> {
 
                 }
-                UserFragmentState.NO_REMOTE_NO_LOCAL -> {
+                FragmentState.NO_REMOTE_NO_LOCAL -> {
                     CustomSnackBar.Builder(
                         requiredActivity = requireActivity(),
                         view = view

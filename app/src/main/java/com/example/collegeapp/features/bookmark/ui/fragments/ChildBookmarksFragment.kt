@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
-import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.FragmentChildBookMarksBinding
-import com.example.collegeapp.features.bookmark.ui.BookmarkViewModel
-import com.example.collegeapp.features.search.ui.adapters.SearchPostAdapter
+import com.example.collegeapp.features.bookmark.ui.adapter.BookmarkRecyclerAdapter
+import com.example.collegeapp.features.bookmark.ui.viewModel.BookmarkViewModel
+import com.example.collegeapp.features.profile.ui.fragments.ProfileFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,16 +35,27 @@ class ChildBookmarksFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchBookmarks()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchPostAdapter = SearchPostAdapter {
-            Navigation.easyNavigate(
-                action = R.id.showArticleFragment,
-                navController = findNavController()
-            )
+        val searchPostAdapter = BookmarkRecyclerAdapter { articleId ->
+            val action =
+                ProfileFragmentDirections.actionProfileFragmentToShowArticleFragment(articleID = articleId)
+            parentFragment?.findNavController()
+                ?.navigate(
+                    action
+                )
         }
         val recyclerView = binding.rvPostsSearchBookmarkFragment
         recyclerView.adapter = searchPostAdapter
-        //searchPostAdapter.submitList(viewModel.bookmark.value)
+
+        viewModel.bookmarks.observe(viewLifecycleOwner) { bookmarks ->
+            searchPostAdapter.submitList(bookmarks)
+
+        }
     }
 }

@@ -16,15 +16,15 @@ class AuthenticationLocalDataSource @Inject constructor(
         return sharedPreferences.contains(ConstanceValue.TOKEN)
     }
 
-    fun setAccessToken(token : String){
+    fun setAccessToken(token: String) {
         val edit = sharedPreferences.edit()
-        edit.putString(ConstanceValue.TOKEN , token)
+        edit.putString(ConstanceValue.TOKEN, token)
         edit.apply()
     }
 
-    fun setUserID(userId : Int){
+    fun setUserID(userId: Int) {
         val edit = sharedPreferences.edit()
-        edit.putInt(ConstanceValue.USER_ID , userId)
+        edit.putInt(ConstanceValue.USER_ID, userId)
         edit.apply()
     }
 
