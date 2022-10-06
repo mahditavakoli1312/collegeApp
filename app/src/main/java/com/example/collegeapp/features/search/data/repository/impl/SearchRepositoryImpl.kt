@@ -2,7 +2,6 @@ package com.example.collegeapp.features.search.data.repository.impl
 
 import com.example.collegeapp.core.networkUtils.ResultWrapper
 import com.example.collegeapp.core.networkUtils.safeApiCall
-import com.example.collegeapp.features.search.data.dataSource.local.SearchLocalDataSource
 import com.example.collegeapp.features.search.data.dataSource.remote.SearchRemoteDataSource
 import com.example.collegeapp.features.search.data.model.response.toSearchBodyRequest
 import com.example.collegeapp.features.search.data.repository.SearchRepository

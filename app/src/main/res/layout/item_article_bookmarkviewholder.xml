@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="article"
+            type="com.example.collegeapp.features.bookmark.ui.model.BookmarkArticleView" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layoutDirection="ltr"
+        android:paddingTop="@dimen/margin_8"
+        tools:background="@color/black">
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:layoutDirection="rtl"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/tv_titleArticleRecycler_homeFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipsGroup_articleRecycler_homeFragment"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layoutDirection="rtl"
+                app:singleLine="true">
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/img_articleRecycler_homeFragment"
+            style="@style/custom_image_article"
+            imageUrl="@{article.image}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_titleArticleRecycler_homeFragment"
+            style="@style/custom_textView_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:text="@{article.title}"
+            app:layout_constraintBottom_toBottomOf="@id/img_articleRecycler_homeFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_articleRecycler_homeFragment"
+            app:layout_constraintTop_toTopOf="@id/img_articleRecycler_homeFragment" />
+
+        <TextView
+            android:id="@+id/tv_writerTimeArticleRecycler_homeFragment"
+            style="@style/custom_textView_writer"
+            time="@{article.createdTime}"
+            writer="@{article.author}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical|start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_titleArticleRecycler_homeFragment" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke_2"
+            android:background="@color/white_10"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

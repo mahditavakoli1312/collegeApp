@@ -11,7 +11,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import retrofit2.create
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -29,10 +28,10 @@ abstract class AuthenticationModules {
     ): AuthenticationRemoteDataSource
 
 
-    companion object{
-       @Provides
-       fun provideAuthenticationApi(retrofit: Retrofit) : AuthenticationApi{
-           return retrofit.create(AuthenticationApi::class.java)
-       }
+    companion object {
+        @Provides
+        fun provideAuthenticationApi(retrofit: Retrofit): AuthenticationApi {
+            return retrofit.create(AuthenticationApi::class.java)
+        }
     }
 }

@@ -18,7 +18,7 @@ class AuthenticationRemoteDataSourceImpl @Inject constructor(
     }
 
     override suspend fun login(userLoginRequest: UserLoginRequest): UserLoginResponse? {
-        Log.d("Taggi", "login: "+userLoginRequest.toString())
+        Log.d("Taggi", "login: " + userLoginRequest.toString())
         return authenticationApi.loginUser(userLoginRequest).bodyOrThrow()
     }
 

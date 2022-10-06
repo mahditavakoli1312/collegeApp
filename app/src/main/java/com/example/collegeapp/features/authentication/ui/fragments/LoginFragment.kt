@@ -76,9 +76,9 @@ class LoginFragment : Fragment() {
 
             tvRegisterLoginFragment.setOnClickListener {
                 Navigation.easyNavigateWithPopUp(
-                    action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment() ,
-                    navController = findNavController() ,
-                    popUpId = R.id.loginFragment ,
+                    action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment(),
+                    navController = findNavController(),
+                    popUpId = R.id.loginFragment,
                     inclusive = true
                 )
             }
