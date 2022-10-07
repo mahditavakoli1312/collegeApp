@@ -1,6 +1,7 @@
 package com.example.collegeapp.core.di
 
 import com.example.collegeapp.core.data.URLs
+import com.example.collegeapp.core.networkUtils.HeaderInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,10 +35,12 @@ object NetworkModules {
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor ,
+        headerInterceptor: HeaderInterceptor
     ): OkHttpClient {
         return OkHttpClient
             .Builder()
+            .addInterceptor(headerInterceptor)
             .addInterceptor(httpLoggingInterceptor)
             .build()
     }

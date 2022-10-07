@@ -44,7 +44,7 @@ class HomeViewModel @Inject constructor(
             }
         }
 
-    fun fetchArticles() {
+    private fun fetchArticles() {
         viewModelScope.launch(Dispatchers.IO) {
             when (val response = articleRepository.getArticles()) {
                 is ResultWrapper.ApplicationError -> {
@@ -70,7 +70,7 @@ class HomeViewModel @Inject constructor(
     }
 
 
-    fun fetchTags() {
+    private fun fetchTags() {
         viewModelScope.launch(Dispatchers.IO) {
             when (val response = articleRepository.getTags()) {
                 is ResultWrapper.ApplicationError -> {

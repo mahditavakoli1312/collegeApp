@@ -1,15 +1,14 @@
 package com.example.collegeapp.features.article.data.repository.impl
 
+import com.example.collegeapp.core.data.ConstanceValue
 import com.example.collegeapp.core.networkUtils.ResultWrapper
 import com.example.collegeapp.core.networkUtils.safeApiCall
 import com.example.collegeapp.features.article.data.dataSource.local.ArticleLocalDataSource
 import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.model.entity.*
+import com.example.collegeapp.features.article.data.model.response.toAddArticleRequest
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
-import com.example.collegeapp.features.article.ui.model.ArticleView
-import com.example.collegeapp.features.article.ui.model.TagView
-import com.example.collegeapp.features.article.ui.model.toArticleView
-import com.example.collegeapp.features.article.ui.model.toTagView
+import com.example.collegeapp.features.article.ui.model.*
 import javax.inject.Inject
 
 class ArticleRepositoryImpl @Inject constructor(
@@ -119,6 +118,17 @@ class ArticleRepositoryImpl @Inject constructor(
 
     override suspend fun bookmarksIsExist(serverId: Int): Boolean =
         articleLocalDataSource.bookmarksIsExist(serverId = serverId)
+
+    override suspend fun addArticle(addArticleView: AddArticleView): ResultWrapper<String> {
+        return safeApiCall(
+            localData = ConstanceValue.FAILURE,
+            api = {
+                val response =
+                    articleRemoteDataSource.addArticle(addArticleView.toAddArticleRequest())
+                return@safeApiCall response?.message ?: ""
+            }
+        )
+    }
 
 
 }
