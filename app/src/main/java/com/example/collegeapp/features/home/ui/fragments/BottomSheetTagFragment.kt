@@ -19,9 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class BottomSheetTagFragment(
     private val singleSelect: Boolean, val tagSelected: (List<TagView>) -> Unit
 ) : BottomSheetDialogFragment() {
-    private val tagListSelected : MutableList<TagView> = mutableListOf()
+    private val tagListSelected: MutableList<TagView> = mutableListOf()
     lateinit var binding: FragmentBottomSheetTagsBinding
-    private val bottomSheetViewModel : BottomSheetViewModel by viewModels()
+    private val bottomSheetViewModel: BottomSheetViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -46,7 +46,7 @@ class BottomSheetTagFragment(
                 dismiss()
             }
 
-            bottomSheetViewModel.tag.observe(viewLifecycleOwner){
+            bottomSheetViewModel.tag.observe(viewLifecycleOwner) {
                 it?.forEach { chip ->
                     chipsTagsBottomSheetTag.addView(
                         createChip(chip)
@@ -85,8 +85,7 @@ class BottomSheetTagFragment(
                 setOnClickListener {
                     if (isChecked) {
                         tagListSelected.add(chip)
-                    }
-                    else {
+                    } else {
                         tagListSelected.remove(chip)
                     }
                 }

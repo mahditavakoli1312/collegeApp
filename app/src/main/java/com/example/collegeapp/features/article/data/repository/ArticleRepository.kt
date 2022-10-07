@@ -16,5 +16,5 @@ interface ArticleRepository {
     suspend fun insertBookmark(bookmarkEntity: BookmarkEntity)
     suspend fun removeBookmarkByServerId(serverId: Int)
     suspend fun bookmarksIsExist(serverId: Int): Boolean
-    suspend fun addArticle(addArticleView: AddArticleView) : ResultWrapper<String>
+    suspend fun addArticle(addArticleView: AddArticleView): ResultWrapper<String>
 }

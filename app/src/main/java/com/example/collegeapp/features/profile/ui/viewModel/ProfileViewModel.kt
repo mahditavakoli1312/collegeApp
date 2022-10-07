@@ -102,7 +102,6 @@ class ProfileViewModel @Inject constructor(
                                 response.message.apply {
                                     when (this) {
                                         else -> {
-                                            //todo change context to provide module
                                             _fragmentStateMessage.postValue(context.getString(R.string.label_appError))
                                         }
                                     }

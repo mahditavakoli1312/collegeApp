@@ -17,8 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewArticleViewModel @Inject constructor(
-    private val articleRepository: ArticleRepository ,
-    @ApplicationContext val context : Context
+    private val articleRepository: ArticleRepository,
+    @ApplicationContext val context: Context
     //todo change context
 ) : ViewModel() {
     val title = MutableLiveData("")
@@ -30,19 +30,17 @@ class NewArticleViewModel @Inject constructor(
     val addArticleMessage = _addArticleMessage
 
 
-
     fun addArticle() {
         viewModelScope.launch {
             val titleSize = title.value?.length
             val descSize = description.value?.length
-            if(tag.value == null){
+            if (tag.value == null) {
                 _addArticleMessage.postValue(context.getString(R.string.label_choose_one_tag))
-            }
-            else if(titleSize != null && titleSize <3){
+            } else if (titleSize != null && titleSize < 3) {
                 _addArticleMessage.postValue(context.getString(R.string.label_title_length))
-            }else if(descSize != null && descSize < 30){
+            } else if (descSize != null && descSize < 30) {
                 _addArticleMessage.postValue(context.getString(R.string.label_desc_length))
-            }else {
+            } else {
                 val response = articleRepository.addArticle(
                     AddArticleView(
                         title.value ?: "",

@@ -11,16 +11,17 @@ class HeaderInterceptor @Inject constructor(
     private val sharedPreferences: SharedPreferences
 ) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
-        val sharePrefToken = sharedPreferences.getString(ConstanceValue.TOKEN , "")
+        val sharePrefToken = sharedPreferences.getString(ConstanceValue.TOKEN, "")
         var token = ""
-        if(sharePrefToken != null)
+        if (sharePrefToken != null)
             token = sharePrefToken
         return chain.run {
             proceed(
                 request()
                     .newBuilder()
-                    .addHeader("Authorization",
-                         token
+                    .addHeader(
+                        "Authorization",
+                        token
                     )
                     .build()
             )

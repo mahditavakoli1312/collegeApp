@@ -66,7 +66,7 @@ class HomeFragment : Fragment() {
                 articleAdapter.submitList(it)
             }
             imgAddChipsHomeFragment.setOnClickListener {
-                BottomSheetTagFragment(false , ){tagList ->
+                BottomSheetTagFragment(false) { tagList ->
                     //todo select list
                 }.show(parentFragmentManager, "")
             }

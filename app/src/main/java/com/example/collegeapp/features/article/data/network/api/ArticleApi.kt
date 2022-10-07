@@ -24,5 +24,5 @@ interface ArticleApi {
     suspend fun getArticleByAuthorId(@Query("author_id") authorId: Int): Response<UserArticleBaseResponse>
 
     @POST("articles")
-    suspend fun addArticle(@Body addArticleRequest: AddArticleRequest) : Response<AddArticleResponse>
+    suspend fun addArticle(@Body addArticleRequest: AddArticleRequest): Response<AddArticleResponse>
 }
