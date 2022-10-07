@@ -76,4 +76,6 @@
     <string name="label_title_length">عنوان مقاله کوتاه است</string>
     <string name="label_desc_length">متن مقاله کوتاه است</string>
     <string name="label_success_new_article">مقاله منتشر شد</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
