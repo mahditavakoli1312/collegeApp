@@ -66,13 +66,13 @@ class HomeFragment : Fragment() {
                 articleAdapter.submitList(it)
             }
             imgAddChipsHomeFragment.setOnClickListener {
-                BottomSheetTagFragment(false){ tagList ->
+                BottomSheetTagFragment(false) { tagList ->
                     tagList.map { it.isSelected = 1 }
                     homeViewModel.updateTagsSelected(tagList)
                 }.show(parentFragmentManager, "")
             }
 
-            homeViewModel.fragmentStateMessage.observe(viewLifecycleOwner){
+            homeViewModel.fragmentStateMessage.observe(viewLifecycleOwner) {
                 CustomSnackBar.Builder(
                     requiredActivity = requireActivity(),
                     view = view
@@ -118,15 +118,14 @@ class HomeFragment : Fragment() {
                 chipStrokeWidth = root.resources.getDimension(R.dimen.stroke_1)
                 isClickable = true
                 isCheckable = true
-                if(chip.isChecked == 1)
+                if (chip.isChecked == 1)
                     isChecked = true
                 checkedIcon = null
                 setOnClickListener {
                     if (isChecked) {
                         chip.isChecked = 1
                         homeViewModel.updateTag(chip)
-                    }
-                    else {
+                    } else {
                         chip.isChecked = 0
                         homeViewModel.updateTag(chip)
                     }

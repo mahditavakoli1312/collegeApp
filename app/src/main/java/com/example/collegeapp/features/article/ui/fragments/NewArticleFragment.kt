@@ -43,12 +43,12 @@ class NewArticleFragment : Fragment() {
             viewModel = newArticleViewModel
             lifecycleOwner = viewLifecycleOwner
             cAddTagNewArticleFragment.setOnClickListener {
-                BottomSheetTagFragment(true ){ tagList->
+                BottomSheetTagFragment(true) { tagList ->
                     newArticleViewModel.tag.value = tagList[0]
                 }.show(parentFragmentManager, "")
             }
 
-            newArticleViewModel.tag.observe(viewLifecycleOwner){
+            newArticleViewModel.tag.observe(viewLifecycleOwner) {
                 cAddTagNewArticleFragment.text = it.title
                 isTagSelected = true
             }
@@ -61,13 +61,13 @@ class NewArticleFragment : Fragment() {
                 newArticleViewModel.addArticle()
             }
 
-            newArticleViewModel.addArticleMessage.observe(viewLifecycleOwner){
-                if(it.equals(ConstanceValue.SUCCESS)){
+            newArticleViewModel.addArticleMessage.observe(viewLifecycleOwner) {
+                if (it.equals(ConstanceValue.SUCCESS)) {
                     CustomSnackBar.Builder(requireView(), requireActivity())
                         .setDescriptionText(getString(R.string.label_success_new_article))
                         .build().showSnackBar()
                     findNavController().popBackStack()
-                }else {
+                } else {
                     CustomSnackBar.Builder(requireView(), requireActivity())
                         .setDescriptionText(it)
                         .build().showSnackBar()

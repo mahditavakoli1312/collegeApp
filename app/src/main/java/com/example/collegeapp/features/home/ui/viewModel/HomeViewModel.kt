@@ -83,7 +83,7 @@ class HomeViewModel @Inject constructor(
                     return@filter it.isChecked == 1
                 }
                 tagFilter.let {
-                    if(it.isNotEmpty())
+                    if (it.isNotEmpty())
                         tagSearchContent.postValue(it)
                     else tagSearchContent.postValue(tagSelected)
                 }
@@ -92,16 +92,16 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun updateTagsSelected(tagSelectedList : List<TagView>){
+    fun updateTagsSelected(tagSelectedList: List<TagView>) {
         viewModelScope.launch(Dispatchers.IO) {
             articleRepository.updateTags(tagSelectedList)
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
                 fetchTags()
             }
         }
     }
 
-    fun updateTag(tag : TagView){
+    fun updateTag(tag: TagView) {
         viewModelScope.launch(Dispatchers.IO) {
             articleRepository.updateTag(tag.toTagEntity())
             fetchTags()

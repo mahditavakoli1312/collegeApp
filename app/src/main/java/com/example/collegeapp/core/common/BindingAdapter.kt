@@ -25,12 +25,13 @@ fun loadImg(imageView: ImageView, imageUrl: Int) {
 }
 
 @BindingAdapter("jalaliCalender")
-fun jalaliCalender(textView: TextView , date : String){
+fun jalaliCalender(textView: TextView, date: String) {
     //String should be like this 2022-10-06T23:18:06.763Z
     val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     val text = date.split("T")[0]
     val date = formatter.parse(text) as Date
     val converter = PersianDateConverter().calcSolarCalendar(date)
-    textView.text = textView.text.toString() + " ${converter.date} ${converter.strMonth} ${converter.year}"
+    textView.text =
+        textView.text.toString() + " ${converter.date} ${converter.strMonth} ${converter.year}"
 }
 

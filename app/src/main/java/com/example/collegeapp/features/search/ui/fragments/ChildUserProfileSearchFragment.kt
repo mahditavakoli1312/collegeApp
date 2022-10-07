@@ -1,7 +1,6 @@
 package com.example.collegeapp.features.search.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildUserProfileSearchBinding
 import com.example.collegeapp.features.profile.ui.adapters.PostMyArticleAdapter
-import com.example.collegeapp.features.profile.ui.viewModel.TAG
 import com.example.collegeapp.features.search.ui.viewModel.SearchUserProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

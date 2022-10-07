@@ -27,7 +27,6 @@ class NewArticleViewModel @Inject constructor(
     val image = R.drawable.image_place_holder
 
 
-
     private val _addArticleMessage = MutableLiveData<String>()
     val addArticleMessage = _addArticleMessage
 

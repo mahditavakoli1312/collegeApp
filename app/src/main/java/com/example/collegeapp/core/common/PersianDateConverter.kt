@@ -9,7 +9,7 @@ class PersianDateConverter {
     var month = 0
     var year = 0
 
-    fun calcSolarCalendar(MiladiDate: Date) : PersianDateConverter {
+    fun calcSolarCalendar(MiladiDate: Date): PersianDateConverter {
         val ld: Int
         val miladiYear: Int = MiladiDate.year + 1900
         val miladiMonth: Int = MiladiDate.month + 1

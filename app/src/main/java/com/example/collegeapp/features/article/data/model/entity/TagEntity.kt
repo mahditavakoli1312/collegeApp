@@ -11,11 +11,11 @@ data class TagEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "tag_id")
     val id: Int,
-    val name: String ,
+    val name: String,
     //for show view
-    val isSelected : Int = 0 ,
+    val isSelected: Int = 0,
     //for choose filter article
-    val isChecked : Int = 0
+    val isChecked: Int = 0
 )
 
 fun ArticleTagResponse.toTagEntity() = TagEntity(
@@ -24,8 +24,8 @@ fun ArticleTagResponse.toTagEntity() = TagEntity(
 )
 
 fun TagView.toTagEntity() = TagEntity(
-    id = id ,
-    name = title ,
-    isChecked = isChecked ,
+    id = id,
+    name = title,
+    isChecked = isChecked,
     isSelected = isSelected
 )

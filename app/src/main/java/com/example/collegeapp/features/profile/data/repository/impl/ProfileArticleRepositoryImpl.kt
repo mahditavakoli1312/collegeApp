@@ -2,9 +2,9 @@ package com.example.collegeapp.features.profile.data.repository.impl
 
 import com.example.collegeapp.core.networkUtils.ResultWrapper
 import com.example.collegeapp.core.networkUtils.safeApiCall
-import com.example.collegeapp.features.article.data.dataSource.local.ArticleLocalDataSource
-import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
-import com.example.collegeapp.features.authentication.data.datasource.local.AuthenticationLocalDataSource
+import com.example.collegeapp.features.article.data.datasource.local.ArticleLocalDataSource
+import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
+import com.example.collegeapp.features.authentication.data.datasource.local.impl.AuthenticationLocalDataSourceImpl
 import com.example.collegeapp.features.authentication.data.datasource.remote.AuthenticationRemoteDataSource
 import com.example.collegeapp.features.authentication.ui.model.UserProfileView
 import com.example.collegeapp.features.authentication.ui.model.toUserProfileView
@@ -19,7 +19,7 @@ class ProfileArticleRepositoryImpl @Inject constructor(
     private val articleLocalDataSource: ArticleLocalDataSource,
     private val articleRemoteDataSource: ArticleRemoteDataSource,
     private val authenticationRemoteDataSource: AuthenticationRemoteDataSource,
-    private val authenticationLocalDataSource: AuthenticationLocalDataSource
+    private val authenticationLocalDataSource: AuthenticationLocalDataSourceImpl
 ) : ProfileArticleRepository {
 
     private suspend fun getUserArticleByAuthorIdFromRemote(authorId: Int): List<UserArticleDataEntity>? =

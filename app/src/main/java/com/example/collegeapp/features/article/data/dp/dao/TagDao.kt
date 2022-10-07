@@ -15,10 +15,10 @@ interface TagDao {
     fun getTagSelected(): List<TagEntity>?
 
     @Update
-    fun updateTag(tag : TagEntity)
+    fun updateTag(tag: TagEntity)
 
     @Update
-    fun updateTags(tags : List<TagEntity>)
+    fun updateTags(tags: List<TagEntity>)
 
     @Query("SELECT * FROM tags WHERE isChecked == 1")
     fun getTagChecked(): List<TagEntity>?

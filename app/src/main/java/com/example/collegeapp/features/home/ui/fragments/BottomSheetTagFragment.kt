@@ -55,10 +55,10 @@ class BottomSheetTagFragment(
             }
             chipsTagsBottomSheetTag.isSingleSelection = singleSelect
 
-            bottomSheetViewModel.tagSelected.observe(viewLifecycleOwner){
-                if(!singleSelect) {
+            bottomSheetViewModel.tagSelected.observe(viewLifecycleOwner) {
+                if (!singleSelect) {
                     tagListSelected.clear()
-                    tagListSelected.addAll(it?: listOf())
+                    tagListSelected.addAll(it ?: listOf())
                 }
             }
         }

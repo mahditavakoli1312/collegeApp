@@ -1,7 +1,6 @@
 package com.example.collegeapp.features.search.ui.viewModel
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
