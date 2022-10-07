@@ -31,7 +31,7 @@
     <string name="label_email">پست الکترونیک</string>
     <string name="label_search_bar">جستجو …</string>
     <string name="label_confirmRegisterStr">ثبت نام شما با موفقیت انجام شد.</string>
-    <string name="label_writer_time">%s • %s</string>
+    <string name="label_writer_time">%s • </string>
     <string name="label_add_tag">افزودن تگ</string>
     <string name="label_share_new_article">انتشار مقاله جدید</string>
     <string name="label_title_new_article">عنوان مقاله خود را وارد کنید</string>

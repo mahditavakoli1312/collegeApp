@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BottomSheetTagFragment(
-    private val singleSelect: Boolean, val tagSelected: (List<TagView>) -> Unit
+    private val singleSelect: Boolean, val tagChooses: (List<TagView>) -> Unit
 ) : BottomSheetDialogFragment() {
     private val tagListSelected: MutableList<TagView> = mutableListOf()
     lateinit var binding: FragmentBottomSheetTagsBinding
@@ -42,7 +42,7 @@ class BottomSheetTagFragment(
         binding.apply {
             imgCloseBottomSheetTag.setOnClickListener { dismiss() }
             btnChooseTags.setOnClickListener {
-                tagSelected(tagListSelected.toList())
+                tagChooses(tagListSelected.toList())
                 dismiss()
             }
 
@@ -55,6 +55,12 @@ class BottomSheetTagFragment(
             }
             chipsTagsBottomSheetTag.isSingleSelection = singleSelect
 
+            bottomSheetViewModel.tagSelected.observe(viewLifecycleOwner){
+                if(!singleSelect) {
+                    tagListSelected.clear()
+                    tagListSelected.addAll(it?: listOf())
+                }
+            }
         }
 
 
@@ -81,6 +87,7 @@ class BottomSheetTagFragment(
                 chipStrokeWidth = root.resources.getDimension(R.dimen.stroke_1)
                 isClickable = true
                 isCheckable = true
+                isChecked = tagListSelected.any { chip.id == it.id }
                 checkedIcon = null
                 setOnClickListener {
                     if (isChecked) {

@@ -1,5 +1,7 @@
 package com.example.collegeapp.features.authentication.di
 
+import com.example.collegeapp.features.authentication.data.datasource.local.AuthenticationLocalDataSource
+import com.example.collegeapp.features.authentication.data.datasource.local.AuthenticationLocalDataSourceImpl
 import com.example.collegeapp.features.authentication.data.datasource.remote.AuthenticationRemoteDataSource
 import com.example.collegeapp.features.authentication.data.datasource.remote.impl.AuthenticationRemoteDataSourceImpl
 import com.example.collegeapp.features.authentication.data.network.api.AuthenticationApi
@@ -26,6 +28,10 @@ abstract class AuthenticationModules {
     abstract fun bindAuthenticationRemoteDataSource(
         authenticationRemoteDataSourceImpl: AuthenticationRemoteDataSourceImpl
     ): AuthenticationRemoteDataSource
+
+    @Binds
+    abstract fun bindAuthenticationLocalDataSource(authenticationLocalDataSourceImpl: AuthenticationLocalDataSourceImpl)
+            : AuthenticationLocalDataSource
 
 
     companion object {

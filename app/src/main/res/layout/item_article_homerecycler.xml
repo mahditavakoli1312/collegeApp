@@ -58,20 +58,18 @@
             style="@style/custom_textView_title"
             android:text="@{articleBinding.title}"
             android:id="@+id/tv_titleArticleRecycler_homeFragment" />
-            <!--TODO change text adapter and delete it-->
         <TextView
             android:id="@+id/tv_writerTimeArticleRecycler_homeFragment"
             android:layout_width="0dp"
-            android:text="@{@string/label_writer_time(articleBinding.author, articleBinding.createdTime)}"
+            android:text="@{@string/label_writer_time(articleBinding.author)}"
             android:layout_height="0dp"
+            jalaliCalender="@{articleBinding.createdTime}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_titleArticleRecycler_homeFragment"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/label_writer_time"
             android:gravity="center_vertical|start"
             style="@style/custom_textView_writer" />
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/stroke_2"

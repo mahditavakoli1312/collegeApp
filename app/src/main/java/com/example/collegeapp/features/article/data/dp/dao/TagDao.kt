@@ -1,9 +1,6 @@
 package com.example.collegeapp.features.article.data.dp.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.collegeapp.features.article.data.model.entity.TagEntity
 
 @Dao
@@ -11,6 +8,18 @@ interface TagDao {
     @Query("SELECT * FROM tags")
     suspend fun getAllTags(): List<TagEntity>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTags(tags: List<TagEntity>): List<Long>
+
+    @Query("SELECT * FROM tags WHERE isSelected == 1")
+    fun getTagSelected(): List<TagEntity>?
+
+    @Update
+    fun updateTag(tag : TagEntity)
+
+    @Update
+    fun updateTags(tags : List<TagEntity>)
+
+    @Query("SELECT * FROM tags WHERE isChecked == 1")
+    fun getTagChecked(): List<TagEntity>?
 }
