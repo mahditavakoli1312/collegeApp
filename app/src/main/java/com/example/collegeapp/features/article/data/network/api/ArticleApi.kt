@@ -8,6 +8,8 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface ArticleApi {
+
+    //TODO : send Authorization and accessToken
     @GET("articles")
     suspend fun getArticleDetails(@Query("id") id: Int): Response<ArticleDetailBaseResponse>
     @GET("articles")

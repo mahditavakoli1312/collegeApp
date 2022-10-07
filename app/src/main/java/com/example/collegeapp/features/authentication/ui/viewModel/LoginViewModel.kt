@@ -9,7 +9,6 @@ import com.example.collegeapp.features.authentication.data.repository.Authentica
 import com.example.collegeapp.features.authentication.ui.model.UserLoginView
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,11 +24,13 @@ class LoginViewModel @Inject constructor(
     val loginMessage = _loginMessage
     fun login() {
         viewModelScope.launch(Dispatchers.IO) {
-            val responseLogin = authenticationRepository.login(UserLoginView(
-                phoneNumber.value ,
-                password.value
-            ))
-            when(responseLogin){
+            val responseLogin = authenticationRepository.login(
+                UserLoginView(
+                    phoneNumber.value,
+                    password.value
+                )
+            )
+            when (responseLogin) {
                 is ResultWrapper.ApplicationError -> _loginMessage.postValue(responseLogin.message)
                 is ResultWrapper.Failure -> _loginMessage.postValue(responseLogin.message)
                 is ResultWrapper.Success -> {

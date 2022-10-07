@@ -35,7 +35,7 @@ object NetworkModules {
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        httpLoggingInterceptor: HttpLoggingInterceptor ,
+        httpLoggingInterceptor: HttpLoggingInterceptor,
         headerInterceptor: HeaderInterceptor
     ): OkHttpClient {
         return OkHttpClient

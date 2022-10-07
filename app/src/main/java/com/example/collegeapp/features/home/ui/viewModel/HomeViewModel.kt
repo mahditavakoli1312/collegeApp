@@ -4,10 +4,10 @@ import android.content.Context
 import androidx.lifecycle.*
 import com.example.collegeapp.R
 import com.example.collegeapp.core.networkUtils.ResultWrapper
+import com.example.collegeapp.core.ui.FragmentState
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.ui.model.ArticleView
 import com.example.collegeapp.features.article.ui.model.TagView
-import com.example.collegeapp.features.article.ui.viewModels.UserFragmentState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +26,7 @@ class HomeViewModel @Inject constructor(
 
     //TODO : Sobhan : manage _fragmentState and _fragmentStateMessage
     //TODO : Sobhan : Check the home features again
-    private val _fragmentState = MutableLiveData(UserFragmentState.INITIAL_STATE)
+    private val _fragmentState = MutableLiveData(FragmentState.INITIAL_STATE)
     val fragmentState = _fragmentState
 
     private val _fragmentStateMessage = MutableLiveData<String>()
@@ -56,12 +56,12 @@ class HomeViewModel @Inject constructor(
                             }
                         }
                     }
-                    _fragmentState.postValue(UserFragmentState.APP_ERROR)
+                    _fragmentState.postValue(FragmentState.APP_ERROR)
                     _articles.postValue(response.localData)
                 }
                 is ResultWrapper.Failure -> {
                     _fragmentStateMessage.postValue("${response.message} ${response.code}")
-                    _fragmentState.postValue(UserFragmentState.FAILURE)
+                    _fragmentState.postValue(FragmentState.FAILURE)
                     _articles.postValue(response.localData)
                 }
                 is ResultWrapper.Success -> _articles.postValue(response.data)
@@ -82,12 +82,12 @@ class HomeViewModel @Inject constructor(
                             }
                         }
                     }
-                    _fragmentState.postValue(UserFragmentState.APP_ERROR)
+                    _fragmentState.postValue(FragmentState.APP_ERROR)
                     _chipsList.postValue(response.localData)
                 }
                 is ResultWrapper.Failure -> {
                     _fragmentStateMessage.postValue("${response.message} ${response.code}")
-                    _fragmentState.postValue(UserFragmentState.FAILURE)
+                    _fragmentState.postValue(FragmentState.FAILURE)
                     _chipsList.postValue(response.localData)
                 }
                 is ResultWrapper.Success -> _chipsList.postValue(response.data)

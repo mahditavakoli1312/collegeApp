@@ -53,7 +53,7 @@ class SplashFragment : Fragment() {
         }
     }
 
-    private fun checkLogin(){
+    private fun checkLogin() {
         if (splashViewModel.isLogin()) {
             Navigation.easyNavigateWithPopUp(
                 action = SplashFragmentDirections.actionSplashFragmentToHomeFragment(),

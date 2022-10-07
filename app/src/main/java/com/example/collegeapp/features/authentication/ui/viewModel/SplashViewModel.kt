@@ -10,7 +10,7 @@ class SplashViewModel @Inject constructor(
     private val authenticationRepository: AuthenticationRepository
 ) : ViewModel() {
 
-    fun isLogin() : Boolean {
+    fun isLogin(): Boolean {
         return authenticationRepository.isLogin()
     }
 }

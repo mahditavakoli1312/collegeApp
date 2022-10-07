@@ -6,7 +6,7 @@
     <data>
         <variable
             name="myArticle"
-            type="com.example.collegeapp.features.search.data.entities.MyArticleEntity" />
+            type="com.example.collegeapp.features.profile.ui.model.MyArticleView" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

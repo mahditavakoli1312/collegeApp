@@ -7,7 +7,7 @@ import com.example.collegeapp.features.authentication.data.model.response.UserRe
 
 interface AuthenticationRemoteDataSource {
 
-    suspend fun register(userRegisterRequest: UserRegisterRequest) : UserRegisterResponse?
+    suspend fun register(userRegisterRequest: UserRegisterRequest): UserRegisterResponse?
 
-    suspend fun login(userLoginRequest: UserLoginRequest) : UserLoginResponse?
+    suspend fun login(userLoginRequest: UserLoginRequest): UserLoginResponse?
 }

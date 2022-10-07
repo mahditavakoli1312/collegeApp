@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.example.collegeapp.R
 import com.example.collegeapp.core.networkUtils.ResultWrapper
+import com.example.collegeapp.core.ui.FragmentState
 import com.example.collegeapp.features.article.data.model.entity.toBookmarkEntity
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.ui.model.ArticleView
@@ -44,7 +45,7 @@ class ShowArticleViewModel @Inject constructor(
     )
     val article = _articleDetail
 
-    private val _fragmentState = MutableLiveData(UserFragmentState.INITIAL_STATE)
+    private val _fragmentState = MutableLiveData(FragmentState.INITIAL_STATE)
     val fragmentState = _fragmentState
 
     private val _fragmentStateMessage = MutableLiveData<String>()
@@ -68,7 +69,7 @@ class ShowArticleViewModel @Inject constructor(
                             if (response.localData != null) {
 
                                 response.message.apply {
-                                    Log.d(TAG, "fetchArticleDetails: ${response.message}")
+                                    Log.d(TAG, "fetchArticleDetails: app ${response.message}")
                                     when (this) {
                                         else -> {
                                             //todo change context to provide module
@@ -76,25 +77,25 @@ class ShowArticleViewModel @Inject constructor(
                                         }
                                     }
                                 }
-                                _fragmentState.postValue(UserFragmentState.APP_ERROR)
+                                _fragmentState.postValue(FragmentState.APP_ERROR)
                                 _articleDetail.postValue(response.localData)
                             } else {
                                 _fragmentStateMessage.postValue(context.getString(R.string.label_no_remote_no_local))
-                                _fragmentState.postValue(UserFragmentState.NO_REMOTE_NO_LOCAL)
+                                _fragmentState.postValue(FragmentState.NO_REMOTE_NO_LOCAL)
                             }
                         } catch (exception: Exception) {
                             _fragmentStateMessage.postValue(context.getString(R.string.label_unknown_error))
-                            _fragmentState.postValue(UserFragmentState.UNKNOWN_STATE)
+                            _fragmentState.postValue(FragmentState.UNKNOWN_STATE)
                         }
                     }
                     is ResultWrapper.Failure -> {
                         _fragmentStateMessage.postValue("${response.message} ${response.code}")
-                        _fragmentState.postValue(UserFragmentState.FAILURE)
+                        _fragmentState.postValue(FragmentState.FAILURE)
                         _articleDetail.postValue(response.localData)
                     }
                     is ResultWrapper.Success -> {
                         _articleDetail.postValue(response.data)
-                        _fragmentState.postValue(UserFragmentState.SUCCESS)
+                        _fragmentState.postValue(FragmentState.SUCCESS)
                     }
                 }
             }
@@ -146,13 +147,4 @@ class ShowArticleViewModel @Inject constructor(
             _bookmark.postValue(true)
         }
     }
-}
-
-enum class UserFragmentState {
-    SUCCESS,
-    FAILURE,
-    APP_ERROR,
-    INITIAL_STATE,
-    NO_REMOTE_NO_LOCAL,
-    UNKNOWN_STATE,
 }

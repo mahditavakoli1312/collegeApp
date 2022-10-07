@@ -6,7 +6,7 @@
     <data>
         <variable
             name="userSearch"
-            type="com.example.collegeapp.features.search.data.entities.UserSearchEntity" />
+            type="com.example.collegeapp.features.search.ui.model.SearchUserView" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
