@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentChildSearchUserBinding
 import com.example.collegeapp.features.search.ui.adapters.SearchUserAdapter
@@ -38,8 +39,16 @@ class ChildUserSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchUserAdapter = SearchUserAdapter {
-
+        val searchUserAdapter = SearchUserAdapter { id, name ->
+            val action =
+                SearchFragmentDirections.actionSearchFragmentToSearchUserProfileFragment(
+                    userId = id,
+                    userName = name
+                )
+            parentFragment?.findNavController()
+                ?.navigate(
+                    action
+                )
         }
         binding.apply {
             rvUsersSearchChildSearchPostFragment.adapter = searchUserAdapter

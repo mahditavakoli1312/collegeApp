@@ -9,7 +9,7 @@ import com.example.collegeapp.databinding.ItemUserSerarchviewholderBinding
 import com.example.collegeapp.features.search.ui.model.SearchUserView
 
 class SearchUserAdapter(
-    private val onItemClick: () -> Unit
+    private val onItemClick: (userId: Int, userName: String) -> Unit
 ) :
     ListAdapter<SearchUserView, SearchUserAdapter.SearchUserHolder>(SearchUserDiffCallback) {
 
@@ -30,7 +30,7 @@ class SearchUserAdapter(
     override fun onBindViewHolder(holder: SearchUserHolder, position: Int) {
         val user = getItem(position)
         holder.bind(user)
-        holder.itemBinding.root.setOnClickListener { onItemClick() }
+        holder.itemBinding.root.setOnClickListener { onItemClick(user.id, user.nameUser) }
     }
 
 }

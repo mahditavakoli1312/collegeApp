@@ -93,6 +93,9 @@
         <action
             android:id="@+id/action_searchFragment_to_showArticleFragment"
             app:destination="@id/showArticleFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_searchUserProfileFragment"
+            app:destination="@id/searchUserProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -134,7 +137,11 @@
         android:id="@+id/childUserSearchFragment2"
         android:name="com.example.collegeapp.features.search.ui.fragments.ChildUserSearchFragment"
         android:label="ChildUserSearchFragment"
-        tools:layout="@layout/fragment_child_search_user" />
+        tools:layout="@layout/fragment_child_search_user" >
+        <action
+            android:id="@+id/action_childUserSearchFragment2_to_searchUserProfileFragment"
+            app:destination="@id/searchUserProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newArticleFragment"
         android:name="com.example.collegeapp.features.article.ui.fragments.NewArticleFragment"
@@ -149,5 +156,19 @@
             android:name="articleID"
             android:defaultValue="1"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchUserProfileFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.SearchUserProfileFragment"
+        android:label="SearchUserProfileFragment" >
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+        <argument
+            android:name="user_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchUserProfileFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
     </fragment>
 </navigation>
