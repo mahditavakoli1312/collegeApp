@@ -5,11 +5,11 @@ import com.example.collegeapp.features.article.ui.model.AddArticleView
 data class AddArticleRequest(
     val title: String,
     val content: String,
-    val tag: String
+    val tags: String
 )
 
 fun AddArticleView.toAddArticleRequest() = AddArticleRequest(
     title = title,
     content = content,
-    tag = tag.toString()
+    tags = tag.toString()
 )
