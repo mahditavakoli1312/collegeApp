@@ -66,7 +66,9 @@ class HomeFragment : Fragment() {
                 articleAdapter.submitList(it)
             }
             imgAddChipsHomeFragment.setOnClickListener {
-                BottomSheetTagFragment().show(parentFragmentManager, "")
+                BottomSheetTagFragment(false , ){tagList ->
+                    //todo select list
+                }.show(parentFragmentManager, "")
             }
         }
     }
@@ -103,10 +105,10 @@ class HomeFragment : Fragment() {
                 setChipStrokeColorResource(R.color.top_home_chips_bordercolor_selector)
                 chipStrokeWidth = root.resources.getDimension(R.dimen.stroke_1)
                 isClickable = true
-                isCheckable = false
+                isCheckable = true
+                checkedIcon = null
                 setOnClickListener {
-                    isSelected = !isSelected
-                    if (isSelected)
+                    if (isChecked)
                         tagSelectedList.add(chip)
                     else tagSelectedList.remove(chip)
                     homeViewModel.tagSearchContent.postValue(tagSelectedList)

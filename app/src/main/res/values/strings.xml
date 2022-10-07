@@ -71,4 +71,8 @@
     <string name="label_password_error">پسورد معتبر نیست</string>
     <string name="label_password_length_error">رمز عبور باید حداقل 6 حرف باشد</string>
     <string name="label_validation_true">تمامی فیلد ها باید درست باشند</string>
+    <string name="label_choose_one_tag">یک تگ انتخاب کنید</string>
+    <string name="label_title_length">عنوان مقاله کوتاه است</string>
+    <string name="label_desc_length">متن مقاله کوتاه است</string>
+    <string name="label_success_new_article">مقاله منتشر شد</string>
 </resources>

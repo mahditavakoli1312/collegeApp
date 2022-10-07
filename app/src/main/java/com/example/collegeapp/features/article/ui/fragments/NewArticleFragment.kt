@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
+import com.example.collegeapp.core.data.ConstanceValue
+import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.FragmentNewArticleBinding
 import com.example.collegeapp.features.article.ui.viewModels.NewArticleViewModel
 import com.example.collegeapp.features.home.ui.fragments.BottomSheetTagFragment
@@ -18,8 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class NewArticleFragment : Fragment() {
 
     private lateinit var binding: FragmentNewArticleBinding
-    private val viewModel: NewArticleViewModel by viewModels()
-
+    private val newArticleViewModel: NewArticleViewModel by viewModels()
+    private var isTagSelected = false
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,20 +34,46 @@ class NewArticleFragment : Fragment() {
             false
         )
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            viewModel = this@NewArticleFragment.viewModel
+            viewModel = newArticleViewModel
             lifecycleOwner = viewLifecycleOwner
             cAddTagNewArticleFragment.setOnClickListener {
-                BottomSheetTagFragment().show(parentFragmentManager, "")
+                BottomSheetTagFragment(true){tagList->
+                    newArticleViewModel.tag.value = tagList[0]
+                }.show(parentFragmentManager, "")
+            }
+
+            newArticleViewModel.tag.observe(viewLifecycleOwner){
+                cAddTagNewArticleFragment.text = it.title
+                isTagSelected = true
             }
 
             imgCloseNewArticleFragment.setOnClickListener {
                 findNavController().popBackStack()
             }
+
+            btnShareArticleNewArticleFragment.setOnClickListener {
+                    newArticleViewModel.addArticle()
+            }
+
+            newArticleViewModel.addArticleMessage.observe(viewLifecycleOwner){
+                if(it.equals(ConstanceValue.SUCCESS)){
+                    CustomSnackBar.Builder(requireView(), requireActivity())
+                        .setDescriptionText(getString(R.string.label_success_new_article))
+                        .build().showSnackBar()
+                    findNavController().popBackStack()
+                }else {
+                    CustomSnackBar.Builder(requireView(), requireActivity())
+                        .setDescriptionText(it)
+                        .build().showSnackBar()
+                }
+            }
         }
     }
+
 }
