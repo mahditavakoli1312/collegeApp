@@ -76,5 +76,4 @@
     <string name="label_title_length">عنوان مقاله کوتاه است</string>
     <string name="label_desc_length">متن مقاله کوتاه است</string>
     <string name="label_success_new_article">مقاله منتشر شد</string>
-    <string name="label_no_connection_no_exists_user">عدم ارتباط ، عدم وجود کاربر در حافظه محلی</string>
 </resources>

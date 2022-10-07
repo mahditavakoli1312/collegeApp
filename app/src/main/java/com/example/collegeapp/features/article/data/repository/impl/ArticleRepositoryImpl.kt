@@ -6,11 +6,9 @@ import com.example.collegeapp.core.networkUtils.safeApiCall
 import com.example.collegeapp.features.article.data.dataSource.local.ArticleLocalDataSource
 import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.model.entity.*
+import com.example.collegeapp.features.article.data.model.response.toAddArticleRequest
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
-import com.example.collegeapp.features.article.ui.model.ArticleView
-import com.example.collegeapp.features.article.ui.model.TagView
-import com.example.collegeapp.features.article.ui.model.toArticleView
-import com.example.collegeapp.features.article.ui.model.toTagView
+import com.example.collegeapp.features.article.ui.model.*
 import javax.inject.Inject
 
 class ArticleRepositoryImpl @Inject constructor(

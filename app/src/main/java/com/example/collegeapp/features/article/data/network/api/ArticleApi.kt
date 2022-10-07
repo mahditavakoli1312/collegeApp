@@ -1,8 +1,6 @@
 package com.example.collegeapp.features.article.data.network.api
 
-import com.example.collegeapp.features.article.data.model.response.ArticleBaseResponse
-import com.example.collegeapp.features.article.data.model.response.ArticleDetailBaseResponse
-import com.example.collegeapp.features.article.data.model.response.TagBaseResponse
+import com.example.collegeapp.features.article.data.model.response.*
 import com.example.collegeapp.features.profile.data.model.response.UserArticleBaseResponse
 import retrofit2.Response
 import retrofit2.http.Body
