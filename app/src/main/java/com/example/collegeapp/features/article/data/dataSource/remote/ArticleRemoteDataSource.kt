@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.article.data.dataSource.remote
+package com.example.collegeapp.features.article.data.datasource.remote
 
 import com.example.collegeapp.features.article.data.model.response.*
 import com.example.collegeapp.features.profile.data.model.response.UserArticleDataResponse

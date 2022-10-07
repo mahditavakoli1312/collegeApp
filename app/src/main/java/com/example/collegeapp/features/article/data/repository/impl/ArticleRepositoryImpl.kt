@@ -3,8 +3,8 @@ package com.example.collegeapp.features.article.data.repository.impl
 import com.example.collegeapp.core.data.ConstanceValue
 import com.example.collegeapp.core.networkUtils.ResultWrapper
 import com.example.collegeapp.core.networkUtils.safeApiCall
-import com.example.collegeapp.features.article.data.dataSource.local.ArticleLocalDataSource
-import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
+import com.example.collegeapp.features.article.data.datasource.local.ArticleLocalDataSource
+import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.model.entity.*
 import com.example.collegeapp.features.article.data.model.response.toAddArticleRequest
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
@@ -74,14 +74,14 @@ class ArticleRepositoryImpl @Inject constructor(
     override suspend fun getArticleWithTags(tags: List<TagView>): List<ArticleView> {
         return if (tags.isNotEmpty()) {
             articleLocalDataSource.getArticles().filter { articleEntity ->
-                tags.contains(articleEntity.tag.toTagView())
+                tags.any {
+                    it.id == articleEntity.tag.id
+                }
             }.map { articleEntity ->
                 articleEntity.toArticleView()
             }
         } else {
-            articleLocalDataSource.getArticles().map { articleEntity ->
-                articleEntity.toArticleView()
-            }
+            listOf()
         }
     }
 
@@ -119,6 +119,21 @@ class ArticleRepositoryImpl @Inject constructor(
 
     override suspend fun bookmarksIsExist(serverId: Int): Boolean =
         articleLocalDataSource.bookmarksIsExist(serverId = serverId)
+
+    override suspend fun getTagSelected(): List<TagView>? {
+        return articleLocalDataSource.getTagSelected()?.map {
+            it.toTagView()
+        }
+    }
+
+    override suspend fun updateTag(tagEntity: TagEntity) {
+        articleLocalDataSource.updateTag(tagEntity)
+    }
+
+    override suspend fun updateTags(tagList: List<TagView>) {
+        articleLocalDataSource.updateTags(tagList.map { it.toTagEntity() })
+    }
+
 
     override suspend fun addArticle(addArticleView: AddArticleView): ResultWrapper<String> {
         return safeApiCall(

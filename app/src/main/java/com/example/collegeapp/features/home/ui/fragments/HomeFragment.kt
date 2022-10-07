@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigate
+import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.FragmentHomeBinding
 import com.example.collegeapp.features.article.ui.model.TagView
 import com.example.collegeapp.features.home.ui.adapters.ArticlesAdapter
@@ -24,7 +25,6 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
     lateinit var binding: FragmentHomeBinding
-    private val tagSelectedList = mutableListOf<TagView>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
                 action
             )
         }
-        homeViewModel.article.observe(viewLifecycleOwner) {
+        homeViewModel.articleSearchTag.observe(viewLifecycleOwner) {
             articleAdapter.submitList(it)
         }
         createChipGroup()
@@ -67,8 +67,19 @@ class HomeFragment : Fragment() {
             }
             imgAddChipsHomeFragment.setOnClickListener {
                 BottomSheetTagFragment(false) { tagList ->
-                    //todo select list
+                    tagList.map { it.isSelected = 1 }
+                    homeViewModel.updateTagsSelected(tagList)
                 }.show(parentFragmentManager, "")
+            }
+
+            homeViewModel.fragmentStateMessage.observe(viewLifecycleOwner) {
+                CustomSnackBar.Builder(
+                    requiredActivity = requireActivity(),
+                    view = view
+                )
+                    .setDescriptionText(it)
+                    .build()
+                    .showSnackBar()
             }
         }
     }
@@ -76,6 +87,7 @@ class HomeFragment : Fragment() {
     private fun createChipGroup() {
         binding.apply {
             homeViewModel.chipsList.observe(viewLifecycleOwner) {
+                chipsFilterHomeFragment.removeAllViews()
                 it?.forEach { tag ->
                     chipsFilterHomeFragment.addView(
                         createChip(tag)
@@ -106,12 +118,17 @@ class HomeFragment : Fragment() {
                 chipStrokeWidth = root.resources.getDimension(R.dimen.stroke_1)
                 isClickable = true
                 isCheckable = true
+                if (chip.isChecked == 1)
+                    isChecked = true
                 checkedIcon = null
                 setOnClickListener {
-                    if (isChecked)
-                        tagSelectedList.add(chip)
-                    else tagSelectedList.remove(chip)
-                    homeViewModel.tagSearchContent.postValue(tagSelectedList)
+                    if (isChecked) {
+                        chip.isChecked = 1
+                        homeViewModel.updateTag(chip)
+                    } else {
+                        chip.isChecked = 0
+                        homeViewModel.updateTag(chip)
+                    }
                 }
             }
         }

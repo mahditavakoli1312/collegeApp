@@ -87,6 +87,15 @@ class ShowArticleFragment : Fragment() {
         binding.apply {
             viewModel = this@ShowArticleFragment.showArticleViewModel
             lifecycleOwner = viewLifecycleOwner
+
+            showArticleViewModel.createdTime.observe(viewLifecycleOwner) { createdTimeString ->
+                createdTime = createdTimeString
+            }
+
+            showArticleViewModel.imageUrl.observe(viewLifecycleOwner) { imgUrl ->
+                imageUrl = imgUrl
+            }
+
             imgBackShowArticleFragment.setOnClickListener {
                 findNavController().popBackStack()
             }

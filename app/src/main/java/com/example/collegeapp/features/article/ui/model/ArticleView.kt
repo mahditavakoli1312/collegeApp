@@ -10,6 +10,7 @@ data class ArticleView(
     val content: String,
     @DrawableRes
     val image: Int,
+    //2022-10-07T08:31:02.630Z
     val createdTime: String,
     val author: String,
     val tag: TagView

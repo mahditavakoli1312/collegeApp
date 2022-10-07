@@ -64,11 +64,11 @@
         <TextView
             android:id="@+id/tv_writerTimeArticleRecycler_homeFragment"
             style="@style/custom_textView_writer"
-            time="@{article.createdTime}"
-            writer="@{article.author}"
+            android:text="@{@string/label_writer_time(article.author)}"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center_vertical|start"
+            jalaliCalender="@{article.createdTime}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -28,6 +28,8 @@ class ShowArticleViewModel @Inject constructor(
 
 
     private val _articleId = savedStateHandle.getLiveData<Int>("articleID")
+    val createdTime = MutableLiveData<String>()
+    val imageUrl = MutableLiveData<Int>()
 
     /*for test ServerError
     private val _articleId = MutableLiveData<Int>(100)*/
@@ -77,6 +79,8 @@ class ShowArticleViewModel @Inject constructor(
                                 }
                                 _fragmentState.postValue(FragmentState.APP_ERROR)
                                 _articleDetail.postValue(response.localData)
+                                createdTime.postValue(response.localData.createdTime)
+                                imageUrl.postValue(response.localData.image)
                             } else {
                                 _fragmentStateMessage.postValue(context.getString(R.string.label_no_remote_no_local))
                                 _fragmentState.postValue(FragmentState.NO_REMOTE_NO_LOCAL)
@@ -90,10 +94,15 @@ class ShowArticleViewModel @Inject constructor(
                         _fragmentStateMessage.postValue("${response.message} ${response.code}")
                         _fragmentState.postValue(FragmentState.FAILURE)
                         _articleDetail.postValue(response.localData)
+                        createdTime.postValue(response.localData?.createdTime)
+                        imageUrl.postValue(response.localData?.image)
                     }
                     is ResultWrapper.Success -> {
                         _articleDetail.postValue(response.data)
+                        createdTime.postValue(response.data?.createdTime)
+                        imageUrl.postValue(response.data?.image)
                         _fragmentState.postValue(FragmentState.SUCCESS)
+
                     }
                 }
             }

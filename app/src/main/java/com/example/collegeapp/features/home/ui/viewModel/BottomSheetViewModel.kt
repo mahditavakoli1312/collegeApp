@@ -27,25 +27,32 @@ class BottomSheetViewModel @Inject constructor(
     private val _tags = MutableLiveData<List<TagView>?>()
     val tag = _tags
 
+    val tagSelected = MutableLiveData<List<TagView>>()
+
     private fun fetchTags() {
         viewModelScope.launch(Dispatchers.IO) {
-            when (val response = articleRepository.getTags()) {
-                is ResultWrapper.ApplicationError -> {
-                    response.message.apply {
-                        when (this) {
-                            else -> {
-                                //TODO : change context
-                                _fragmentStateMessage.postValue(ConstanceValue.FAILURE)
+            tagSelected.postValue(
+                articleRepository.getTagSelected()
+            ).let {
+                when (val response = articleRepository.getTags()) {
+                    is ResultWrapper.ApplicationError -> {
+                        response.message.apply {
+                            when (this) {
+                                else -> {
+                                    //TODO : change context
+                                    _fragmentStateMessage.postValue(ConstanceValue.FAILURE)
+                                }
                             }
                         }
+                        _tags.postValue(response.localData)
                     }
-                    _tags.postValue(response.localData)
+                    is ResultWrapper.Failure -> {
+                        _fragmentStateMessage.postValue("${response.message} ${response.code}")
+                        _tags.postValue(response.localData)
+                    }
+                    is ResultWrapper.Success ->
+                        _tags.postValue(response.data)
                 }
-                is ResultWrapper.Failure -> {
-                    _fragmentStateMessage.postValue("${response.message} ${response.code}")
-                    _tags.postValue(response.localData)
-                }
-                is ResultWrapper.Success -> _tags.postValue(response.data)
             }
         }
     }

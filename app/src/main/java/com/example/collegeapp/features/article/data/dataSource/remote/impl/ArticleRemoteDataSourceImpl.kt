@@ -1,7 +1,7 @@
-package com.example.collegeapp.features.article.data.dataSource.remote.impl
+package com.example.collegeapp.features.article.data.datasource.remote.impl
 
 import com.example.collegeapp.core.networkUtils.bodyOrThrow
-import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
+import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.model.response.*
 import com.example.collegeapp.features.article.data.network.api.ArticleApi
 import com.example.collegeapp.features.profile.data.model.response.UserArticleDataResponse

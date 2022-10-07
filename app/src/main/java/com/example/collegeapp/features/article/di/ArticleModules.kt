@@ -2,8 +2,10 @@ package com.example.collegeapp.features.article.di
 
 
 import com.example.collegeapp.core.common.LocalDatabase
-import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
-import com.example.collegeapp.features.article.data.dataSource.remote.impl.ArticleRemoteDataSourceImpl
+import com.example.collegeapp.features.article.data.datasource.local.ArticleLocalDataSource
+import com.example.collegeapp.features.article.data.datasource.local.impl.ArticleLocalDataSourceImpl
+import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
+import com.example.collegeapp.features.article.data.datasource.remote.impl.ArticleRemoteDataSourceImpl
 import com.example.collegeapp.features.article.data.dp.dao.*
 import com.example.collegeapp.features.article.data.network.api.ArticleApi
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
@@ -25,6 +27,10 @@ abstract class ArticleModules {
     @Binds
     abstract fun bindArticleRemoteDataSource(articleRemoteDataSourceImpl: ArticleRemoteDataSourceImpl):
             ArticleRemoteDataSource
+
+    @Binds
+    abstract fun bindArticleLocalDataSource(articleLocalDataSourceImpl: ArticleLocalDataSourceImpl)
+            : ArticleLocalDataSource
 
     companion object {
         @Provides
@@ -54,6 +60,7 @@ abstract class ArticleModules {
         @Provides
         fun provideUserArticleTagDao(database: LocalDatabase): UserArticleTagDao =
             database.getUserArticleTagDao()
+
     }
 
 }
