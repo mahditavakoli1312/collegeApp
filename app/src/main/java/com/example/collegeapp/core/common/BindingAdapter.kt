@@ -11,27 +11,34 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @BindingAdapter("imageUrl")
-fun loadImg(imageView: ImageView, imageUrl: Int) {
-    imageView.load(
-        ResourcesCompat.getDrawable(
-            imageView.resources,
-            imageUrl,
-            imageView.context.theme
-        )
-    ) {
-        error(R.drawable.ic_gallery)
-        transformations(RoundedCornersTransformation(imageView.resources.getDimension(R.dimen.radius_8)))
+fun loadImg(imageView: ImageView, imageUrl: Int?) {
+    if (imageUrl != null && imageUrl != 0) {
+        imageView.load(
+            imageUrl.let {
+                ResourcesCompat.getDrawable(
+                    imageView.resources,
+                    it,
+                    imageView.context.theme
+                )
+            }
+        ) {
+            error(R.drawable.ic_gallery)
+            transformations(RoundedCornersTransformation(imageView.resources.getDimension(R.dimen.radius_8)))
+        }
     }
 }
 
 @BindingAdapter("jalaliCalender")
-fun jalaliCalender(textView: TextView, date: String) {
+fun jalaliCalender(textView: TextView, date: String?) {
     //String should be like this 2022-10-06T23:18:06.763Z
-    val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-    val text = date.split("T")[0]
-    val date = formatter.parse(text) as Date
-    val converter = PersianDateConverter().calcSolarCalendar(date)
-    textView.text =
-        textView.text.toString() + " ${converter.date} ${converter.strMonth} ${converter.year}"
+    if (date != null && date.isNotEmpty()) {
+        val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        val text = date.split("T")?.get(0)
+        val date = formatter.parse(text) as Date
+        val converter = PersianDateConverter().calcSolarCalendar(date)
+        textView.text =
+            textView.text.toString() + " ${converter.date} ${converter.strMonth} ${converter.year}"
+
+    }
 }
 
