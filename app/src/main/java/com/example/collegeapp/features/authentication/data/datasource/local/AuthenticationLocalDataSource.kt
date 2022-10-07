@@ -7,11 +7,6 @@ import javax.inject.Inject
 class AuthenticationLocalDataSource @Inject constructor(
     private val sharedPreferences: SharedPreferences
 ) {
-
-    /*
-      TODO The following methods should be changed based on the APIs
-    */
-
     fun isLogin(): Boolean {
         return sharedPreferences.contains(ConstanceValue.TOKEN)
     }
@@ -28,5 +23,16 @@ class AuthenticationLocalDataSource @Inject constructor(
         edit.apply()
     }
 
+    fun getUserID(): Int =
+        sharedPreferences.getInt(ConstanceValue.USER_ID, -1)
+
+    fun setUserFullName(fullName: String) {
+        val edit = sharedPreferences.edit()
+        edit.putString(ConstanceValue.USER_FULL_NAME, fullName)
+        edit.apply()
+    }
+
+    fun getUserFullName(): String =
+        sharedPreferences.getString(ConstanceValue.USER_FULL_NAME, "") ?: ""
 
 }

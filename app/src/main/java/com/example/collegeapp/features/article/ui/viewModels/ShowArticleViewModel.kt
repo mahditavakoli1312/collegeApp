@@ -1,7 +1,6 @@
 package com.example.collegeapp.features.article.ui.viewModels
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.collegeapp.R
 import com.example.collegeapp.core.networkUtils.ResultWrapper
@@ -69,7 +68,6 @@ class ShowArticleViewModel @Inject constructor(
                             if (response.localData != null) {
 
                                 response.message.apply {
-                                    Log.d(TAG, "fetchArticleDetails: app ${response.message}")
                                     when (this) {
                                         else -> {
                                             //todo change context to provide module

@@ -40,9 +40,7 @@ class ShowArticleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         showArticleViewModel.fragmentState.observe(viewLifecycleOwner) { fragmentState ->
             when (fragmentState) {
-                FragmentState.SUCCESS -> {
-
-                }
+                FragmentState.SUCCESS -> {}
                 FragmentState.FAILURE -> {
 
                     CustomSnackBar.Builder(
@@ -62,30 +60,7 @@ class ShowArticleFragment : Fragment() {
                         .build()
                         .showSnackBar()
                 }
-                FragmentState.INITIAL_STATE -> {
-
-                }
-                FragmentState.NO_REMOTE_NO_LOCAL -> {
-                    CustomSnackBar.Builder(
-                        requiredActivity = requireActivity(),
-                        view = view
-                    )
-                        .setDescriptionText(showArticleViewModel.fragmentStateMessage.value ?: "")
-                        .build()
-                        .showSnackBar()
-                }
-                FragmentState.APP_ERROR -> {
-                    CustomSnackBar.Builder(
-                        requiredActivity = requireActivity(),
-                        view = view
-                    )
-                        .setDescriptionText(showArticleViewModel.fragmentStateMessage.value ?: "")
-                        .build()
-                        .showSnackBar()
-                }
-                FragmentState.INITIAL_STATE -> {
-
-                }
+                FragmentState.INITIAL_STATE -> {}
                 FragmentState.NO_REMOTE_NO_LOCAL -> {
                     CustomSnackBar.Builder(
                         requiredActivity = requireActivity(),

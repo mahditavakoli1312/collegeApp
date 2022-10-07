@@ -3,12 +3,10 @@ package com.example.collegeapp.features.home.ui.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.collegeapp.R
 import com.example.collegeapp.core.data.ConstanceValue
 import com.example.collegeapp.core.networkUtils.ResultWrapper
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.ui.model.TagView
-import com.example.collegeapp.features.article.ui.viewModels.UserFragmentState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,6 +20,7 @@ class BottomSheetViewModel @Inject constructor(
     init {
         fetchTags()
     }
+
     private val _fragmentStateMessage = MutableLiveData<String>()
     val fragmentStateMessage = _fragmentStateMessage
 

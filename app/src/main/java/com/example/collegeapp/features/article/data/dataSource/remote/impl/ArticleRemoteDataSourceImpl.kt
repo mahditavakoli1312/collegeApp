@@ -4,6 +4,7 @@ import com.example.collegeapp.core.networkUtils.bodyOrThrow
 import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.model.response.*
 import com.example.collegeapp.features.article.data.network.api.ArticleApi
+import com.example.collegeapp.features.profile.data.model.response.UserArticleDataResponse
 import javax.inject.Inject
 
 class ArticleRemoteDataSourceImpl @Inject constructor(
@@ -21,8 +22,10 @@ class ArticleRemoteDataSourceImpl @Inject constructor(
         return api.getTags().bodyOrThrow()?.data
     }
 
+    override suspend fun getArticleByAuthorId(id: Int): List<UserArticleDataResponse>? =
+        api.getArticleByAuthorId(authorId = id).bodyOrThrow()?.data
+
     override suspend fun addArticle(addArticleRequest: AddArticleRequest): AddArticleResponse? {
         return api.addArticle(addArticleRequest).bodyOrThrow()
     }
-
 }

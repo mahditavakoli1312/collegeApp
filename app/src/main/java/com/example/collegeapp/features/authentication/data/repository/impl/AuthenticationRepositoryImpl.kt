@@ -17,10 +17,6 @@ class AuthenticationRepositoryImpl @Inject constructor(
     private val authenticationRemoteDataSource: AuthenticationRemoteDataSource
 ) : AuthenticationRepository {
 
-    /*
-      TODO The following methods should be changed based on the APIs
-    */
-
     override fun isLogin(): Boolean {
         return authenticationLocalDataSource.isLogin()
     }

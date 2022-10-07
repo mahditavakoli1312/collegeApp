@@ -22,8 +22,10 @@ class ArticleRepositoryImpl @Inject constructor(
             api = {
                 val response = articleRemoteDataSource.getArticles()
                     ?.map { articleDataResponse -> articleDataResponse.toArticleEntity() }
-                if (response != null)
+                if (response != null) {
+                    articleLocalDataSource.deleteAllArticles()
                     articleLocalDataSource.insertArticles(response)
+                }
                 return@safeApiCall getArticleFromLocalDataSource()
             }
         )
@@ -102,9 +104,8 @@ class ArticleRepositoryImpl @Inject constructor(
         return safeApiCall(
             localData = getArticleViewByIdFromLocalDataSource(id),
             api = {
-                getArticleDetailsEntityByIdFromRemoteDataSource(id).let { remoteData ->
-                    if (remoteData != null)
-                        insertArticleDetailsToLocalDatabase(remoteData)
+                getArticleDetailsEntityByIdFromRemoteDataSource(id)?.let { remoteData ->
+                    insertArticleDetailsToLocalDatabase(remoteData)
                 }
                 return@safeApiCall getArticleViewByIdFromLocalDataSource(id)
             })
@@ -129,6 +130,5 @@ class ArticleRepositoryImpl @Inject constructor(
             }
         )
     }
-
 
 }

@@ -20,10 +20,10 @@ object AppModule {
     fun provideLocalDatabase(@ApplicationContext context: Context): LocalDatabase {
         return Room.databaseBuilder(context, LocalDatabase::class.java, "helium").build()
     }
-    
+
     @Provides
-    fun provideSharedPreferences(@ApplicationContext context: Context) : SharedPreferences{
-        return context.getSharedPreferences("shared_pref" , Context.MODE_PRIVATE)
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences("shared_pref", Context.MODE_PRIVATE)
     }
 
 

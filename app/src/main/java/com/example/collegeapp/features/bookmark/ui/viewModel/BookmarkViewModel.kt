@@ -26,7 +26,7 @@ class BookmarkViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val response = bookmarkRepository.getBookmarks()
             withContext(Dispatchers.Main) {
-                _bookmarks.postValue(response)
+                _bookmarks.postValue(response.reversed())
             }
         }
     }

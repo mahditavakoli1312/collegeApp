@@ -57,14 +57,14 @@ class HomeViewModel @Inject constructor(
                         }
                     }
                     _fragmentState.postValue(FragmentState.APP_ERROR)
-                    _articles.postValue(response.localData)
+                    _articles.postValue(response.localData.reversed())
                 }
                 is ResultWrapper.Failure -> {
                     _fragmentStateMessage.postValue("${response.message} ${response.code}")
                     _fragmentState.postValue(FragmentState.FAILURE)
-                    _articles.postValue(response.localData)
+                    _articles.postValue(response.localData.reversed())
                 }
-                is ResultWrapper.Success -> _articles.postValue(response.data)
+                is ResultWrapper.Success -> _articles.postValue(response.data.reversed())
             }
         }
     }

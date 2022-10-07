@@ -4,15 +4,10 @@ package com.example.collegeapp.features.article.di
 import com.example.collegeapp.core.common.LocalDatabase
 import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.dataSource.remote.impl.ArticleRemoteDataSourceImpl
-import com.example.collegeapp.features.article.data.dp.dao.ArticleDao
-import com.example.collegeapp.features.article.data.dp.dao.ArticleDetailsDao
-import com.example.collegeapp.features.article.data.dp.dao.BookmarkDao
-import com.example.collegeapp.features.article.data.dp.dao.TagDao
+import com.example.collegeapp.features.article.data.dp.dao.*
 import com.example.collegeapp.features.article.data.network.api.ArticleApi
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.data.repository.impl.ArticleRepositoryImpl
-import com.example.collegeapp.features.profile.data.MyArticleRepository
-import com.example.collegeapp.features.profile.data.impl.MyArticleRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -26,9 +21,6 @@ abstract class ArticleModules {
 
     @Binds
     abstract fun bindArticleReository(articleRepository: ArticleRepositoryImpl): ArticleRepository
-
-    @Binds
-    abstract fun bindMyArticleRepository(myArticleRepository: MyArticleRepositoryImpl): MyArticleRepository
 
     @Binds
     abstract fun bindArticleRemoteDataSource(articleRemoteDataSourceImpl: ArticleRemoteDataSourceImpl):
@@ -54,6 +46,14 @@ abstract class ArticleModules {
         @Provides
         fun provideArticleDao(database: LocalDatabase): ArticleDao =
             database.getArticleDao()
+
+        @Provides
+        fun provideUserArticleDao(database: LocalDatabase): UserArticleDao =
+            database.getUserArticleDataDao()
+
+        @Provides
+        fun provideUserArticleTagDao(database: LocalDatabase): UserArticleTagDao =
+            database.getUserArticleTagDao()
     }
 
 }
