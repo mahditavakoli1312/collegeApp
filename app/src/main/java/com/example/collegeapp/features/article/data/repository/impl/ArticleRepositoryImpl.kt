@@ -6,9 +6,11 @@ import com.example.collegeapp.core.networkUtils.safeApiCall
 import com.example.collegeapp.features.article.data.dataSource.local.ArticleLocalDataSource
 import com.example.collegeapp.features.article.data.dataSource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.model.entity.*
-import com.example.collegeapp.features.article.data.model.response.toAddArticleRequest
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
-import com.example.collegeapp.features.article.ui.model.*
+import com.example.collegeapp.features.article.ui.model.ArticleView
+import com.example.collegeapp.features.article.ui.model.TagView
+import com.example.collegeapp.features.article.ui.model.toArticleView
+import com.example.collegeapp.features.article.ui.model.toTagView
 import javax.inject.Inject
 
 class ArticleRepositoryImpl @Inject constructor(
@@ -22,8 +24,10 @@ class ArticleRepositoryImpl @Inject constructor(
             api = {
                 val response = articleRemoteDataSource.getArticles()
                     ?.map { articleDataResponse -> articleDataResponse.toArticleEntity() }
-                if (response != null)
+                if (response != null) {
+                    articleLocalDataSource.deleteAllArticles()
                     articleLocalDataSource.insertArticles(response)
+                }
                 return@safeApiCall getArticleFromLocalDataSource()
             }
         )
@@ -102,9 +106,8 @@ class ArticleRepositoryImpl @Inject constructor(
         return safeApiCall(
             localData = getArticleViewByIdFromLocalDataSource(id),
             api = {
-                getArticleDetailsEntityByIdFromRemoteDataSource(id).let { remoteData ->
-                    if (remoteData != null)
-                        insertArticleDetailsToLocalDatabase(remoteData)
+                getArticleDetailsEntityByIdFromRemoteDataSource(id)?.let { remoteData ->
+                    insertArticleDetailsToLocalDatabase(remoteData)
                 }
                 return@safeApiCall getArticleViewByIdFromLocalDataSource(id)
             })
@@ -129,6 +132,5 @@ class ArticleRepositoryImpl @Inject constructor(
             }
         )
     }
-
 
 }

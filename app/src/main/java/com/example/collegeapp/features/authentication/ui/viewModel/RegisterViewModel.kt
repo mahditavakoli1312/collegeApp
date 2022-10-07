@@ -1,6 +1,5 @@
 package com.example.collegeapp.features.authentication.ui.viewModel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -40,7 +39,6 @@ class RegisterViewModel @Inject constructor(
                 )) {
                 is ResultWrapper.ApplicationError -> _registerMessage.postValue(response.message)
                 is ResultWrapper.Failure -> {
-                    Log.d("TAGii", "register: " + response.message)
                     _registerMessage.postValue("${response.message} ${response.code}")
                 }
                 //todo change hard code

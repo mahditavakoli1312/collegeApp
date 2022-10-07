@@ -6,7 +6,7 @@
     <data>
         <variable
             name="myArticle"
-            type="com.example.collegeapp.features.profile.ui.model.MyArticleView" />
+            type="com.example.collegeapp.features.profile.ui.model.UserArticleDataView" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,6 +61,7 @@
             app:layout_constraintTop_toTopOf="@id/img_articleRecycler_myArticle" />
 
         <TextView
+            android:textDirection="rtl"
             android:id="@+id/tv_inProgress_myArticles"
             style="@style/custom_textView_writer"
             android:layout_width="0dp"

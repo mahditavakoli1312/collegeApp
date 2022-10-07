@@ -8,7 +8,9 @@ class BookmarkLocalDataSourceImpl @Inject constructor(
     private val bookmarkDao: BookmarkDao
 ) : BookmarkLocalDataSource {
     override suspend fun getBookmarks() =
-        bookmarkDao.getBookmarkWithArticle().map { bookmarkWithArticle ->
+        bookmarkDao.getBookmarkWithArticle().filter { bookmarkWithArticle ->
+            bookmarkWithArticle.article != null
+        }.map { bookmarkWithArticle ->
             bookmarkWithArticle.article
         }
 }

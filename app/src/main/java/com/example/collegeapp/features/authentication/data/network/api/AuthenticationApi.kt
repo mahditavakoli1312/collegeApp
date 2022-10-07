@@ -1,11 +1,9 @@
 package com.example.collegeapp.features.authentication.data.network.api
 
-import com.example.collegeapp.features.authentication.data.model.response.UserLoginRequest
-import com.example.collegeapp.features.authentication.data.model.response.UserLoginResponse
-import com.example.collegeapp.features.authentication.data.model.response.UserRegisterRequest
-import com.example.collegeapp.features.authentication.data.model.response.UserRegisterResponse
+import com.example.collegeapp.features.authentication.data.model.response.*
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AuthenticationApi {
@@ -15,4 +13,7 @@ interface AuthenticationApi {
 
     @POST("auth/login")
     suspend fun loginUser(@Body userLoginRequest: UserLoginRequest): Response<UserLoginResponse>
+
+    @GET("user")
+    suspend fun getProfileDetails(): Response<UserProfileResponse>?
 }

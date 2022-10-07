@@ -5,75 +5,60 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegeapp.R
-import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.databinding.ItemMyarticleProfileviewholderBinding
-import com.example.collegeapp.features.home.ui.MainActivity
-import com.example.collegeapp.features.profile.ui.model.MyArticleView
+import com.example.collegeapp.features.profile.ui.model.UserArticleDataView
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 
 class PostMyArticleAdapter(
-    private val onItemClick: () -> Unit
+    private val onItemClick: (articleId: Int) -> Unit
 ) :
-    ListAdapter<MyArticleView, PostMyArticleAdapter.MyArticlePostHolder>(PostMyArticleDiffCallback) {
+    ListAdapter<UserArticleDataView, PostMyArticleAdapter.MyArticlePostHolder>(
+        PostMyArticleDiffCallback
+    ) {
 
     class MyArticlePostHolder(val binding: ItemMyarticleProfileviewholderBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(articleEntity: MyArticleView) {
+        fun bind(userArticle: UserArticleDataView) {
             binding.apply {
-                myArticle = articleEntity
-                val chipsGroup: ChipGroup = binding.chipsGroupArticleRecyclerMyArticle
+                myArticle = userArticle
                 val progressBar = pbProgressBarMyArticle
                 val inProgress = tvInProgressMyArticles
                 val currentProgress = 74
                 progressBar.max = 100
+                chipsGroupArticleRecyclerMyArticle.removeAllViews()
 
-                root.setOnClickListener {
-                    val x =
-                        MainActivity.globalMain?.findNavController(R.id.fcv_fragmentContainer_activityMain)
-                            ?: root.findNavController()
-                    Navigation.easyNavigate(
-                        action = R.id.showArticleFragment,
-                        navController = x
+                chipsGroupArticleRecyclerMyArticle.addView(Chip(root.context).apply {
+                    text = userArticle.tag?.name
+                    id = userArticle.tag?.id ?: -1
+                    backgroundDrawable = ResourcesCompat.getDrawable(
+                        root.resources,
+                        R.drawable.tag_gray,
+                        root.context.theme
                     )
-                }
-
-                val tagsList = articleEntity.tag.split(",")
-                chipsGroup.removeAllViews()
-                tagsList.forEach {
-                    chipsGroup.addView(Chip(root.context).apply {
-                        text = it
-                        backgroundDrawable = ResourcesCompat.getDrawable(
+                    setTextColor(
+                        ResourcesCompat.getColor(
                             root.resources,
-                            R.drawable.tag_gray,
+                            R.color.primary_200,
                             root.context.theme
                         )
-                        setTextColor(
-                            ResourcesCompat.getColor(
-                                root.resources,
-                                R.color.primary_200,
-                                root.context.theme
-                            )
-                        )
-                    })
-                }
-
-                if (articleEntity.inProgress) {
+                    )
+                })
+                if (false) {
                     progressBar.visibility = View.VISIBLE
-                    ObjectAnimator.ofInt(progressBar, "progress", currentProgress)
-                        .setDuration(2000)
+                    ObjectAnimator.ofInt(progressBar, "progress", currentProgress).setDuration(2000)
                         .start()
-                    inProgress.text = root.context.getString(R.string.label_in_progress)
+                    inProgress.text = "در حال انتشار"
+
                 } else {
                     progressBar.visibility = View.INVISIBLE
-                    inProgress.text = articleEntity.time
+                    inProgress.text = userArticle.createdAt
                 }
+
+
             }
         }
     }
@@ -87,17 +72,23 @@ class PostMyArticleAdapter(
     override fun onBindViewHolder(holder: MyArticlePostHolder, position: Int) {
         val post = getItem(position)
         holder.bind(post)
-        holder.binding.root.setOnClickListener { onItemClick() }
+        holder.binding.root.setOnClickListener { onItemClick(post.id ?: -1) }
     }
 
 }
 
-object PostMyArticleDiffCallback : DiffUtil.ItemCallback<MyArticleView>() {
-    override fun areItemsTheSame(oldItem: MyArticleView, newItem: MyArticleView): Boolean {
+object PostMyArticleDiffCallback : DiffUtil.ItemCallback<UserArticleDataView>() {
+    override fun areItemsTheSame(
+        oldItem: UserArticleDataView,
+        newItem: UserArticleDataView
+    ): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: MyArticleView, newItem: MyArticleView): Boolean {
+    override fun areContentsTheSame(
+        oldItem: UserArticleDataView,
+        newItem: UserArticleDataView
+    ): Boolean {
         return oldItem.hashCode() == newItem.hashCode()
     }
 }

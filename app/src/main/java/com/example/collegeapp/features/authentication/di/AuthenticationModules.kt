@@ -1,7 +1,7 @@
 package com.example.collegeapp.features.authentication.di
 
 import com.example.collegeapp.features.authentication.data.datasource.remote.AuthenticationRemoteDataSource
-import com.example.collegeapp.features.authentication.data.datasource.remote.AuthenticationRemoteDataSourceImpl
+import com.example.collegeapp.features.authentication.data.datasource.remote.impl.AuthenticationRemoteDataSourceImpl
 import com.example.collegeapp.features.authentication.data.network.api.AuthenticationApi
 import com.example.collegeapp.features.authentication.data.repository.AuthenticationRepository
 import com.example.collegeapp.features.authentication.data.repository.impl.AuthenticationRepositoryImpl
