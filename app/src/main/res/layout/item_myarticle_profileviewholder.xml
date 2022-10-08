@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="myArticle"
             type="com.example.collegeapp.features.profile.ui.model.UserArticleDataView" />

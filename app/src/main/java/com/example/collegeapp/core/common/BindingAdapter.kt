@@ -33,7 +33,7 @@ fun jalaliCalender(textView: TextView, date: String?) {
     //String should be like this 2022-10-06T23:18:06.763Z
     if (date != null && date.isNotEmpty()) {
         val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-        val text = date.split("T")?.get(0)
+        val text = date.split("T").get(0)
         val date = formatter.parse(text) as Date
         val converter = PersianDateConverter().calcSolarCalendar(date)
         textView.text =

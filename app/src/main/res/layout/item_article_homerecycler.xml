@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="articleBinding"
             type="com.example.collegeapp.features.article.ui.model.ArticleView" />
@@ -58,6 +59,7 @@
             style="@style/custom_textView_title"
             android:text="@{articleBinding.title}"
             android:id="@+id/tv_titleArticleRecycler_homeFragment" />
+
         <TextView
             android:id="@+id/tv_writerTimeArticleRecycler_homeFragment"
             android:layout_width="0dp"
@@ -70,6 +72,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:gravity="center_vertical|start"
             style="@style/custom_textView_writer" />
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/stroke_2"

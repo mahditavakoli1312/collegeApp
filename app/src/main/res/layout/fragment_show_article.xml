@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="created_time"
             type="String" />
+
         <variable
             name="imageUrl"
             type="Integer" />
+
         <variable
             name="viewModel"
             type="com.example.collegeapp.features.article.ui.viewModels.ShowArticleViewModel" />
@@ -80,7 +83,7 @@
                     app:layout_constraintStart_toStartOf="@id/gl_vertical50_showArticle"
                     app:layout_constraintTop_toBottomOf="@id/img_article_showArticleFragment"
                     jalaliCalender="@{created_time}"
-                    android:text="@{@string/label_writer_time(viewModel.article.author)}"/>
+                    android:text="@{@string/label_writer_time(viewModel.article.author)}" />
                 <!--Todo Change writer and time-->
                 <TextView
                     android:id="@+id/tv_title_showArticleFragment"

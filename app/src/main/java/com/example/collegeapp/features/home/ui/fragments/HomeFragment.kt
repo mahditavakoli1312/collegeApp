@@ -56,6 +56,12 @@ class HomeFragment : Fragment() {
         binding.apply {
             viewModel = homeViewModel
             lifecycleOwner = viewLifecycleOwner
+
+            hscChipsScrollViewHomeFragment.postDelayed(Runnable {
+                kotlin.run {
+                    hscChipsScrollViewHomeFragment.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
+                }
+            }, 100L)
             rvArticlesHomeFragment.adapter = articleAdapter
             btnNewArticleMainFragment.setOnClickListener {
                 Navigation.easyNavigate(

@@ -11,8 +11,6 @@ import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentSearchUserProfileBinding
 import com.example.collegeapp.features.profile.ui.adapters.ViewPagerAdapterTabLayout
 import com.example.collegeapp.features.search.ui.viewModel.SearchUserProfileViewModel
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -41,30 +39,10 @@ class SearchUserProfileFragment : Fragment() {
             userProfileViewModel = viewModel
             lifecycleOwner = viewLifecycleOwner
         }
-        val tabTitleList = listOf(
-            requireContext().getString(R.string.label_myArticles),
-        )
-
         val viewPager = binding.vpViewpagerSearchProfileFragment
         viewPager.adapter =
             ViewPagerAdapterTabLayout(fragmentList, lifecycle, childFragmentManager)
-        val tabLayout = binding.tlTabLayoutSearchProfileFragment
-        TabLayoutMediator(
-            tabLayout,
-            viewPager
-        ) { tab, pos ->
-            tab.text = tabTitleList[pos]
-        }.attach()
-
-        setupTabIconsForTwo(
-            tabLayout = tabLayout,
-            firstIcon = R.drawable.ic_myarticles,
-            secondIcon = R.drawable.ic_bookmarks
-        )
-
     }
 
-    private fun setupTabIconsForTwo(tabLayout: TabLayout, firstIcon: Int, secondIcon: Int) {
-        tabLayout.getTabAt(0)?.setIcon(firstIcon)
-    }
+
 }
