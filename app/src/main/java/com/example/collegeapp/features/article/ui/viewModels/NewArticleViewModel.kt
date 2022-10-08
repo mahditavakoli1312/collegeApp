@@ -39,7 +39,7 @@ class NewArticleViewModel @Inject constructor(
                 _addArticleMessage.postValue(context.getString(R.string.label_choose_one_tag))
             } else if (titleSize != null && titleSize < 3) {
                 _addArticleMessage.postValue(context.getString(R.string.label_title_length))
-            } else if (descSize != null && descSize < 30) {
+            } else if (descSize != null && descSize < 50) {
                 _addArticleMessage.postValue(context.getString(R.string.label_desc_length))
             } else {
                 val response = articleRepository.addArticle(

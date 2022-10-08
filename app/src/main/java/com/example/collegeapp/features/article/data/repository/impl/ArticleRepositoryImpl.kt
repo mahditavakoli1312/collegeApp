@@ -139,8 +139,9 @@ class ArticleRepositoryImpl @Inject constructor(
         return safeApiCall(
             localData = ConstanceValue.FAILURE,
             api = {
+                val article = addArticleView.toAddArticleRequest()
                 val response =
-                    articleRemoteDataSource.addArticle(addArticleView.toAddArticleRequest())
+                    articleRemoteDataSource.addArticle(article)
                 return@safeApiCall response?.message ?: ""
             }
         )
