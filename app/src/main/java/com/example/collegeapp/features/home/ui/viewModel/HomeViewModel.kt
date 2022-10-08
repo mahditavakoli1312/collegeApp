@@ -47,7 +47,7 @@ class HomeViewModel @Inject constructor(
         }
 
 
-    private fun fetchArticles() {
+    fun fetchArticles() {
         viewModelScope.launch(Dispatchers.IO) {
             when (val response = articleRepository.getArticles()) {
                 is ResultWrapper.ApplicationError -> {
