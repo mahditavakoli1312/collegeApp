@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.HorizontalScrollView
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -55,6 +56,12 @@ class HomeFragment : Fragment() {
         binding.apply {
             viewModel = homeViewModel
             lifecycleOwner = viewLifecycleOwner
+
+            hscChipsScrollViewHomeFragment.postDelayed(Runnable {
+                kotlin.run {
+                    hscChipsScrollViewHomeFragment.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
+                }
+            },100L)
             rvArticlesHomeFragment.adapter = articleAdapter
             btnNewArticleMainFragment.setOnClickListener {
                 Navigation.easyNavigate(

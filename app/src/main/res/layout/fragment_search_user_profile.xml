@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="userProfileViewModel"
             type="com.example.collegeapp.features.search.ui.viewModel.SearchUserProfileViewModel" />
@@ -49,25 +50,13 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tl_tabLayout_searchProfileFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/margin_16"
-            android:background="@color/black"
-            app:layout_constraintBottom_toTopOf="@id/gl_horizontal22_searchProfileFragment"
-            app:layout_constraintTop_toBottomOf="@id/gl_horizontal8_searchProfileFragment"
-            app:tabIconTint="@color/tab_layout_color"
-            app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="#80FFFFFF" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_viewpager_searchProfileFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tl_tabLayout_searchProfileFragment" />
+            app:layout_constraintTop_toBottomOf="@id/gl_horizontal8_searchProfileFragment" />
 
 
         <ImageView
@@ -95,10 +84,10 @@
             app:layout_constraintTop_toTopOf="@id/gl_horizontal2_searchProfileFragment" />
 
         <ImageView
-            android:scaleType="fitXY"
             android:id="@+id/iv_hamburgerIcon_searchProfileFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_leading_actionbar"
             app:layout_constraintBottom_toBottomOf="@id/gl_horizontal8_searchProfileFragment"
             app:layout_constraintDimensionRatio="1:1"
