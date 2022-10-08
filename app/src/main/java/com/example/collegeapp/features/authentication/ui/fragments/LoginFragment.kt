@@ -47,6 +47,8 @@ class LoginFragment : Fragment() {
 
             btnLoginLoginFragment.setOnClickListener {
                 loginViewModel.login()
+                ProgressLoginLoginFragment.visibility = View.VISIBLE
+                btnLoginLoginFragment.visibility = View.GONE
             }
 
             loginViewModel.phoneNumber.observe(viewLifecycleOwner) {
@@ -72,6 +74,9 @@ class LoginFragment : Fragment() {
                     requiredActivity = requireActivity()
                 ).setDescriptionText(it)
                     .build().showSnackBar()
+
+                btnLoginLoginFragment.visibility = View.VISIBLE
+                ProgressLoginLoginFragment.visibility = View.GONE
             }
 
             tvRegisterLoginFragment.setOnClickListener {

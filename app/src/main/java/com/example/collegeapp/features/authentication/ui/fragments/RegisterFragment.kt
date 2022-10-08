@@ -118,8 +118,11 @@ class RegisterFragment : Fragment() {
                 }
             }
             btnRegisterRegisterFragment.setOnClickListener {
-                if (checkAllValidation())
+                if (checkAllValidation()) {
                     registerViewModel.register()
+                    ProgressRegisterRegisterFragment.visibility = View.VISIBLE
+                    btnRegisterRegisterFragment.visibility = View.GONE
+                }
                 else CustomSnackBar.Builder(
                     view = view,
                     requiredActivity = requireActivity()
@@ -134,26 +137,29 @@ class RegisterFragment : Fragment() {
                     inclusive = true
                 )
             }
-        }
-        registerViewModel.registerMessage.observe(viewLifecycleOwner) {
-            if (it.equals("success")) {
-                Navigation.easyNavigateWithPopUp(
-                    action = RegisterFragmentDirections.actionRegisterFragmentToConfirmRegisterFragment(),
-                    navController = findNavController(),
-                    popUpId = R.id.registerFragment,
-                    inclusive = true
-                )
-            } else {
-                CustomSnackBar.Builder(
-                    view = view,
-                    requiredActivity = requireActivity()
-                )
-                    .setDescriptionText(it)
-                    .build()
-                    .showSnackBar()
-            }
 
+            registerViewModel.registerMessage.observe(viewLifecycleOwner) {
+                if (it.equals("success")) {
+                    Navigation.easyNavigateWithPopUp(
+                        action = RegisterFragmentDirections.actionRegisterFragmentToConfirmRegisterFragment(),
+                        navController = findNavController(),
+                        popUpId = R.id.registerFragment,
+                        inclusive = true
+                    )
+                } else {
+                    CustomSnackBar.Builder(
+                        view = view,
+                        requiredActivity = requireActivity()
+                    )
+                        .setDescriptionText(it)
+                        .build()
+                        .showSnackBar()
+                }
+                btnRegisterRegisterFragment.visibility = View.VISIBLE
+                ProgressRegisterRegisterFragment.visibility = View.GONE
+            }
         }
+
     }
 
     private fun checkFirstName(firstName: String): String {

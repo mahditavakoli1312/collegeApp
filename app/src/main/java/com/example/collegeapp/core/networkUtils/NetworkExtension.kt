@@ -1,5 +1,7 @@
 package com.example.collegeapp.core.networkUtils
 
+import com.example.collegeapp.core.data.ConstanceValue
+import com.google.gson.Gson
 import org.json.JSONObject
 import retrofit2.Response
 
@@ -8,15 +10,15 @@ fun <T> Response<T>.bodyOrThrow(): T? {
         return body()
     else {
         /*TODO : check errorBody */
-        var errorMessage: String
-        try {
-            errorMessage = JSONObject(errorBody()?.string())
-                .getJSONArray("message")
-                .get(0).toString()
+        val gson = Gson()
+        val errorBody = errorBody()?.string()
+        val errorMessage: String = try {
+            val errors = gson.fromJson(errorBody, ErrorsResponse::class.java).message
+            if(errors != null)
+                errors[0]?:""
+            else ConstanceValue.FAILURE
         } catch (e: Exception) {
-            errorMessage = JSONObject(errorBody()?.string())
-                .getString("message")
-
+            gson.fromJson(errorBody, ErrorResponse::class.java).message
         }
         throw NetworkException(
             serverMessage = errorMessage, code = code()
