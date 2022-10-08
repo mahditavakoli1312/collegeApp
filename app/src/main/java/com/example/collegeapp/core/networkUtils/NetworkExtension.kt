@@ -9,7 +9,6 @@ fun <T> Response<T>.bodyOrThrow(): T? {
     if (isSuccessful)
         return body()
     else {
-        /*TODO : check errorBody */
         val gson = Gson()
         val errorBody = errorBody()?.string()
         val errorMessage: String = try {

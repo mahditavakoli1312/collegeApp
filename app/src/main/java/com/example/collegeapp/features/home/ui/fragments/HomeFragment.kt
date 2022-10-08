@@ -49,9 +49,7 @@ class HomeFragment : Fragment() {
                 action
             )
         }
-        homeViewModel.articleSearchTag.observe(viewLifecycleOwner) {
-            articleAdapter.submitList(it)
-        }
+
         createChipGroup()
         binding.apply {
             viewModel = homeViewModel
@@ -66,6 +64,13 @@ class HomeFragment : Fragment() {
             }
             homeViewModel.articleSearchTag.observe(viewLifecycleOwner) {
                 articleAdapter.submitList(it)
+            }
+            srlRefreshArticleHomeFragment.setOnRefreshListener {
+                srlRefreshArticleHomeFragment.isRefreshing = true
+                homeViewModel.fetchArticles()
+            }
+            homeViewModel.article.observe(viewLifecycleOwner){
+                srlRefreshArticleHomeFragment.isRefreshing = false
             }
             imgAddChipsHomeFragment.setOnClickListener {
                 BottomSheetTagFragment(false) { tagList ->

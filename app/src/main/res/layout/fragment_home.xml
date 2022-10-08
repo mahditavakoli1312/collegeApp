@@ -3,58 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.example.collegeapp.features.home.ui.viewModel.HomeViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
         tools:context=".features.home.ui.fragments.HomeFragment">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_HorizontalStart_homeFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="@dimen/guid_0.08Start_percent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_verticalStart_homeFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_verticalEnd_homeFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_horizontalEnd_homeFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
-
-        <ImageView
-            android:id="@+id/img_addChips_homeFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:background="@drawable/tag_gray"
-            android:padding="@dimen/margin_4"
-            android:src="@drawable/ic_add"
-            app:layout_constraintBottom_toBottomOf="@id/gl_HorizontalStart_homeFragment"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_homeFragment"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <HorizontalScrollView
             android:id="@+id/hsv_chipGroup_homeFragment"
@@ -78,17 +31,17 @@
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_articles_homeFragment"
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/img_addChips_homeFragment"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/gl_verticalEnd_homeFragment"
-            app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
-            app:layout_constraintTop_toBottomOf="@id/gl_HorizontalStart_homeFragment" />
-
+            android:background="@drawable/tag_gray"
+            android:padding="@dimen/margin_4"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="@id/gl_HorizontalStart_homeFragment"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_homeFragment"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/btn_newArticle_mainFragment"
@@ -101,5 +54,58 @@
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontalEnd_homeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_HorizontalStart_homeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/guid_0.08Start_percent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalStart_homeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalEnd_homeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_refreshArticle_homeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_verticalEnd_homeFragment"
+            app:layout_constraintStart_toStartOf="@id/gl_verticalStart_homeFragment"
+            app:layout_constraintTop_toBottomOf="@id/gl_HorizontalStart_homeFragment">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_articles_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.collegeapp.features.home.ui.viewModel.HomeViewModel" />
+    </data>
 </layout>
