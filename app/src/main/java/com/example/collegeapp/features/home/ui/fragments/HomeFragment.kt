@@ -100,6 +100,10 @@ class HomeFragment : Fragment() {
                         createChip(tag)
                     )
                 }
+                hsvChipGroupHomeFragment.postDelayed({
+                    hsvChipGroupHomeFragment.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
+                } , 0)
+
             }
         }
     }

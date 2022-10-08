@@ -59,9 +59,13 @@ class NewArticleFragment : Fragment() {
 
             btnShareArticleNewArticleFragment.setOnClickListener {
                 newArticleViewModel.addArticle()
+                progressShareArticleNewArticleFragment.visibility = View.VISIBLE
+                btnShareArticleNewArticleFragment.visibility = View.GONE
             }
 
             newArticleViewModel.addArticleMessage.observe(viewLifecycleOwner) {
+                progressShareArticleNewArticleFragment.visibility = View.GONE
+                btnShareArticleNewArticleFragment.visibility = View.VISIBLE
                 if (it.equals(ConstanceValue.SUCCESS)) {
                     CustomSnackBar.Builder(requireView(), requireActivity())
                         .setDescriptionText(getString(R.string.label_success_new_article))

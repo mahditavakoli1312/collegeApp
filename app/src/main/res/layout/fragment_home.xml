@@ -57,7 +57,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <HorizontalScrollView
-            android:id="@+id/hsc_chipsScrollView_homeFragment"
+            android:id="@+id/hsv_chipGroup_homeFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_8"
@@ -70,8 +70,9 @@
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chips_filter_homeFragment"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layoutDirection="ltr"
                 app:singleLine="true">
 
             </com.google.android.material.chip.ChipGroup>
