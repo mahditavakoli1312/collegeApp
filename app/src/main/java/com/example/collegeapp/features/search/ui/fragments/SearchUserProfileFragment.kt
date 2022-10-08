@@ -11,8 +11,6 @@ import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentSearchUserProfileBinding
 import com.example.collegeapp.features.profile.ui.adapters.ViewPagerAdapterTabLayout
 import com.example.collegeapp.features.search.ui.viewModel.SearchUserProfileViewModel
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

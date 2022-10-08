@@ -137,7 +137,7 @@
         android:id="@+id/childUserSearchFragment2"
         android:name="com.example.collegeapp.features.search.ui.fragments.ChildUserSearchFragment"
         android:label="ChildUserSearchFragment"
-        tools:layout="@layout/fragment_child_search_user" >
+        tools:layout="@layout/fragment_child_search_user">
         <action
             android:id="@+id/action_childUserSearchFragment2_to_searchUserProfileFragment"
             app:destination="@id/searchUserProfileFragment" />
@@ -160,7 +160,7 @@
     <fragment
         android:id="@+id/searchUserProfileFragment"
         android:name="com.example.collegeapp.features.search.ui.fragments.SearchUserProfileFragment"
-        android:label="SearchUserProfileFragment" >
+        android:label="SearchUserProfileFragment">
         <argument
             android:name="user_id"
             app:argType="integer" />

@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
                 kotlin.run {
                     hscChipsScrollViewHomeFragment.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
                 }
-            },100L)
+            }, 100L)
             rvArticlesHomeFragment.adapter = articleAdapter
             btnNewArticleMainFragment.setOnClickListener {
                 Navigation.easyNavigate(
