@@ -41,13 +41,12 @@ class AuthenticationRepositoryImpl @Inject constructor(
     }
 
     override suspend fun register(userRegisterView: UserRegisterView): ResultWrapper<String> {
-        //todo change hard code
         return safeApiCall(
             localData = ConstanceValue.FAILURE,
             api = {
                 val response = authenticationRemoteDataSource
                     .register(userRegisterView.toRegisterRequest())
-                return@safeApiCall response?.message?.get(0) ?: ""
+                return@safeApiCall response?.message?.get(0) ?: ConstanceValue.FAILURE
             }
         )
     }

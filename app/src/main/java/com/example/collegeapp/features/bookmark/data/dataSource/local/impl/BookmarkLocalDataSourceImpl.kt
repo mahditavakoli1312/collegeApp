@@ -1,6 +1,6 @@
 package com.example.collegeapp.features.bookmark.data.dataSource.local.impl
 
-import com.example.collegeapp.features.article.data.dp.dao.BookmarkDao
+import com.example.collegeapp.features.article.data.db.dao.BookmarkDao
 import com.example.collegeapp.features.bookmark.data.dataSource.local.BookmarkLocalDataSource
 import javax.inject.Inject
 

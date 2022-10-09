@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.home.ui.fragments
+package com.example.collegeapp.features.article.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import com.example.collegeapp.R
 import com.example.collegeapp.databinding.FragmentBottomSheetTagsBinding
 import com.example.collegeapp.features.article.ui.model.TagView
-import com.example.collegeapp.features.home.ui.viewModel.BottomSheetViewModel
+import com.example.collegeapp.features.article.ui.viewModels.BottomSheetViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint

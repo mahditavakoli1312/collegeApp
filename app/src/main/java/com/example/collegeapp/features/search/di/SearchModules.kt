@@ -1,7 +1,6 @@
 package com.example.collegeapp.features.search.di
 
-import com.example.collegeapp.features.search.data.dataSource.local.SearchLocalDataSource
-import com.example.collegeapp.features.search.data.dataSource.local.impl.SearchLocalDataSourceImpl
+
 import com.example.collegeapp.features.search.data.dataSource.remote.SearchRemoteDataSource
 import com.example.collegeapp.features.search.data.dataSource.remote.impl.SearchRemoteDataSourceImpl
 import com.example.collegeapp.features.search.data.network.api.SearchApi
@@ -17,10 +16,6 @@ import retrofit2.Retrofit
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class SearchModules {
-
-    @Binds
-    abstract fun bindSearchLocalDataSource(impl: SearchLocalDataSourceImpl):
-            SearchLocalDataSource
 
     @Binds
     abstract fun bindSearchRemoteDataSource(impl: SearchRemoteDataSourceImpl):

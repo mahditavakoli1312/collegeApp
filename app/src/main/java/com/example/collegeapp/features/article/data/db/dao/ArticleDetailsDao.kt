@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.article.data.dp.dao
+package com.example.collegeapp.features.article.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert

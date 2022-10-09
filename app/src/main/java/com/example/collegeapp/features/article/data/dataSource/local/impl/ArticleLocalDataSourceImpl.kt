@@ -1,7 +1,7 @@
 package com.example.collegeapp.features.article.data.datasource.local.impl
 
 import com.example.collegeapp.features.article.data.datasource.local.ArticleLocalDataSource
-import com.example.collegeapp.features.article.data.dp.dao.*
+import com.example.collegeapp.features.article.data.db.dao.*
 import com.example.collegeapp.features.article.data.model.entity.ArticleDetailsEntity
 import com.example.collegeapp.features.article.data.model.entity.ArticleEntity
 import com.example.collegeapp.features.article.data.model.entity.BookmarkEntity
@@ -19,9 +19,6 @@ class ArticleLocalDataSourceImpl @Inject constructor(
     private val userArticleTagDao: UserArticleTagDao
 ) : ArticleLocalDataSource {
     override suspend fun getArticles() = articleDao.getArticles()
-
-    //TODO Change authorId to sharedPref
-    override fun getMyArticle() = articleDao.getArticleWithAuthorId(1)
 
     override suspend fun getAllTags(): List<TagEntity> = tagDao.getAllTags()
 

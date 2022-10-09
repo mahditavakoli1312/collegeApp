@@ -3,6 +3,7 @@ package com.example.collegeapp.features.authentication.ui.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.collegeapp.core.data.ConstanceValue
 import com.example.collegeapp.core.networkUtils.ResultWrapper
 import com.example.collegeapp.features.authentication.data.repository.AuthenticationRepository
 import com.example.collegeapp.features.authentication.ui.model.UserRegisterView
@@ -41,8 +42,7 @@ class RegisterViewModel @Inject constructor(
                 is ResultWrapper.Failure -> {
                     _registerMessage.postValue("${response.message} ${response.code}")
                 }
-                //todo change hard code
-                is ResultWrapper.Success -> _registerMessage.postValue("success")
+                is ResultWrapper.Success -> _registerMessage.postValue(ConstanceValue.SUCCESS)
             }
         }
     }

@@ -3,21 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="created_time"
-            type="String" />
-
-        <variable
-            name="imageUrl"
-            type="Integer" />
-
-        <variable
-            name="viewModel"
-            type="com.example.collegeapp.features.article.ui.viewModels.ShowArticleViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -61,9 +46,9 @@
 
                 <ImageView
                     android:id="@+id/img_article_showArticleFragment"
+                    imageUrl="@{imageUrl}"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    imageUrl="@{imageUrl}"
                     app:layout_constraintDimensionRatio="@dimen/ratio_328_246"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -73,18 +58,18 @@
                 <TextView
                     android:id="@+id/tv_writerTimeArticleRecycler_showArticle"
                     style="@style/custom_textView_writer"
+                    jalaliCalender="@{created_time}"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_8"
                     android:gravity="center_vertical|start"
                     android:maxLines="1"
+                    android:text="@{@string/label_writer_time(viewModel.article.author)}"
                     app:layout_constraintBottom_toBottomOf="@id/chipsGroup_tag_showArticle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/gl_vertical50_showArticle"
-                    app:layout_constraintTop_toBottomOf="@id/img_article_showArticleFragment"
-                    jalaliCalender="@{created_time}"
-                    android:text="@{@string/label_writer_time(viewModel.article.author)}" />
-                <!--Todo Change writer and time-->
+                    app:layout_constraintTop_toBottomOf="@id/img_article_showArticleFragment" />
+
                 <TextView
                     android:id="@+id/tv_title_showArticleFragment"
                     style="@style/custom_textView_header"
@@ -162,4 +147,19 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="created_time"
+            type="String" />
+
+        <variable
+            name="imageUrl"
+            type="Integer" />
+
+        <variable
+            name="viewModel"
+            type="com.example.collegeapp.features.article.ui.viewModels.ShowArticleViewModel" />
+    </data>
 </layout>

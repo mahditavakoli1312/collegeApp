@@ -10,7 +10,6 @@ import com.example.collegeapp.features.profile.data.model.entity.UserArticleTagE
 
 interface ArticleLocalDataSource {
     suspend fun getArticles(): List<ArticleEntity>
-    fun getMyArticle(): LiveData<List<ArticleEntity>>
     suspend fun getAllTags(): List<TagEntity>
     suspend fun insertTags(tags: List<TagEntity>): List<Long>
     suspend fun getArticleWithId(articleId: Int): ArticleEntity
