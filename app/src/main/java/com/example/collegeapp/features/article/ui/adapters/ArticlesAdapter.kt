@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.home.ui.adapters
+package com.example.collegeapp.features.article.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

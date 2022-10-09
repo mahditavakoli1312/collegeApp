@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.home.ui.fragments
+package com.example.collegeapp.features.article.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,8 +16,8 @@ import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.FragmentHomeBinding
 import com.example.collegeapp.features.article.ui.model.TagView
-import com.example.collegeapp.features.home.ui.adapters.ArticlesAdapter
-import com.example.collegeapp.features.home.ui.viewModel.HomeViewModel
+import com.example.collegeapp.features.article.ui.adapters.ArticlesAdapter
+import com.example.collegeapp.features.article.ui.viewModels.HomeViewModel
 import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 

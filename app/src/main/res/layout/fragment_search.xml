@@ -2,13 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.example.collegeapp.features.search.ui.viewModel.SearchViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,6 +37,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.19" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_nestedFragmentHolder_searchFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_searchFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_searchFragment"
+            app:layout_constraintTop_toBottomOf="@id/gl_horizontal18_searchFragment" />
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/cg_searchChips_searchFragment"
@@ -117,23 +120,20 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:text="@={viewModel.searchVariable}"
                 style="@style/custom_inputEditText_gray"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/label_search_bar"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={viewModel.searchVariable}" />
         </com.google.android.material.textfield.TextInputLayout>
-        <!--todo delete nav graph search-->
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vp_nestedFragmentHolder_searchFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/gl_verticalEnd_searchFragment"
-            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_searchFragment"
-            app:layout_constraintTop_toBottomOf="@id/gl_horizontal18_searchFragment" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.collegeapp.features.search.ui.viewModel.SearchViewModel" />
+    </data>
 </layout>

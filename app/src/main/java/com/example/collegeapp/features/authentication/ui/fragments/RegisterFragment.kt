@@ -11,13 +11,14 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigateWithPopUp
+import com.example.collegeapp.core.data.ConstanceValue
 import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.FragmentRegisterBinding
 import com.example.collegeapp.features.authentication.ui.viewModel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
-//todo if all til error , view maybe gone
+
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
@@ -139,7 +140,7 @@ class RegisterFragment : Fragment() {
             }
 
             registerViewModel.registerMessage.observe(viewLifecycleOwner) {
-                if (it.equals("success")) {
+                if (it.equals(ConstanceValue.SUCCESS)) {
                     Navigation.easyNavigateWithPopUp(
                         action = RegisterFragmentDirections.actionRegisterFragmentToConfirmRegisterFragment(),
                         navController = findNavController(),

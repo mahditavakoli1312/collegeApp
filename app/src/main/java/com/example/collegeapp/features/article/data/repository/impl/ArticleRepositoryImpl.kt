@@ -15,7 +15,7 @@ class ArticleRepositoryImpl @Inject constructor(
     private val articleLocalDataSource: ArticleLocalDataSource,
     private val articleRemoteDataSource: ArticleRemoteDataSource
 ) : ArticleRepository {
-    //todo handle result wrapper errors in all function
+
     override suspend fun getArticles(): ResultWrapper<List<ArticleView>> {
         return safeApiCall(
             localData = getArticleFromLocalDataSource(),
@@ -51,8 +51,8 @@ class ArticleRepositoryImpl @Inject constructor(
 
 
     private suspend fun getTagsViewFromLocalDataSource(): List<TagView> {
-        val res = articleLocalDataSource.getAllTags().map { tagsEntitys ->
-            tagsEntitys.toTagView()
+        val res = articleLocalDataSource.getAllTags().map { tagsEntities ->
+            tagsEntities.toTagView()
         }
         return res
     }
@@ -133,7 +133,6 @@ class ArticleRepositoryImpl @Inject constructor(
     override suspend fun updateTags(tagList: List<TagView>) {
         articleLocalDataSource.updateTags(tagList.map { it.toTagEntity() })
     }
-
 
     override suspend fun addArticle(addArticleView: AddArticleView): ResultWrapper<String> {
         return safeApiCall(

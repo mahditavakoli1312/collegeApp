@@ -6,7 +6,7 @@ import com.example.collegeapp.features.article.data.datasource.local.ArticleLoca
 import com.example.collegeapp.features.article.data.datasource.local.impl.ArticleLocalDataSourceImpl
 import com.example.collegeapp.features.article.data.datasource.remote.ArticleRemoteDataSource
 import com.example.collegeapp.features.article.data.datasource.remote.impl.ArticleRemoteDataSourceImpl
-import com.example.collegeapp.features.article.data.dp.dao.*
+import com.example.collegeapp.features.article.data.db.dao.*
 import com.example.collegeapp.features.article.data.network.api.ArticleApi
 import com.example.collegeapp.features.article.data.repository.ArticleRepository
 import com.example.collegeapp.features.article.data.repository.impl.ArticleRepositoryImpl

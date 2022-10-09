@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        tools:context=".features.home.ui.fragments.HomeFragment">
+        tools:context=".features.article.ui.fragments.HomeFragment">
 
         <HorizontalScrollView
             android:id="@+id/hsv_chipGroup_homeFragment"
@@ -106,6 +106,6 @@
 
         <variable
             name="viewModel"
-            type="com.example.collegeapp.features.home.ui.viewModel.HomeViewModel" />
+            type="com.example.collegeapp.features.article.ui.viewModels.HomeViewModel" />
     </data>
 </layout>

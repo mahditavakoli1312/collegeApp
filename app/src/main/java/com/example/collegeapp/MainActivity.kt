@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.home.ui
+package com.example.collegeapp
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.collegeapp.R
 import com.example.collegeapp.core.common.easyNavigate
 import com.example.collegeapp.core.ui.CustomSnackBar
 import com.example.collegeapp.databinding.ActivityMainBinding

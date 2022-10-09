@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.home.ui.viewModel
+package com.example.collegeapp.features.article.ui.viewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -37,12 +37,7 @@ class BottomSheetViewModel @Inject constructor(
                 when (val response = articleRepository.getTags()) {
                     is ResultWrapper.ApplicationError -> {
                         response.message.apply {
-                            when (this) {
-                                else -> {
-                                    //TODO : change context
-                                    _fragmentStateMessage.postValue(ConstanceValue.FAILURE)
-                                }
-                            }
+                            _fragmentStateMessage.postValue(ConstanceValue.FAILURE)
                         }
                         _tags.postValue(response.localData)
                     }

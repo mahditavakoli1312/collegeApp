@@ -1,4 +1,4 @@
-package com.example.collegeapp.features.home.ui.viewModel
+package com.example.collegeapp.features.article.ui.viewModels
 
 import android.content.Context
 import androidx.lifecycle.*
@@ -27,7 +27,6 @@ class HomeViewModel @Inject constructor(
     }
 
     //TODO : Sobhan : manage _fragmentState and _fragmentStateMessage
-    //TODO : Sobhan : Check the home features again
     private val _fragmentState = MutableLiveData(FragmentState.INITIAL_STATE)
     val fragmentState = _fragmentState
 

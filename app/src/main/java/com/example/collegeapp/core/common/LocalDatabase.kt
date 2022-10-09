@@ -2,7 +2,7 @@ package com.example.collegeapp.core.common
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.collegeapp.features.article.data.dp.dao.*
+import com.example.collegeapp.features.article.data.db.dao.*
 import com.example.collegeapp.features.article.data.model.entity.ArticleDetailsEntity
 import com.example.collegeapp.features.article.data.model.entity.ArticleEntity
 import com.example.collegeapp.features.article.data.model.entity.BookmarkEntity
